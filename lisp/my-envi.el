@@ -47,6 +47,11 @@
 (defconst my-envi-windows (my-envi-windows-p)
   "This constant specify whatever user is using Emacs on device with Windows system.")
 
+;;;; Paths ----------------------------
+
+(defvar my-envi-user-files-directory (if my-envi-android "~/storage/shared/" "~/")
+  "Default directory where user stores files.")
+
 (provide 'my-envi)
 
 ;;; my-envi.el ends here
