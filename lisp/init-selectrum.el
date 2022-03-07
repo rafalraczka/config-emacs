@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-selectrum.el --- selectrum configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,15 +24,8 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(straight-use-package 'selectrum)
 
-(require 'init-straight)
-(require 'init-package)
+(provide 'init-selectrum)
 
-(require 'my-envi)
-
-(require 'init-selectrum)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-selectrum.el ends here
