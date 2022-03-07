@@ -24,6 +24,29 @@
 
 ;;; Code:
 
+;;;; System dependent variables -------
+
+(defun my-envi-android-p ()
+  "Return t if current system is Android, and return nil otherwise."
+  (string-equal "Android\n" (shell-command-to-string "uname -o")))
+
+(defun my-envi-gnu-linux-p ()
+  "Return t if current system is GNU/Linux, and return nil otherwise."
+  (eq system-type 'gnu/linux))
+
+(defun my-envi-windows-p ()
+  "Return t if current system is Windows, and return nil otherwise."
+  (eq system-type 'windows-nt))
+
+(defconst my-envi-android (my-envi-android-p)
+  "This constant specify whatever user is using Emacs on device with Android system.")
+
+(defconst my-envi-gnu-linux (my-envi-gnu-linux-p)
+  "This constant specify whatever user is using Emacs on device with GNU/Linux system.")
+
+(defconst my-envi-windows (my-envi-windows-p)
+  "This constant specify whatever user is using Emacs on device with Windows system.")
+
 (provide 'my-envi)
 
 ;;; my-envi.el ends here
