@@ -28,6 +28,23 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(defvar my/package-contents-refreshed nil)
+
+(defun my/package-ensure (package)
+  "Ensure that PACKAGE is installed and return non-nil if successful."
+  (or (package-installed-p package)
+      (let* ((archive (cdr (assoc package package-archive-contents)))
+             (newest (car (sort archive (lambda (a b)
+                                          (version-list-<= (package-desc-version b)
+                                                           (package-desc-version a)))))))
+        (if newest
+            (package-install newest)
+          (when (not my/package-contents-refreshed)
+            (package-refresh-contents)
+            (setq my/package-contents-refreshed t)
+            (my/package-ensure package)))
+        (package-installed-p package))))
+
 (package-initialize)
 
 (unless package-archive-contents
