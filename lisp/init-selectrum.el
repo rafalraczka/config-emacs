@@ -26,6 +26,8 @@
 
 (straight-use-package 'selectrum)
 
+(add-hook 'after-init-hook 'selectrum-mode)
+
 (provide 'init-selectrum)
 
 ;;; init-selectrum.el ends here
