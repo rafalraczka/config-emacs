@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; my-envi.el --- Environment configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,13 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'my-envi)
 
-(require 'init-straight)
-(require 'init-package)
-
-(require 'my-envi)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; my-envi.el ends here
