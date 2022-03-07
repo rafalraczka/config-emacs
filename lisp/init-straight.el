@@ -1,6 +1,6 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-straight.el --- straight configuration -*- lexical-binding: t -*-
 
-;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
+;; Copyright (C) 2022 Rafał Rączka
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
 ;; URL: https://github.com/rafalraczka/config-emacs
@@ -24,11 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'init-straight)
 
-(require 'init-straight)
-(require 'init-package)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-straight.el ends here
