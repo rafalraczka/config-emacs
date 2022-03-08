@@ -1,6 +1,6 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-custom.el --- custom configuration -*- lexical-binding: t -*-
 
-;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
+;; Copyright (C) 2022 Rafał Rączka
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
 ;; URL: https://github.com/rafalraczka/config-emacs
@@ -24,16 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'init-custom)
 
-(require 'init-straight)
-(require 'init-package)
-
-(require 'my-envi)
-
-(require 'init-custom)
-(require 'init-selectrum)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-custom.el ends here
