@@ -24,6 +24,15 @@
 
 ;;; Code:
 
+(defun my-init-check-emacs-version (ver)
+  "Give warning about old Emacs if `emacs-version' is lower than VER."
+  (when (version< emacs-version ver)
+    (warn "%s %s\n  %s %s %s"
+          "Your Emacs version is" emacs-version
+	  "this configuration was only tested with version" ver "or higher")))
+
+(my-init-check-emacs-version "27.2")
+
 (provide 'my-init)
 
 ;;; my-init.el ends here
