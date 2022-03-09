@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; my-init.el --- Utilities for Emacs initialization -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,17 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'my-init)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
-
-(require 'my-envi)
-
-(require 'init-custom)
-(require 'init-selectrum)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; my-init.el ends here
