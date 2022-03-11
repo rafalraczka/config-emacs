@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-tab-bar.el --- tab-bar configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'init-tab-bar)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
-
-(require 'my-envi)
-
-(require 'init-custom)
-(require 'init-selectrum)
-(require 'init-tab-bar)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-tab-bar.el ends here
