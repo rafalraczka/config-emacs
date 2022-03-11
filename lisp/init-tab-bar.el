@@ -24,6 +24,15 @@
 
 ;;; Code:
 
+(with-eval-after-load 'tab-bar
+  (setq tab-bar-back-button nil)
+  (setq tab-bar-close-button-show nil)
+  (setq tab-bar-forward-button nil)
+  (setq tab-bar-new-button-show nil)
+  (setq tab-bar-show 1)
+  (setq tab-bar-tab-name-function 'tab-bar-tab-name-truncated)
+  (setq tab-bar-tab-name-truncated-max 10))
+
 (provide 'init-tab-bar)
 
 ;;; init-tab-bar.el ends here
