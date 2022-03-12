@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-undo-tree.el --- undo-tree configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,19 +24,8 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(straight-use-package 'undo-tree)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
+(provide 'init-undo-tree)
 
-(require 'my-envi)
-
-(require 'init-custom)
-(require 'init-selectrum)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-undo-tree.el ends here
