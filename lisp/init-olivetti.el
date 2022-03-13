@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-olivetti.el --- olivetti configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,23 +24,12 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(straight-use-package
+ '(olivetti :type git :flavor melpa :host github
+            :repo "rnkn/olivetti"
+            :fork (:type git :flavor melpa :host github
+                   :repo "rafalraczka/olivetti")))
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
+(provide 'init-olivetti)
 
-(require 'my-envi)
-
-(require 'init-custom)
-
-(when (not my-envi-android)
-  (require 'init-olivetti))
-
-(require 'init-selectrum)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-olivetti.el ends here
