@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-ess.el --- ess configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,24 +24,8 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(straight-use-package 'ess)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
+(provide 'init-ess)
 
-(require 'my-envi)
-
-(require 'init-custom)
-(require 'init-ess)
-
-(when (not my-envi-android)
-  (require 'init-olivetti))
-
-(require 'init-selectrum)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-ess.el ends here
