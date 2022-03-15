@@ -28,6 +28,9 @@
 
 (add-hook 'after-init-hook 'global-undo-tree-mode)
 
+(with-eval-after-load 'undo-tree
+  (setq undo-tree-auto-save-history nil))
+
 (provide 'init-undo-tree)
 
 ;;; init-undo-tree.el ends here
