@@ -26,6 +26,29 @@
 
 (straight-use-package 'ess)
 
+
+(with-eval-after-load 'ess
+
+  (defun my/ess-mode-config ()
+    (ess-set-style 'C++ 'quiet))
+
+  (add-hook 'ess-r-mode-hook 'my/ess-mode-config)
+
+  (setq ess-eval-visibly nil)
+  (setq ess-R-font-lock-keywords
+        '((ess-R-fl-keyword:keywords . t)
+          (ess-R-fl-keyword:constants . t)
+          (ess-R-fl-keyword:modifiers . t)
+          (ess-R-fl-keyword:fun-defs . t)
+          (ess-R-fl-keyword:assign-ops . t)
+          (ess-R-fl-keyword:%op% . nil)
+          (ess-fl-keyword:fun-calls . nil)
+          (ess-fl-keyword:numbers . t)
+          (ess-fl-keyword:operators . t)
+          (ess-fl-keyword:delimiters . nil)
+          (ess-fl-keyword:= . nil)
+          (ess-R-fl-keyword:F&T . t))))
+
 (provide 'init-ess)
 
 ;;; init-ess.el ends here
