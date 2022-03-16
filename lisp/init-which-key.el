@@ -28,6 +28,8 @@
 
 (add-hook 'after-init-hook 'which-key-mode)
 
+(setq which-key-idle-delay 0.5)
+
 (provide 'init-which-key)
 
 ;;; init-which-key.el ends here
