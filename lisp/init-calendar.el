@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-calendar.el --- calendar configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,26 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'init-calendar)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
-
-(require 'my-envi)
-
-(require 'init-calendar)
-(require 'init-custom)
-(require 'init-ess)
-(require 'init-magit)
-
-(when (not my-envi-android)
-  (require 'init-olivetti))
-
-(require 'init-selectrum)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-calendar.el ends here
