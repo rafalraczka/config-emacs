@@ -26,6 +26,8 @@
 
 (straight-use-package 'which-key)
 
+(add-hook 'after-init-hook 'which-key-mode)
+
 (provide 'init-which-key)
 
 ;;; init-which-key.el ends here
