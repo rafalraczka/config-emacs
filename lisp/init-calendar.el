@@ -24,6 +24,18 @@
 
 ;;; Code:
 
+(with-eval-after-load 'calendar
+  (defun my/calendar-mode-config ()
+    (setq-local fill-column 71))
+
+  (add-hook 'calendar-mode-hook 'my/calendar-mode-config)
+
+  (setq calendar-left-margin 2)
+  (setq calendar-date-style 'iso)
+
+  (setq calendar-minimum-window-height 9)
+  (setq calendar-week-start-day 1))
+
 (provide 'init-calendar)
 
 ;;; init-calendar.el ends here
