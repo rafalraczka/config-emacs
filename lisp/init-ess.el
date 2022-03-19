@@ -24,8 +24,8 @@
 
 ;;; Code:
 
-(straight-use-package 'ess)
 
+(my/package-ensure 'ess)
 
 (with-eval-after-load 'ess
 

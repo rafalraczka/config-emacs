@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(straight-use-package 'magit)
+(my/package-ensure 'magit)
 
 (provide 'init-magit)
 

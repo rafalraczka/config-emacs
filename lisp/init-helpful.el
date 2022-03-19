@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(straight-use-package 'helpful)
+(my/package-ensure 'helpful)
 
 (provide 'init-helpful)
 

@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(straight-use-package 'which-key)
+(my/package-ensure 'which-key)
 
 (add-hook 'after-init-hook 'which-key-mode)
 

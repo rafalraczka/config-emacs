@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(straight-use-package 'selectrum)
+(my/package-ensure 'selectrum)
 
 (add-hook 'after-init-hook 'selectrum-mode)
 
