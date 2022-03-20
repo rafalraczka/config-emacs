@@ -44,6 +44,7 @@
   ;; Default directory for org files.
 
   (setq org-directory my-envi-org-directory)
+  (setq org-ellipsis "…")
 
   ;; Hide all leading stars in a heading except the last one.
 
