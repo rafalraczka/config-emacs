@@ -81,6 +81,12 @@
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "STRT(s!)" "|" "DONE(d!)")
           (sequence "MYBE(m!)" "WAIT(w!)" "|" "CANC(c!)")))
+
+  (push '(".+\\.org-.*"
+          (display-buffer-in-direction)
+          (direction . right)
+          (window-width . 0.33))
+        display-buffer-alist)
   )
 
 (provide 'init-org)
