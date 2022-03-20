@@ -34,6 +34,9 @@
   (defun my/org-mode-config ()
     (setq fill-column my/org-fill-column))
 
+  (add-hook 'org-clock-cancel-hook #'save-buffer)
+  (add-hook 'org-clock-in-hook #'save-buffer)
+  (add-hook 'org-clock-out-hook #'save-buffer)
   (add-hook 'org-mode-hook #'my/org-mode-config)
 
   (setq org-default-priority ?C)
