@@ -40,6 +40,10 @@
   (add-hook 'org-mode-hook #'my/org-mode-config)
 
   (setq org-default-priority ?C)
+
+  ;; Default directory for org files.
+
+  (setq org-directory my-envi-org-directory)
   (setq org-highest-priority ?A)
   (setq org-lowest-priority  ?E)
 
