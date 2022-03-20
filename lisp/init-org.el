@@ -50,6 +50,12 @@
 
   (setq org-hide-leading-stars t)
   (setq org-highest-priority ?A)
+
+  ;; Use id property when storing links to org entries and id property is
+  ;; present.
+
+  (setq org-id-link-to-org-use-id 'use-existing)
+
   (setq org-lowest-priority  ?E)
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-targets
