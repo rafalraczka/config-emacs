@@ -36,6 +36,10 @@
 
   (add-hook 'org-mode-hook #'my/org-mode-config)
 
+  (setq org-default-priority ?C)
+  (setq org-highest-priority ?A)
+  (setq org-lowest-priority  ?E)
+
   ;; - =CANC= - The task has been cancelled.
   ;;
   ;; - =DONE= - The task has been done.
