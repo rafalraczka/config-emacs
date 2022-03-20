@@ -46,6 +46,11 @@
   (setq org-directory my-envi-org-directory)
   (setq org-highest-priority ?A)
   (setq org-lowest-priority  ?E)
+  (setq org-outline-path-complete-in-steps nil)
+  (setq org-refile-targets
+        '((nil :maxlevel . 8)
+          (org-agenda-files :maxlevel . 1)))
+  (setq org-refile-use-outline-path t)
 
   ;; - =CANC= - The task has been cancelled.
   ;;
