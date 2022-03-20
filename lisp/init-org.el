@@ -1,6 +1,6 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-org.el --- org configuration -*- lexical-binding: t -*-
 
-;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
+;; Copyright (C) 2022 Rafał Rączka
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
 ;; URL: https://github.com/rafalraczka/config-emacs
@@ -24,29 +24,8 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(straight-use-package 'org)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
+(provide 'init-org)
 
-(require 'my-envi)
-
-(require 'init-calendar)
-(require 'init-custom)
-(require 'init-ess)
-(require 'init-helpful)
-(require 'init-magit)
-
-(when (not my-envi-android)
-  (require 'init-olivetti))
-
-(require 'init-org)
-(require 'init-selectrum)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-(require 'init-which-key)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-org.el ends here
