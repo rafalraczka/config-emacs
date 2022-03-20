@@ -44,6 +44,10 @@
   ;; Default directory for org files.
 
   (setq org-directory my-envi-org-directory)
+
+  ;; Hide all leading stars in a heading except the last one.
+
+  (setq org-hide-leading-stars t)
   (setq org-highest-priority ?A)
   (setq org-lowest-priority  ?E)
   (setq org-outline-path-complete-in-steps nil)
