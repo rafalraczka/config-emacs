@@ -26,6 +26,17 @@
 
 (straight-use-package 'org)
 
+(with-eval-after-load 'org
+  (defcustom my/org-fill-column 72
+    "Default `fill-column' for Org mode."
+    :type 'integer)
+
+  (defun my/org-mode-config ()
+    (setq fill-column my/org-fill-column))
+
+  (add-hook 'org-mode-hook #'my/org-mode-config)
+  )
+
 (provide 'init-org)
 
 ;;; init-org.el ends here
