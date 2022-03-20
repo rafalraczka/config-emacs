@@ -35,6 +35,25 @@
     (setq fill-column my/org-fill-column))
 
   (add-hook 'org-mode-hook #'my/org-mode-config)
+
+  ;; - =CANC= - The task has been cancelled.
+  ;;
+  ;; - =DONE= - The task has been done.
+  ;;
+  ;; - =MYBE= - The task is optional and completion or participation is not
+  ;;   required.
+  ;;
+  ;; - =STRT= - The task has been started but not finalized.
+  ;;
+  ;; - =TODO= - The task has to be done.
+  ;;
+  ;; - =WAIT= - Task cannot be done right now and I have to wait for some event
+  ;;   to occur which would make this task actionable again e.g. somebody will
+  ;;   do other task, some time will pass or the weather will change.
+
+  (setq org-todo-keywords
+        '((sequence "TODO(t!)" "STRT(s!)" "|" "DONE(d!)")
+          (sequence "MYBE(m!)" "WAIT(w!)" "|" "CANC(c!)")))
   )
 
 (provide 'init-org)
