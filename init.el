@@ -41,6 +41,7 @@
 (when (not my-envi-android)
   (require 'init-olivetti))
 
+(require 'init-org)
 (require 'init-selectrum)
 (require 'init-tab-bar)
 (require 'init-undo-tree)

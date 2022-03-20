@@ -52,6 +52,10 @@
 (defvar my-envi-user-files-directory (if my-envi-android "~/storage/shared/" "~/")
   "Default directory where user stores files.")
 
+(defconst my-envi-org-directory
+  (expand-file-name "org" my-envi-user-files-directory)
+  "Default directory where user stores org files.")
+
 (provide 'my-envi)
 
 ;;; my-envi.el ends here
