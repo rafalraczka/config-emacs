@@ -48,6 +48,11 @@
   (setq modus-themes-org-blocks 'gray-background)
   (setq modus-themes-paren-match '(intense))
   (setq modus-themes-syntax '(yellow-comments))
+  (setq modus-themes-vivendi-color-overrides '((bg-main . "#191919")
+                                               (bg-inactive . "#373737")
+                                               (bg-tab-active . "#323232")
+                                               (bg-tab-inactive . "#100f10")
+                                               (fg-comment-yellow . "#d0ba95")))
   )
 
 (provide 'init-modus-themes)
