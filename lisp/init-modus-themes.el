@@ -36,6 +36,20 @@
     (add-hook 'server-after-make-frame-hook 'modus-themes-load-vivendi -50)
   (add-hook 'after-init-hook 'modus-themes-load-vivendi -50))
 
+(with-eval-after-load 'modus-themes
+  (setq modus-themes-headings (mapcar (lambda (i)
+                                        `(,i . (rainbow)))
+                                      (number-sequence 1 9)))
+  (setq modus-themes-lang-checkers '(faint))
+  (setq modus-themes-links '(no-color))
+  (setq modus-themes-mode-line '(borderless))
+  (setq modus-themes-org-agenda '((scheduled . rainbow)
+                                  (header-date . (bold-today))))
+  (setq modus-themes-org-blocks 'gray-background)
+  (setq modus-themes-paren-match '(intense))
+  (setq modus-themes-syntax '(yellow-comments))
+  )
+
 (provide 'init-modus-themes)
 
 ;;; init-modus-themes.el ends here
