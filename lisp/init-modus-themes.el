@@ -51,7 +51,21 @@
       (set-face-attribute 'org-cite nil :inherit 'default)
       (set-face-attribute 'org-headline-done nil :inherit 'shadow)
       (set-face-attribute 'org-scheduled nil :foreground 'unspecified)
-      (set-face-attribute 'org-tag nil :foreground nil :inherit 'shadow)))
+      (set-face-attribute 'org-tag nil :foreground nil :inherit 'shadow))
+    (when (memq 'modus-vivendi custom-enabled-themes)
+      (my/modus-themes-set-faces-vivendi)))
+
+  (defun my/modus-themes-set-faces-vivendi ()
+    "Set faces which overrides Modus Vivendi defaults."
+    (set-face-attribute 'line-number nil :background "#1e1e1e")
+    (set-face-attribute 'mode-line-inactive nil :background "#100f10")
+    (set-face-attribute 'vertical-border nil :foreground "#1e1e1e")
+    (with-eval-after-load 'org-faces
+      (set-face-attribute 'org-block nil :background "#252525")
+      (set-face-attribute 'org-block-begin-line nil :background "#323232")
+      (set-face-attribute 'org-cite-key nil :foreground "#00d3d0"))
+    (with-eval-after-load 'org-ref-ref-links
+      (set-face-attribute 'org-ref-ref-face nil :foreground "#00d3d0")))
 
   (add-hook 'modus-themes-after-load-theme-hook 'my/modus-themes-set-faces)
 
