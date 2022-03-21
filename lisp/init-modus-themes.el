@@ -37,6 +37,24 @@
   (add-hook 'after-init-hook 'modus-themes-load-vivendi -50))
 
 (with-eval-after-load 'modus-themes
+  (defun my/modus-themes-set-faces ()
+    "Set faces which overrides `modus-themes' defaults."
+    (set-face-attribute 'fringe nil :inherit 'line-number :background 'unspecified)
+    (set-face-attribute 'mode-line nil :box 'unspecified)
+    (set-face-attribute 'mode-line-inactive nil :box nil)
+    (set-face-attribute 'modus-themes-tab-active nil :box nil)
+    (set-face-attribute 'modus-themes-tab-backdrop nil :background 'unspecified :inherit 'mode-line-inactive)
+    (set-face-attribute 'tab-bar-tab nil :inherit 'mode-line)
+    (set-face-attribute 'tab-bar-tab-inactive nil :inherit 'mode-line-inactive :height 0.92)
+    (with-eval-after-load 'org-faces
+      (set-face-attribute 'org-agenda-date-today nil :background 'unspecified)
+      (set-face-attribute 'org-cite nil :inherit 'default)
+      (set-face-attribute 'org-headline-done nil :inherit 'shadow)
+      (set-face-attribute 'org-scheduled nil :foreground 'unspecified)
+      (set-face-attribute 'org-tag nil :foreground nil :inherit 'shadow)))
+
+  (add-hook 'modus-themes-after-load-theme-hook 'my/modus-themes-set-faces)
+
   (setq modus-themes-headings (mapcar (lambda (i)
                                         `(,i . (rainbow)))
                                       (number-sequence 1 9)))
