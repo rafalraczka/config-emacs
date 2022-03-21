@@ -32,6 +32,10 @@
                 :repo "protesilaos/modus-themes"
                 :fork (:repo "rafalraczka/modus-themes")))
 
+(if (daemonp)
+    (add-hook 'server-after-make-frame-hook 'modus-themes-load-vivendi -50)
+  (add-hook 'after-init-hook 'modus-themes-load-vivendi -50))
+
 (provide 'init-modus-themes)
 
 ;;; init-modus-themes.el ends here
