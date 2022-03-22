@@ -24,6 +24,15 @@
 
 ;;; Code:
 
+(require 'server)
+
+(defun my/server-ensure-server ()
+  "Ensure that the server is running."
+  (unless (server-running-p)
+    (server-start)))
+
+(my/server-ensure-server)
+
 (provide 'init-server)
 
 ;;; init-server.el ends here
