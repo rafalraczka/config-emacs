@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-server.el --- server configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,31 +24,6 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(provide 'init-server)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
-(require 'init-server)
-
-(require 'my-envi)
-
-(require 'init-calendar)
-(require 'init-custom)
-(require 'init-ess)
-(require 'init-helpful)
-(require 'init-magit)
-(require 'init-modus-themes)
-
-(when (not my-envi-android)
-  (require 'init-olivetti))
-
-(require 'init-org)
-(require 'init-selectrum)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-(require 'init-which-key)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-server.el ends here
