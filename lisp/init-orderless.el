@@ -26,6 +26,8 @@
 
 (my/package-ensure 'orderless)
 
+(setq completion-styles '(orderless))
+
 (provide 'init-orderless)
 
 ;;; init-orderless.el ends here
