@@ -28,6 +28,9 @@
 
 (add-hook 'after-init-hook 'pdf-loader-install)
 
+(with-eval-after-load 'pdf-tools
+  (setq-default pdf-view-display-size 'fit-page))
+
 (provide 'init-pdf-tools)
 
 ;;; init-pdf-tools.el ends here
