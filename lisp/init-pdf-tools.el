@@ -26,6 +26,8 @@
 
 (my/package-ensure 'pdf-tools)
 
+(add-hook 'after-init-hook 'pdf-loader-install)
+
 (provide 'init-pdf-tools)
 
 ;;; init-pdf-tools.el ends here
