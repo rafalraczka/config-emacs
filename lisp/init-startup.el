@@ -24,6 +24,20 @@
 
 ;;; Code:
 
+;; `initial-major-mode' can be set to change the major
+;; mode of the =*scratch*= buffer.
+
+;; (setq initial-major-mode 'text-mode)
+
+;; Changing content of the message for the scratch buffer.
+
+(setq initial-scratch-message ";; Scratch\n\n")
+
+;; Preventing startup screen for displaying as the initial screen for Emacs
+;; session.
+
+(setq inhibit-startup-screen t)
+
 (provide 'init-startup)
 
 ;;; init-startup.el ends here
