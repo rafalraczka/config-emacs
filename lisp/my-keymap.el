@@ -24,6 +24,23 @@
 
 ;;; Code:
 
+;;;; global-map -----------------------
+
+(global-set-key (kbd "C-s-g") #'my-keymap-git-map)
+
+;;;; my-keymap-git-map ----------------
+
+(define-prefix-command 'my-keymap-git-map)
+
+(with-eval-after-load 'init-git-timemachine
+  (define-key my-keymap-git-map (kbd "t") #'git-timemachine))
+
+(with-eval-after-load 'init-magit
+  (define-key my-keymap-git-map (kbd "l f") #'magit-log-buffer-file)
+  (define-key my-keymap-git-map (kbd "l c") #'magit-log-current)
+  (define-key my-keymap-git-map (kbd "r") #'magit-rebase)
+  (define-key my-keymap-git-map (kbd "s") #'magit-status))
+
 (provide 'my-keymap)
 
 ;;; my-keymap.el ends here
