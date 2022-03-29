@@ -72,6 +72,7 @@
   (setq modus-themes-headings (mapcar (lambda (i)
                                         `(,i . (rainbow)))
                                       (number-sequence 1 9)))
+  (setq modus-themes-hl-line '(intense))
   (setq modus-themes-lang-checkers '(faint))
   (setq modus-themes-links '(no-color))
   (setq modus-themes-mode-line '(borderless))
