@@ -27,6 +27,7 @@
 ;;;; global-map -----------------------
 
 (global-set-key (kbd "C-s-g") #'my-keymap-git-map)
+(global-set-key (kbd "C-s-h") #'my-keymap-help-map)
 
 ;;;; my-keymap-git-map ----------------
 
@@ -40,6 +41,17 @@
   (define-key my-keymap-git-map (kbd "l c") #'magit-log-current)
   (define-key my-keymap-git-map (kbd "r") #'magit-rebase)
   (define-key my-keymap-git-map (kbd "s") #'magit-status))
+
+;;;; my-keymap-help-map ---------------
+
+(define-prefix-command 'my-keymap-help-map)
+
+(set-keymap-parent my-keymap-help-map 'help-command)
+
+(with-eval-after-load 'init-helpful
+  (define-key my-keymap-help-map (kbd "f") #'helpful-callable)
+  (define-key my-keymap-help-map (kbd "v") #'helpful-variable)
+  (define-key my-keymap-help-map (kbd "k") #'helpful-key))
 
 (provide 'my-keymap)
 
