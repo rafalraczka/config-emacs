@@ -47,6 +47,8 @@
 (defconst my-envi-windows (my-envi-windows-p)
   "This constant specify whatever user is using Emacs on device with Windows system.")
 
+(defconst my-envi-daemon (daemonp))
+
 ;;;; Paths ----------------------------
 
 (defvar my-envi-user-files-directory (if my-envi-android "~/storage/shared/" "~/")
