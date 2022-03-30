@@ -26,6 +26,27 @@
 
 (my/package-ensure 'doom-modeline)
 
+(defun my/doom-modeline-set-faces ()
+  "Set faces for doom-modeline."
+  (set-face-attribute 'doom-modeline-buffer-file nil :inherit 'unspecified)
+  (set-face-attribute 'doom-modeline-buffer-major-mode nil :foreground 'unspecified :inherit 'unspecified)
+  (set-face-attribute 'doom-modeline-buffer-modified nil :inherit 'unspecified)
+  (set-face-attribute 'doom-modeline-buffer-path nil :inherit 'unspecified)
+  (set-face-attribute 'doom-modeline-project-dir nil :inherit 'unspecified)
+  (set-face-attribute 'doom-modeline-warning nil :inherit 'unspecified)
+  (set-face-attribute 'mode-line nil :height 0.90)
+  (set-face-attribute 'mode-line-inactive nil :height 1.0 :inherit 'mode-line))
+
+(add-hook 'after-init-hook 'doom-modeline-mode)
+
+(if my-envi-daemon
+    (add-hook 'server-after-make-frame-hook 'my/doom-modeline-set-faces)
+  (add-hook 'after-init-hook 'my/doom-modeline-set-faces 50))
+
+(with-eval-after-load 'doom-modeline
+  (with-eval-after-load 'modus-themes
+    (add-hook 'modus-themes-after-load-theme-hook 'my/doom-modeline-set-faces)))
+
 (provide 'init-doom-modeline)
 
 ;;; init-doom-modeline.el ends here
