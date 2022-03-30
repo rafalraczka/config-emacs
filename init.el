@@ -52,6 +52,7 @@
 (require 'init-startup)
 (require 'init-tab-bar)
 (require 'init-undo-tree)
+(require 'init-visual-fill)
 (require 'init-which-key)
 (require 'my-keymap)
 
