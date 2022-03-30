@@ -44,6 +44,16 @@
   (add-hook 'after-init-hook 'my/doom-modeline-set-faces 50))
 
 (with-eval-after-load 'doom-modeline
+  (setq doom-modeline-bar-width 4)
+  (setq doom-modeline-buffer-file-name-style 'file-name)
+  (setq doom-modeline-github t)
+  (setq doom-modeline-height 25)
+  (setq doom-modeline-lsp t)
+  (setq doom-modeline-major-mode-icon t)
+  (setq doom-modeline-minor-modes t)
+  (setq doom-modeline-window-width-limit 80)
+  (setq doom-modeline-workspace-name nil)
+
   (with-eval-after-load 'modus-themes
     (add-hook 'modus-themes-after-load-theme-hook 'my/doom-modeline-set-faces)))
 
