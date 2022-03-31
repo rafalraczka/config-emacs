@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
+;;; init-ctrlf.el --- ctrlf configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,39 +24,8 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(my/package-ensure 'ctrlf)
 
-(require 'my-init)
-(require 'init-straight)
-(require 'init-package)
-(require 'init-server)
+(provide 'init-ctrlf)
 
-(require 'my-envi)
-
-(require 'init-calendar)
-(require 'init-ctrlf)
-(require 'init-custom)
-(require 'init-doom-modeline)
-(require 'init-ess)
-(require 'init-git-timemachine)
-(require 'init-helpful)
-(require 'init-magit)
-(require 'init-modus-themes)
-
-(when (not my-envi-android)
-  (require 'init-olivetti))
-
-(require 'init-orderless)
-(require 'init-org)
-(require 'init-pdf-tools)
-(require 'init-selectrum)
-(require 'init-startup)
-(require 'init-tab-bar)
-(require 'init-undo-tree)
-(require 'init-visual-fill)
-(require 'init-which-key)
-(require 'my-keymap)
-
-(provide 'init)
-
-;;; init.el ends here
+;;; init-ctrlf.el ends here
