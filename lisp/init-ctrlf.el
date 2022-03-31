@@ -26,6 +26,8 @@
 
 (my/package-ensure 'ctrlf)
 
+(add-hook 'after-init-hook 'ctrlf-mode)
+
 (provide 'init-ctrlf)
 
 ;;; init-ctrlf.el ends here
