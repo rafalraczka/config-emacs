@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(set-face-attribute 'default nil :height 120 :family "Roboto Mono")
+
 (provide 'init-faces)
 
 ;;; init-faces.el ends here
