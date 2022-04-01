@@ -33,22 +33,21 @@
 (defun my/package-ensure (package)
   "Ensure that PACKAGE is installed and return non-nil if successful."
   (or (package-installed-p package)
-      (let* ((archive (cdr (assoc package package-archive-contents)))
-             (newest (car (sort archive (lambda (a b)
-                                          (version-list-<= (package-desc-version b)
-                                                           (package-desc-version a)))))))
-        (if newest
-            (package-install newest)
-          (when (not my/package-contents-refreshed)
-            (package-refresh-contents)
-            (setq my/package-contents-refreshed t)
-            (my/package-ensure package)))
-        (package-installed-p package))))
+      (progn (if (assoc package package-archive-contents)
+                 (condition-case err
+                     (package-install package)
+                   (error (my/package-refresh-maybe-and-install package)))
+               (my/package-refresh-maybe-and-install package))
+             (package-installed-p package))))
+
+(defun my/package-refresh-maybe-and-install (package)
+  "Refresh archive contents if not done yet and install PACKAGE."
+  (when (not my/package-contents-refreshed)
+    (package-refresh-contents)
+    (setq my/package-contents-refreshed t))
+  (package-install package))
 
 (package-initialize)
-
-(unless package-archive-contents
-  (package-refresh-contents))
 
 (provide 'init-package)
 
