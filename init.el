@@ -46,6 +46,7 @@
 (require 'init-flycheck)
 (require 'init-git-timemachine)
 (require 'init-helpful)
+(require 'init-lsp-mode)
 (require 'init-magit)
 (require 'init-modus-themes)
 
