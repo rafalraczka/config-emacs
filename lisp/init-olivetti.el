@@ -34,6 +34,18 @@
 
 (with-eval-after-load 'olivetti
 
+  (defun my/olivetti-set-body-width ()
+    "Set olivetti body width according to `fill-column' value."
+    (let* ((col (or fill-column 80))
+           (width (if (and (boundp 'display-line-numbers-mode)
+                           display-line-numbers-mode)
+                      (+ col 4)
+                    col)))
+      (setq-local olivetti-body-width width)
+      (setq-local olivetti-minimum-body-width width)))
+
+  (add-hook 'olivetti-mode-on-hook 'my/olivetti-set-body-width)
+
   (setq olivetti-global-modes '(:exclude (exwm-mode
                                           image-mode
                                           pdf-view-mode)))
