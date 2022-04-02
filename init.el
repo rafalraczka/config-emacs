@@ -36,6 +36,7 @@
 (require 'init-calendar)
 (require 'init-ctrlf)
 (require 'init-custom)
+(require 'init-dired)
 (require 'init-doom-modeline)
 (require 'init-ess)
 (require 'init-faces)
