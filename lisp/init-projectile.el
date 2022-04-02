@@ -26,6 +26,8 @@
 
 (my/package-ensure 'projectile)
 
+(add-hook 'after-init-hook 'projectile-mode)
+
 (provide 'init-projectile)
 
 ;;; init-projectile.el ends here
