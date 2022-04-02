@@ -26,6 +26,15 @@
 
 (my/package-ensure 'company)
 
+(with-eval-after-load 'company
+
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 1)
+  (setq company-selection-wrap-around t)
+  (setq company-tooltip-limit 6)
+
+  )
+
 (provide 'init-company)
 
 ;;; init-company.el ends here
