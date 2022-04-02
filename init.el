@@ -36,6 +36,7 @@
 (require 'init-all-the-icons)
 (require 'init-all-the-icons-dired)
 (require 'init-calendar)
+(require 'init-company)
 (require 'init-ctrlf)
 (require 'init-custom)
 (require 'init-dired)
