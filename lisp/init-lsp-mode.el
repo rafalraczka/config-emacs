@@ -30,6 +30,9 @@
 
   (setq lsp-headerline-breadcrumb-enable nil)
 
+  (with-eval-after-load 'init-company
+    (add-hook 'lsp-mode-hook 'company-mode))
+
 )
 
 (provide 'init-lsp-mode)
