@@ -33,6 +33,7 @@
 
 (require 'my-envi)
 
+(require 'init-all-the-icons)
 (require 'init-calendar)
 (require 'init-ctrlf)
 (require 'init-custom)
