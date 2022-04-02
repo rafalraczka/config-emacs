@@ -58,6 +58,10 @@
   (expand-file-name "org" my-envi-user-files-directory)
   "Default directory where user stores org files.")
 
+(defvar my-envi-projects-directory
+  (list (expand-file-name "projects/" my-envi-user-files-directory))
+  "Default directory with projects.")
+
 (provide 'my-envi)
 
 ;;; my-envi.el ends here
