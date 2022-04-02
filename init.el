@@ -34,6 +34,7 @@
 (require 'my-envi)
 
 (require 'init-all-the-icons)
+(require 'init-all-the-icons-dired)
 (require 'init-calendar)
 (require 'init-ctrlf)
 (require 'init-custom)
