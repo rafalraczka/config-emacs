@@ -26,6 +26,11 @@
 
 (with-eval-after-load 'dired
 
+  (defun my/dired-enable-truncate-lines ()
+    (setq truncate-lines t))
+
+  (add-hook 'dired-after-readin-hook 'my/dired-enable-truncate-lines)
+
   ;; Use different approach to group directories first when =ls= is not
   ;; available.  This also set default switches.
 
