@@ -32,6 +32,13 @@
 
 (add-hook 'after-init-hook 'olivetti-global-mode)
 
+(with-eval-after-load 'olivetti
+
+  (setq olivetti-global-modes '(:exclude (exwm-mode
+                                          image-mode
+                                          pdf-view-mode)))
+  )
+
 (provide 'init-olivetti)
 
 ;;; init-olivetti.el ends here
