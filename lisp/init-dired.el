@@ -24,6 +24,18 @@
 
 ;;; Code:
 
+(with-eval-after-load 'dired
+
+  ;; Use different approach to group directories first when =ls= is not
+  ;; available.  This also set default switches.
+
+  (if (executable-find "ls")
+      (setq dired-listing-switches "-Ahl --group-directories-first")
+    (progn (setq dired-listing-switches "-Ahl")
+           (setq ls-lisp-dirs-first t)))
+
+  )
+
 (provide 'init-dired)
 
 ;;; init-dired.el ends here
