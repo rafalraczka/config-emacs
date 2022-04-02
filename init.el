@@ -55,6 +55,7 @@
 (require 'init-orderless)
 (require 'init-org)
 (require 'init-pdf-tools)
+(require 'init-projectile)
 (require 'init-selectrum)
 (require 'init-startup)
 (require 'init-tab-bar)
