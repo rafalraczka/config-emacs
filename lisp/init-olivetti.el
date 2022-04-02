@@ -30,6 +30,8 @@
             :fork (:type git :flavor melpa :host github
                    :repo "rafalraczka/olivetti")))
 
+(add-hook 'after-init-hook 'olivetti-global-mode)
+
 (provide 'init-olivetti)
 
 ;;; init-olivetti.el ends here
