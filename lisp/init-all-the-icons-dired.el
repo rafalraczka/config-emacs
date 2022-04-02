@@ -26,6 +26,12 @@
 
 (my/package-ensure 'all-the-icons-dired)
 
+(with-eval-after-load 'dired
+
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+  )
+
 (provide 'init-all-the-icons-dired)
 
 ;;; init-all-the-icons-dired.el ends here
