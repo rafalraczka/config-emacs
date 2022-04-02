@@ -33,6 +33,9 @@
   (with-eval-after-load 'init-company
     (add-hook 'lsp-mode-hook 'company-mode))
 
+  (with-eval-after-load 'init-which-key
+    (add-hook 'lsp-mode-hook 'lsp-enable-which-key-integration))
+
 )
 
 (provide 'init-lsp-mode)
