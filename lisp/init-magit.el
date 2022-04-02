@@ -26,6 +26,15 @@
 
 (my/package-ensure 'magit)
 
+(with-eval-after-load 'magit
+
+  (defun my/magit-mode-config ()
+    (setq-local fill-column 81))
+
+  (add-hook 'magit-mode-hook 'my/magit-mode-config)
+
+)
+
 (provide 'init-magit)
 
 ;;; init-magit.el ends here
