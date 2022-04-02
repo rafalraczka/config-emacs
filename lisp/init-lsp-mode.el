@@ -26,6 +26,12 @@
 
 (my/package-ensure 'lsp-mode)
 
+(with-eval-after-load 'lsp-mode
+
+  (setq lsp-headerline-breadcrumb-enable nil)
+
+)
+
 (provide 'init-lsp-mode)
 
 ;;; init-lsp-mode.el ends here
