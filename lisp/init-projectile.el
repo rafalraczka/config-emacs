@@ -28,6 +28,12 @@
 
 (add-hook 'after-init-hook 'projectile-mode)
 
+(with-eval-after-load 'projectile
+
+  (setq projectile-project-search-path my-envi-projects-directory)
+
+  )
+
 (provide 'init-projectile)
 
 ;;; init-projectile.el ends here
