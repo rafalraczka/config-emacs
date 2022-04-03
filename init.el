@@ -50,6 +50,7 @@
 (require 'init-julia-mode)
 (require 'init-lsp-mode)
 (require 'init-lsp-julia)
+(require 'init-lsp-pyls)
 (require 'init-magit)
 (require 'init-modus-themes)
 
