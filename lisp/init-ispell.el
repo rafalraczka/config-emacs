@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(setq ispell-dictionary "en_GB-ize")
+
 (provide 'init-ispell)
 
 ;;; init-ispell.el ends here
