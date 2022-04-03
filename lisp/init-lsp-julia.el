@@ -26,6 +26,15 @@
 
 (my/package-ensure 'lsp-julia)
 
+(with-eval-after-load 'julia-mode
+
+  (require 'lsp-julia)
+
+  (with-eval-after-load 'init-lsp-mode
+    (add-hook 'julia-mode-hook #'lsp-deferred))
+
+  )
+
 (provide 'init-lsp-julia)
 
 ;;; init-lsp-julia.el ends here
