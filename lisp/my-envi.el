@@ -51,6 +51,13 @@
 
 ;;;; Paths ----------------------------
 
+(defconst my-envi-chemacs-directory
+  (when-let ((file (car (rassoc '((require . chemacs)) load-history))))
+    (file-name-directory file))
+  "This constant specify directory from which chemacs.el has been required.
+If Chemacs is not in use in current session the constant value is
+nil.")
+
 (defvar my-envi-user-files-directory (if my-envi-android "~/storage/shared/" "~/")
   "Default directory where user stores files.")
 
