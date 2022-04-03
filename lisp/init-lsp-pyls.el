@@ -26,6 +26,12 @@
 
 (require 'init-lsp-mode)
 
+(with-eval-after-load 'init-lsp-mode
+
+  (add-hook 'python-mode-hook 'lsp-deferred)
+
+  )
+
 (provide 'init-lsp-pyls)
 
 ;;; init-lsp-pyls.el ends here
