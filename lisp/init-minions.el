@@ -26,6 +26,8 @@
 
 (my/package-ensure 'minions)
 
+(add-hook 'after-init-hook 'minions-mode)
+
 (provide 'init-minions)
 
 ;;; init-minions.el ends here
