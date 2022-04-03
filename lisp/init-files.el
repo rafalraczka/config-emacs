@@ -24,6 +24,12 @@
 
 ;;; Code:
 
+(setq backup-by-copying t)
+(setq delete-old-versions t)
+(setq kept-new-versions 6)
+(setq kept-old-versions 2)
+(setq version-control t)
+
 ;; Emacs create backups and auto-save files in directories of that files by
 ;; default.  It can cause cluttering and it can require additional work to
 ;; configure different software to ignore backup files and auto-saves.
