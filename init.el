@@ -53,6 +53,7 @@
 (require 'init-lsp-julia)
 (require 'init-lsp-pyls)
 (require 'init-magit)
+(require 'init-marginalia)
 (require 'init-minions)
 (require 'init-modus-themes)
 
