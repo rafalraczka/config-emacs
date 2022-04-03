@@ -44,6 +44,7 @@
 (require 'init-doom-modeline)
 (require 'init-ess)
 (require 'init-faces)
+(require 'init-files)
 (require 'init-flycheck)
 (require 'init-git-timemachine)
 (require 'init-helpful)
