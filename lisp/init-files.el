@@ -24,6 +24,33 @@
 
 ;;; Code:
 
+;; Emacs create backups and auto-save files in directories of that files by
+;; default.  It can cause cluttering and it can require additional work to
+;; configure different software to ignore backup files and auto-saves.
+;; Because of that it can be desired then to keep these files in single
+;; directory, independent of file location.
+
+;; Following code will keep all backup and auto-save files in directory of the
+;; Emacs configuration.  In case user use Chemacs, Chemacs directory will be
+;; preferred to keep auto-saves and backups in the same place for various
+;; Emacs profiles.
+
+;; Sources
+;; - https://emacstragic.net/uncategorized/editing-files-using-sudo-and-emacs/
+
+(let ((dir (cond (my-envi-chemacs-directory)
+		 (user-emacs-directory))))
+  (setq auto-save-file-name-transforms`((".*" ,(concat dir "auto-saves/") t)))
+  (setq backup-directory-alist `(("." . ,(concat dir "backups/")))))
+
+;; Create directories for auto-save files.
+
+(mapcar (lambda (a)
+          (let ((dir (nth 1 a)))
+            (when (not (file-exists-p dir))
+              (mkdir dir))))
+        auto-save-file-name-transforms)
+
 (provide 'init-files)
 
 ;;; init-files.el ends here
