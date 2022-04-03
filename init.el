@@ -52,6 +52,7 @@
 (require 'init-lsp-julia)
 (require 'init-lsp-pyls)
 (require 'init-magit)
+(require 'init-minions)
 (require 'init-modus-themes)
 
 (when (not my-envi-android)
