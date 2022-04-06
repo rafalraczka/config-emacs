@@ -30,6 +30,16 @@
 
   (add-hook 'calendar-mode-hook 'my/calendar-mode-config)
 
+  ;; By default, calendar is displayed at the bottom of the frame or in the
+  ;; other window if more then one window is in the current frame and tab
+  ;; (side windows do not count).  I prefer to have consistent behaviour and
+  ;; have it always at the bottom of the frame.
+
+  (push  '("\\*Calendar\\*"
+           (display-buffer-in-direction)
+           (direction . bottom))
+	 display-buffer-alist)
+
   (setq calendar-left-margin 2)
   (setq calendar-date-style 'iso)
 
