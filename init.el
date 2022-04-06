@@ -50,6 +50,10 @@
 (require 'init-helpful)
 (require 'init-ispell)
 (require 'init-julia-mode)
+
+(when (executable-find "languagetool")
+  (require 'init-langtool))
+
 (require 'init-lsp-mode)
 (require 'init-lsp-julia)
 (require 'init-lsp-pyls)
