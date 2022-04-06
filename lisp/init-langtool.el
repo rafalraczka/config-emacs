@@ -26,6 +26,10 @@
 
 (my/package-ensure 'langtool)
 
+(when my-envi-gnu-linux
+  (setq langtool-java-classpath
+	"/usr/share/languagetool:/usr/share/java/languagetool/*"))
+
 (provide 'init-langtool)
 
 ;;; init-langtool.el ends here
