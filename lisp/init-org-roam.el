@@ -38,6 +38,12 @@
 
 (with-eval-after-load 'org
 
+  (defun my/org-roam-buffer-startup ()
+    (when (and (org-roam-buffer-p) (not (buffer-narrowed-p)))
+      (setq org-startup-folded 'show2levels)
+      (org-set-startup-visibility)))
+
+  (add-hook 'org-mode-hook #'my/org-roam-buffer-startup)
   (add-hook 'org-mode-hook #'org-roam-db-autosync-mode)
 
   )
