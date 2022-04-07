@@ -33,6 +33,9 @@
             :repo "org-roam/org-roam"
             :fork (:repo "rafalraczka/org-roam")))
 
+(unless (file-exists-p (expand-file-name "org-roam.db" user-emacs-directory))
+  (add-hook 'after-init-hook 'org-roam-db-sync))
+
 (provide 'init-org-roam)
 
 ;;; init-org-roam.el ends here
