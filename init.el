@@ -72,6 +72,7 @@
 (require 'init-pdf-tools)
 (require 'init-projectile)
 (require 'init-selectrum)
+(require 'init-smartparens)
 (require 'init-startup)
 (require 'init-tab-bar)
 (require 'init-undo-tree)
