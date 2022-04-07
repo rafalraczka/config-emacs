@@ -70,6 +70,7 @@
 (require 'init-org-roam)
 (require 'init-org-roam-ui)
 (require 'init-pdf-tools)
+(require 'init-prog-mode)
 (require 'init-projectile)
 (require 'init-selectrum)
 (require 'init-smartparens)
