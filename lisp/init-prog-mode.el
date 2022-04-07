@@ -26,6 +26,9 @@
 
 (with-eval-after-load 'prog-mode
 
+  (with-eval-after-load 'init-rainbow-delimiters
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
   (with-eval-after-load 'init-smartparens
     (add-hook 'prog-mode-hook 'smartparens-mode))
 
