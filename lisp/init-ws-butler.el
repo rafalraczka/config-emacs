@@ -26,6 +26,8 @@
 
 (my/package-ensure 'ws-butler)
 
+(add-hook 'after-init-hook #'ws-butler-global-mode)
+
 (provide 'init-ws-butler)
 
 ;;; init-ws-butler.el ends here
