@@ -68,6 +68,7 @@
 (require 'init-orderless)
 (require 'init-org)
 (require 'init-org-roam)
+(require 'init-org-roam-ui)
 (require 'init-pdf-tools)
 (require 'init-projectile)
 (require 'init-selectrum)
