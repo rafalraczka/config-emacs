@@ -36,6 +36,12 @@
 (unless (file-exists-p (expand-file-name "org-roam.db" user-emacs-directory))
   (add-hook 'after-init-hook 'org-roam-db-sync))
 
+(with-eval-after-load 'org
+
+  (add-hook 'org-mode-hook #'org-roam-db-autosync-mode)
+
+  )
+
 (provide 'init-org-roam)
 
 ;;; init-org-roam.el ends here
