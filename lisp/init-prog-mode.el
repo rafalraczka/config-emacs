@@ -24,6 +24,13 @@
 
 ;;; Code:
 
+(with-eval-after-load 'prog-mode
+
+  (with-eval-after-load 'init-smartparens
+    (add-hook 'prog-mode-hook 'smartparens-mode))
+
+  )
+
 (provide 'init-prog-mode)
 
 ;;; init-prog-mode.el ends here
