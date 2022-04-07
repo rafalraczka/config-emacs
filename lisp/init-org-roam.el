@@ -48,6 +48,17 @@
 
   )
 
+(with-eval-after-load 'org-roam
+
+  (push '("\\*org-roam\\*"
+         (display-buffer-in-direction)
+         (direction . right)
+         (window-width . 0.33)
+         (window-height . fit-window-to-buffer))
+        display-buffer-alist)
+
+  )
+
 (provide 'init-org-roam)
 
 ;;; init-org-roam.el ends here
