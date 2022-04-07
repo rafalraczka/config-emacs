@@ -81,6 +81,7 @@
 (require 'init-undo-tree)
 (require 'init-visual-fill)
 (require 'init-which-key)
+(require 'init-ws-butler)
 (require 'my-keymap)
 
 (provide 'init)
