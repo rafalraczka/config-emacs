@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(add-hook 'after-init-hook #'savehist-mode)
+
 (provide 'init-savehist)
 
 ;;; init-savehist.el ends here
