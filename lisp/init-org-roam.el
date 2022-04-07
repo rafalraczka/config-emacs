@@ -57,6 +57,11 @@
          (window-height . fit-window-to-buffer))
         display-buffer-alist)
 
+  (setq org-roam-completion-everywhere t)
+  (setq org-roam-dailies-directory "journal/")
+  (setq org-roam-db-extra-links-exclude-keys '((node-property . ("ROAM_REFS"))))
+  (setq org-roam-directory org-directory)
+
   )
 
 (provide 'init-org-roam)
