@@ -26,6 +26,28 @@
 
 (require 'chemacs)
 
+(defun my-chemacs-read-profile (&optional prompt)
+  "Read a PROFILE by its name.
+PROMPT can overwrite the default prompt."
+  (let ((profiles
+         (with-temp-buffer
+           (insert-file-contents chemacs-profiles-path)
+           (goto-char (point-min))
+           (read (current-buffer))))
+        (prompt (or prompt "Profile: ")))
+    (completing-read prompt profiles)))
+
+(defun my-chemacs-run-emacs (profile)
+  "Test Emacs startup with PROFILE."
+  (interactive
+   (list (my-chemacs-read-profile "Profile to run: ")))
+  (let* ((cmd (format "emacs --fullscreen --with-profile %s" profile))
+         cmd-parts)
+    (when current-prefix-arg
+      (setq cmd (format "%s %s" cmd "--debug-init")))
+    (setq cmd-parts (split-string cmd "[ ]+"))
+    (apply #'call-process `(,(car cmd-parts) nil 0 nil ,@(cdr cmd-parts)))))
+
 (provide 'my-chemacs)
 
 ;;; my-chemacs.el ends here
