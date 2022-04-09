@@ -87,6 +87,7 @@
   (require 'my-chemacs))
 
 (require 'my-keymap)
+(require 'my-mini-gui)
 
 (provide 'init)
 
