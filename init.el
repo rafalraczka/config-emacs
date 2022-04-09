@@ -82,6 +82,10 @@
 (require 'init-visual-fill)
 (require 'init-which-key)
 (require 'init-ws-butler)
+
+(when my-envi-chemacs-directory
+  (require 'my-chemacs))
+
 (require 'my-keymap)
 
 (provide 'init)
