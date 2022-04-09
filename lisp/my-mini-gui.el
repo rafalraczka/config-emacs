@@ -61,6 +61,10 @@ number.  Disable if ARG is a negative number."
     (mapc (lambda (f) (funcall f -1)) my-mini-gui-disabled-modes))
   (setq my-mini-gui-global-mode (not my-mini-gui-global-mode)))
 
+(if (daemonp)
+    (add-hook 'server-after-make-frame-hook #'my-mini-gui-mode)
+  (add-hook 'after-init-hook #'my-mini-gui-mode))
+
 (provide 'my-mini-gui)
 
 ;;; my-mini-gui.el ends here
