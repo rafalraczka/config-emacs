@@ -48,6 +48,7 @@
 (require 'init-flycheck)
 (require 'init-git-timemachine)
 (require 'init-helpful)
+(require 'init-hl-todo)
 (require 'init-ispell)
 (require 'init-julia-mode)
 
