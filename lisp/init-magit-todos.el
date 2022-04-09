@@ -26,6 +26,9 @@
 
 (my/package-ensure 'magit-todos)
 
+(with-eval-after-load 'magit
+  (magit-todos-mode))
+
 (provide 'init-magit-todos)
 
 ;;; init-magit-todos.el ends here
