@@ -33,6 +33,11 @@
 (defvar my-init-gcs-done-during-startup nil
   "Number of garbage collections done after the Emacs startup.")
 
+(defvar my-init-first-interaction-hook nil
+  "Normal hook run before first interaction in the Emacs session.
+The first interaction is considered to be the first command call
+or first `find-file' non-interactive call.")
+
 (defun my-init-benchmark ()
   "Return benchmark of the Emacs startup."
   (interactive)
@@ -60,6 +65,12 @@
     (warn "%s %s\n  %s %s %s"
           "Your Emacs version is" emacs-version
 	  "this configuration was only tested with version" ver "or higher")))
+
+(defun my-init-run-first-interaction-hook ()
+  "Run `my-init-first-interaction-hook'."
+  (run-hooks 'my-init-first-interaction-hook)
+  (remove-hook 'find-file-hook #'my-init-run-first-interaction-hook)
+  (remove-hook 'pre-command-hook #'my-init-run-first-interaction-hook))
 
 (defun my-init-set-after-startup-time ()
   "Set `my-init-after-startup-time' value to the value of `current-time'."
@@ -90,6 +101,8 @@ and change to TH value after the Emacs startup."
 (add-hook 'emacs-startup-hook 'my-init-benchmark 100)
 (add-hook 'emacs-startup-hook 'my-init-set-startup-gcs-done 99)
 (add-hook 'emacs-startup-hook 'my-init-set-after-startup-time 99)
+(add-hook 'find-file-hook #'my-init-run-first-interaction-hook -50)
+(add-hook 'pre-command-hook #'my-init-run-first-interaction-hook -50)
 
 (my-init-check-emacs-version "27.2")
 
