@@ -33,6 +33,16 @@
 
 (my/package-ensure 'presentation)
 
+(with-eval-after-load 'presentation
+
+  ;; `text-scale-mode-amount' equal to 2 is optimal most of the time for me.
+  ;; For cases when it will not be enough it can be easily adjusted with
+  ;; `presentation-mode' enabled.
+
+  (setq presentation-default-text-scale 2)
+
+  )
+
 (provide 'init-presentation)
 
 ;;; init-presentation.el ends here
