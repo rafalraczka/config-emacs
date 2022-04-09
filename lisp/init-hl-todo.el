@@ -28,6 +28,12 @@
 
 (add-hook 'my-init-first-interaction-hook #'global-hl-todo-mode)
 
+(with-eval-after-load 'hl-todo
+
+  (setq hl-todo-highlight-punctuation ":")
+
+  )
+
 (provide 'init-hl-todo)
 
 ;;; init-hl-todo.el ends here
