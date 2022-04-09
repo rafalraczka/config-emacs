@@ -26,7 +26,7 @@
 
 (my/package-ensure 'selectrum)
 
-(add-hook 'after-init-hook 'selectrum-mode)
+(add-hook 'my-init-first-interaction-hook #'selectrum-mode)
 
 (provide 'init-selectrum)
 
