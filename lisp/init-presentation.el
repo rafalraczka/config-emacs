@@ -22,6 +22,13 @@
 
 ;;; Commentary:
 
+;; =presentation= package allows for global usage of the `text-scale-mode'
+;; which effectively alter the height of the default face.  In other words,
+;; this allows to enlarge text in all buffers at once while the
+;; `text-scale-increase', `text-scale-decrease' and toggling `text-scale-mode'
+;; works only locally.  This is an excellent solution to make a presentation
+;; with Emacs when we would like to present more than a single buffer.
+
 ;;; Code:
 
 (my/package-ensure 'presentation)
