@@ -26,6 +26,8 @@
 
 (my/package-ensure 'hl-todo)
 
+(add-hook 'my-init-first-interaction-hook #'global-hl-todo-mode)
+
 (provide 'init-hl-todo)
 
 ;;; init-hl-todo.el ends here
