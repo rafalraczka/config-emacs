@@ -72,6 +72,7 @@
 (require 'init-org-roam)
 (require 'init-org-roam-ui)
 (require 'init-pdf-tools)
+(require 'init-presentation)
 (require 'init-prog-mode)
 (require 'init-projectile)
 (require 'init-rainbow-delimiters)
