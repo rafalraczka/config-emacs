@@ -26,7 +26,7 @@
 
 (my/package-ensure 'marginalia)
 
-(add-hook 'after-init-hook 'marginalia-mode)
+(add-hook 'my-init-first-interaction-hook #'marginalia-mode)
 
 (provide 'init-marginalia)
 
