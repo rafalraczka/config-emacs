@@ -26,6 +26,9 @@
 
 (my/package-ensure 'async)
 
+(with-eval-after-load 'dired
+  (dired-async-mode))
+
 (provide 'init-async)
 
 ;;; init-async.el ends here
