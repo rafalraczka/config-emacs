@@ -31,6 +31,9 @@
              :repo "weirdNox/org-noter"
              :fork (:repo "rafalraczka/org-noter")))
 
+(with-eval-after-load 'org
+  (require 'org-noter))
+
 (provide 'init-org-noter)
 
 ;;; init-org-noter.el ends here
