@@ -35,6 +35,7 @@
 
 (require 'init-all-the-icons)
 (require 'init-all-the-icons-dired)
+(require 'init-async)
 (require 'init-calendar)
 (require 'init-company)
 (require 'init-ctrlf)
