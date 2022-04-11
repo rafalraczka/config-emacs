@@ -48,6 +48,7 @@
 (require 'init-faces)
 (require 'init-files)
 (require 'init-flycheck)
+(require 'init-format-all)
 (require 'init-git-timemachine)
 (require 'init-helpful)
 (require 'init-hide-mode-line)
