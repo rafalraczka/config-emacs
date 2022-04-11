@@ -26,6 +26,12 @@
 
 (my/package-ensure 'company-quickhelp)
 
+(with-eval-after-load 'company-quickhelp
+
+  (setq company-quickhelp-delay 0.25)
+
+  )
+
 (provide 'init-company-quickhelp)
 
 ;;; init-company-quickhelp.el ends here
