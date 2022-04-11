@@ -38,6 +38,7 @@
 (require 'init-async)
 (require 'init-calendar)
 (require 'init-company)
+(require 'init-company-quickhelp)
 (require 'init-ctrlf)
 (require 'init-custom)
 (require 'init-dired)
