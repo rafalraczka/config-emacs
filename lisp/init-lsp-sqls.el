@@ -26,6 +26,12 @@
 
 (require 'init-lsp-mode)
 
+(with-eval-after-load 'sql
+
+  (add-hook 'sql-mode-hook #'lsp-deferred)
+
+  )
+
 (provide 'init-lsp-sqls)
 
 ;;; init-lsp-sqls.el ends here
