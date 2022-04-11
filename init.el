@@ -60,6 +60,7 @@
 (require 'init-lsp-mode)
 (require 'init-lsp-julia)
 (require 'init-lsp-pyls)
+(require 'init-lsp-sqls)
 (require 'init-magit)
 (require 'init-magit-todos)
 (require 'init-marginalia)
