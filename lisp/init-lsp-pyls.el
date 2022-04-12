@@ -28,6 +28,7 @@
 
 (with-eval-after-load 'python
 
+  (add-hook 'python-mode-hook #'flyspell-mode)
   (add-hook 'python-mode-hook 'lsp-deferred)
 
   (with-eval-after-load 'init-company
