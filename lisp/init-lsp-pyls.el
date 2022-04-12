@@ -30,6 +30,23 @@
 
   (add-hook 'python-mode-hook 'lsp-deferred)
 
+  (with-eval-after-load 'init-company
+    (add-hook 'python-mode-hook #'company-mode))
+
+  (with-eval-after-load 'init-company-quickhelp
+
+    (defcustom my/lsp-pyls-company-quickhelp-max-lines 5
+      "When not nil, limits the number of lines in the popup in Python mode.")
+
+    (defun my/lsp-pyls-set-company-quickhelp-max-lines ()
+      (setq-local company-quickhelp-max-lines
+                  my/lsp-pyls-company-quickhelp-max-lines))
+
+    (add-hook 'python-mode-hook #'company-quickhelp-local-mode)
+    (add-hook 'python-mode-hook #'my/lsp-pyls-set-company-quickhelp-max-lines)
+
+    )
+
   )
 
 (provide 'init-lsp-pyls)
