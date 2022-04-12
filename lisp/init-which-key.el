@@ -26,7 +26,7 @@
 
 (my/package-ensure 'which-key)
 
-(add-hook 'after-init-hook 'which-key-mode)
+(add-hook 'my-init-first-interaction-hook #'which-key-mode)
 
 (setq which-key-idle-delay 0.5)
 
