@@ -29,6 +29,7 @@
 (with-eval-after-load 'lsp-mode
 
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-signature-auto-activate nil)
 
   (with-eval-after-load 'init-company
     (add-hook 'lsp-mode-hook 'company-mode))
