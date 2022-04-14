@@ -26,6 +26,8 @@
 
 (with-eval-after-load 'prog-mode
 
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
   (with-eval-after-load 'init-rainbow-delimiters
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
