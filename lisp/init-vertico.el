@@ -26,6 +26,8 @@
 
 (my/package-ensure 'vertico)
 
+(add-hook 'my-init-first-interaction-hook #'vertico-mode)
+
 (provide 'init-vertico)
 
 ;;; init-vertico.el ends here
