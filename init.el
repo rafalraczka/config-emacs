@@ -88,6 +88,7 @@
 (require 'init-startup)
 (require 'init-tab-bar)
 (require 'init-undo-tree)
+(require 'init-vertico)
 (require 'init-visual-fill)
 (require 'init-which-key)
 (require 'init-ws-butler)
