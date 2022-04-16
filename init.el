@@ -93,6 +93,7 @@
 (require 'init-visual-fill)
 (require 'init-which-key)
 (require 'init-ws-butler)
+(require 'init-yaml-mode)
 
 (when my-envi-chemacs-directory
   (require 'my-chemacs))
