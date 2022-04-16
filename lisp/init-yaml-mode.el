@@ -26,6 +26,12 @@
 
 (my/package-ensure 'yaml-mode)
 
+(defun my/yaml-mode-add-to-auto-mode-alist ()
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode)))
+
+(add-hook 'my-init-first-interaction-hook #'my/yaml-mode-add-to-auto-mode-alist)
+
 (provide 'init-yaml-mode)
 
 ;;; init-yaml-mode.el ends here
