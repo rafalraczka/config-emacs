@@ -27,6 +27,14 @@
 
 (my/package-ensure 'ace-window)
 
+(with-eval-after-load 'ace-window
+
+  (if my-envi-exwm-required
+    (setq aw-scope 'frame)
+    (setq aw-scope 'visible))
+
+  )
+
 (provide 'init-ace-window)
 
 ;;; init-ace-window.el ends here
