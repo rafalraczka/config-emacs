@@ -69,6 +69,16 @@ nil.")
   (list (expand-file-name "projects/" my-envi-user-files-directory))
   "Default directory with projects.")
 
+;;;; Others ---------------------------
+
+(require 'seq)
+
+(defun my-envi-exwm-require-p ()
+  (and (seq-contains-p command-line-args "--use-exwm")
+       (eq window-system 'x)))
+
+(defconst my-envi-exwm-required (my-envi-exwm-require-p))
+
 (provide 'my-envi)
 
 ;;; my-envi.el ends here
