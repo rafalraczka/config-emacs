@@ -32,6 +32,9 @@
 (require 'init-server)
 
 (require 'my-envi)
+(when my-envi-exwm-required
+   (require 'init-exwm))
+
 
 (require 'init-ace-window)
 (require 'init-all-the-icons)
