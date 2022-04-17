@@ -33,6 +33,7 @@
 
 (require 'my-envi)
 
+(require 'init-ace-window)
 (require 'init-all-the-icons)
 (require 'init-all-the-icons-dired)
 (require 'init-async)
