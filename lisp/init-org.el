@@ -87,6 +87,19 @@
           (direction . right)
           (window-width . 0.33))
         display-buffer-alist)
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((C . t)
+     (emacs-lisp . t)
+     (julia . t)
+     (latex . t)
+     (lilypond . t)
+     (python . t)
+     (shell . t)
+     (sql . t)
+     (R . t)))
+
   )
 
 (provide 'init-org)
