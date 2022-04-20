@@ -28,7 +28,11 @@
 
 (add-hook 'my-init-first-interaction-hook #'which-key-mode)
 
-(setq which-key-idle-delay 0.5)
+(with-eval-after-load 'which-key
+
+  (setq which-key-idle-delay 0.5)
+
+  )
 
 (provide 'init-which-key)
 
