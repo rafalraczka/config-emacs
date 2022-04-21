@@ -100,6 +100,14 @@
      (sql . t)
      (R . t)))
 
+  (when-let* ((path "/usr/share/java/ditaa/ditaa-0.11.jar")
+              (_ (file-exists-p path)))
+	(setq org-ditaa-jar-path path)
+	(when-let* ((path-eps "/usr/share/java/ditaa-eps/DitaaEps.jar")
+                (_ (file-exists-p path-eps)))
+	  (setq org-ditaa-eps-jar-path path-eps))
+	(org-babel-do-load-languages 'org-babel-load-languages '((ditaa . t))))
+
   )
 
 (provide 'init-org)
