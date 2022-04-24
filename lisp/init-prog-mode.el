@@ -26,7 +26,11 @@
 
 (with-eval-after-load 'prog-mode
 
+  (add-hook 'prog-mode-hook 'auto-fill-mode)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+  (with-eval-after-load 'init-hl-todo
+    (add-hook 'prog-mode-hook 'hl-todo-mode))
 
   (with-eval-after-load 'init-rainbow-delimiters
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
