@@ -26,6 +26,12 @@
 
 (my/package-ensure 'org-contrib)
 
+(with-eval-after-load 'org
+
+  (require 'ol-git-link)
+
+  )
+
 (provide 'init-org-contrib)
 
 ;;; init-org-contrib.el ends here
