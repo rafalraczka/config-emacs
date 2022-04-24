@@ -28,6 +28,8 @@
 
 (with-eval-after-load 'org
 
+  (setq org-transclusion-exclude-elements '(clock drawer planning property-drawer planning))
+
   (org-transclusion-activate)
 
   )
