@@ -24,6 +24,16 @@
 
 ;;; Code:
 
+(with-eval-after-load 'lisp-mode
+
+  (with-eval-after-load 'init-company
+    (add-hook 'emacs-lisp-mode-hook 'company-mode))
+
+  (with-eval-after-load 'init-flycheck
+    (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
+
+  )
+
 (provide 'init-emacs-lisp)
 
 ;;; init-emacs-lisp.el ends here
