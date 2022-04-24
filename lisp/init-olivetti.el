@@ -36,7 +36,9 @@
 
   (defun my/olivetti-set-body-width ()
     "Set olivetti body width according to `fill-column' value."
-    (let* ((col (or fill-column 80))
+    (let* ((col (if (local-variable-p 'olivetti-body-width)
+                    olivetti-body-width
+                  (or fill-column 80)))
            (width (if (and (boundp 'display-line-numbers-mode)
                            display-line-numbers-mode)
                       (+ col 4)
