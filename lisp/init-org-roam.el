@@ -50,6 +50,8 @@
 
 (with-eval-after-load 'org-roam
 
+  (require 'org-roam-overlay)
+
   (push '("\\*org-roam\\*"
          (display-buffer-in-direction)
          (direction . right)
