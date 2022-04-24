@@ -26,6 +26,12 @@
 
 (my/package-ensure 'org-transclusion)
 
+(with-eval-after-load 'org
+
+  (org-transclusion-activate)
+
+  )
+
 (provide 'init-org-transclusion)
 
 ;;; init-org-transclusion.el ends here
