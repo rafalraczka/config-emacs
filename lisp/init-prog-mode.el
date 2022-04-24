@@ -26,8 +26,17 @@
 
 (with-eval-after-load 'prog-mode
 
+  (defcustom my/prog-mode-fill-column 72
+    "Default `fill-column' for programming modes."
+    :type 'integer)
+
+  (defun my/prog-mode-set-fill-column ()
+    "Set `fill-column' for programming modes."
+    (setq-local fill-column my/prog-mode-fill-column))
+
   (add-hook 'prog-mode-hook 'auto-fill-mode)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'prog-mode-hook 'my/prog-mode-set-fill-column)
 
   (with-eval-after-load 'init-hl-todo
     (add-hook 'prog-mode-hook 'hl-todo-mode))
