@@ -83,6 +83,7 @@
 (require 'init-org-noter)
 (require 'init-org-roam)
 (require 'init-org-roam-ui)
+(require 'init-org-transclusion)
 (require 'init-pdf-tools)
 (require 'init-presentation)
 (require 'init-prog-mode)
