@@ -41,6 +41,16 @@
   (with-eval-after-load 'init-hl-todo
     (add-hook 'prog-mode-hook 'hl-todo-mode))
 
+  (with-eval-after-load 'init-olivetti
+    (defcustom my/prog-mode-olivetti-body-width 80
+      "Default `olivetti-body-width' for programming modes."
+      :type 'integer)
+
+    (defun my/prog-mode-set-olivetti-body-width ()
+      (setq-local olivetti-body-width my/prog-mode-olivetti-body-width))
+
+    (add-hook 'prog-mode-hook 'my/prog-mode-set-olivetti-body-width))
+
   (with-eval-after-load 'init-rainbow-delimiters
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
