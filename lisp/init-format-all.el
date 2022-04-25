@@ -26,6 +26,12 @@
 
 (straight-use-package 'format-all)
 
+(with-eval-after-load 'format-all
+
+  (setq-default format-all-formatters '(("SQL" pgformatter)))
+
+  )
+
 (provide 'init-format-all)
 
 ;;; init-format-all.el ends here
