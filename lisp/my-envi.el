@@ -71,10 +71,9 @@ nil.")
 
 ;;;; Others ---------------------------
 
-(require 'seq)
 
 (defun my-envi-exwm-require-p ()
-  (and (seq-contains-p command-line-args "--use-exwm")
+  (and (member "--use-exwm" command-line-args)
        (eq window-system 'x)))
 
 (defconst my-envi-exwm-required (my-envi-exwm-require-p))
