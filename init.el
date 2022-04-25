@@ -49,6 +49,7 @@
 (require 'init-dired-ranger)
 (require 'init-doom-modeline)
 (require 'init-emacs-lisp)
+(require 'init-embark)
 (require 'init-ess)
 (require 'init-faces)
 (require 'init-files)
