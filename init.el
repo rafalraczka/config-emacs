@@ -48,6 +48,7 @@
 (require 'init-dired)
 (require 'init-dired-ranger)
 (require 'init-doom-modeline)
+(require 'init-elfeed)
 (require 'init-emacs-lisp)
 (require 'init-embark)
 (require 'init-ess)
