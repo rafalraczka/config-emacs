@@ -28,7 +28,8 @@
 
 (with-eval-after-load 'format-all
 
-  (setq-default format-all-formatters '(("SQL" pgformatter)))
+  (setq-default format-all-formatters
+                '(("SQL" (pgformatter "--wrap-limit=80" "--wrap-comment"))))
 
   )
 
