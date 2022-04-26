@@ -106,6 +106,7 @@
 (when my-envi-chemacs-directory
   (require 'my-chemacs))
 
+(require 'my-etc)
 (require 'my-keymap)
 (require 'my-mini-gui)
 
