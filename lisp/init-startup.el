@@ -27,7 +27,7 @@
 ;; `initial-major-mode' can be set to change the major
 ;; mode of the =*scratch*= buffer.
 
-;; (setq initial-major-mode 'text-mode)
+(setq initial-major-mode 'fundamental-mode)
 
 ;; Changing content of the message for the scratch buffer.
 
