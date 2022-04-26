@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(setq delete-by-moving-to-trash t)
+
 (provide 'my-etc)
 
 ;;; my-etc.el ends here
