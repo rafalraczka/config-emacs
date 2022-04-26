@@ -27,11 +27,11 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'my-init)
+(require 'my-envi)
 (require 'init-straight)
 (require 'init-package)
 (require 'init-server)
 
-(require 'my-envi)
 (when my-envi-exwm-required
    (require 'init-exwm))
 
