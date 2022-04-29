@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(set-face-attribute 'default nil :height 120 :family "Roboto Mono")
+(set-face-attribute 'default nil :height 120 :family "JuliaMono")
 
 (provide 'init-faces)
 
