@@ -58,6 +58,7 @@
 (require 'init-flycheck)
 (require 'init-format-all)
 (require 'init-git-timemachine)
+(require 'init-help)
 (require 'init-helpful)
 (require 'init-hide-mode-line)
 (require 'init-hl-todo)
