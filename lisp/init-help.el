@@ -24,6 +24,17 @@
 
 ;;; Code:
 
+(with-eval-after-load 'help
+
+  (push '("\\*Help.*"
+          (display-buffer-in-side-window)
+          (side . left)
+          (slot . -1)
+          (window-width . 0.33))
+        display-buffer-alist)
+
+  )
+
 (provide 'init-help)
 
 ;;; init-help.el ends here
