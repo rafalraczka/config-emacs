@@ -26,7 +26,8 @@
 
 (my/package-ensure 'orderless)
 
-(setq completion-styles '(orderless))
+(setq completion-category-overrides '((file (styles basic partial-completion))))
+(setq completion-styles '(orderless basic))
 
 (provide 'init-orderless)
 
