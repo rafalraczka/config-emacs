@@ -57,6 +57,23 @@
     "~/")
   "Default directory where user stores files.")
 
+(defun my-envi-concat-library-file-directory (path)
+  (concat (file-name-directory path) "files/"))
+
+(defconst my-envi-library-directory
+  (let ((dir (expand-file-name "library/" my-envi-user-files-directory)))
+    (when (file-exists-p dir)
+      dir))
+  "Default directory where user stores publications and its metadata.")
+
+(defconst my-envi-bib-files
+  (when my-envi-library-directory
+    (directory-files-recursively my-envi-library-directory "\\.bib$")))
+
+(defconst my-envi-bib-files-directories
+  (when my-envi-library-directory
+    (mapcar 'my-envi-concat-library-file-directory my-envi-bib-files)))
+
 (defconst my-envi-chemacs-directory
   (when-let ((file (car (rassoc '((require . chemacs)) load-history))))
     (file-name-directory file))
@@ -71,6 +88,9 @@ nil.")
 (defconst my-envi-projects-directory
   (list (expand-file-name "projects/" my-envi-user-files-directory))
   "Default directory with projects.")
+
+(defconst my-envi-ref-notes-directory
+  (expand-file-name "references" my-envi-org-directory))
 
 ;;;; Others ---------------------------
 
