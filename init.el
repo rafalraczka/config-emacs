@@ -69,6 +69,7 @@
   (require 'init-langtool))
 
 (require 'init-lsp-mode)
+(require 'init-lilypond)
 (require 'init-lsp-julia)
 (require 'init-lsp-pyls)
 (require 'init-lsp-sqls)
