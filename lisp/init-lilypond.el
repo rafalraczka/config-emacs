@@ -28,6 +28,10 @@
  '(lilypond
    :files ("elisp/*.el")))
 
+(autoload 'LilyPond-mode "lilypond-mode")
+
+(add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
+
 (provide 'init-lilypond)
 
 ;;; init-lilypond.el ends here
