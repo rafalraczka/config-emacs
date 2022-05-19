@@ -51,6 +51,12 @@
 
 ;;;; Paths ----------------------------
 
+(defconst my-envi-user-files-directory
+  (if my-envi-android
+      "~/storage/shared/"
+    "~/")
+  "Default directory where user stores files.")
+
 (defconst my-envi-chemacs-directory
   (when-let ((file (car (rassoc '((require . chemacs)) load-history))))
     (file-name-directory file))
@@ -58,14 +64,11 @@
 If Chemacs is not in use in current session the constant value is
 nil.")
 
-(defvar my-envi-user-files-directory (if my-envi-android "~/storage/shared/" "~/")
-  "Default directory where user stores files.")
-
 (defconst my-envi-org-directory
   (expand-file-name "org" my-envi-user-files-directory)
   "Default directory where user stores org files.")
 
-(defvar my-envi-projects-directory
+(defconst my-envi-projects-directory
   (list (expand-file-name "projects/" my-envi-user-files-directory))
   "Default directory with projects.")
 
