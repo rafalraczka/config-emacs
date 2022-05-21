@@ -37,6 +37,7 @@
   (add-hook 'prog-mode-hook 'auto-fill-mode)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
   (add-hook 'prog-mode-hook 'my/prog-mode-set-fill-column)
+  (add-hook 'prog-mode-hook 'outline-minor-mode)
 
   (with-eval-after-load 'init-hl-todo
     (add-hook 'prog-mode-hook 'hl-todo-mode))
