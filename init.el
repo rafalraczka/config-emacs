@@ -63,6 +63,7 @@
 (require 'init-helpful)
 (require 'init-hide-mode-line)
 (require 'init-hl-todo)
+(require 'init-indent)
 (require 'init-ispell)
 (require 'init-julia-mode)
 
