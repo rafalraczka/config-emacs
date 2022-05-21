@@ -41,6 +41,7 @@
 (require 'init-all-the-icons-dired)
 (require 'init-async)
 (require 'init-calendar)
+(require 'init-citar)
 (require 'init-company)
 (require 'init-company-quickhelp)
 (require 'init-ctrlf)
