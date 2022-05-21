@@ -31,6 +31,14 @@
 
 (add-hook 'my-init-first-interaction-hook #'my/citar-add-watches)
 
+(with-eval-after-load 'citar
+
+  (setq citar-bibliography my-envi-bib-files)
+  (setq citar-library-paths my-envi-bib-files-directories)
+  (setq citar-notes-paths (list my-envi-ref-notes-directory))
+
+  )
+
 (provide 'init-citar)
 
 ;;; init-citar.el ends here
