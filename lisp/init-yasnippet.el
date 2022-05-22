@@ -26,6 +26,13 @@
 
 (my/package-ensure 'yasnippet)
 
+(defun my/yasnippet-global-mode-no-message ()
+  (let ((inhibit-message t)
+	(message-log-max nil))
+    (yas-global-mode)))
+
+(add-hook 'my-init-first-interaction-hook #'my/yasnippet-global-mode-no-message)
+
 (provide 'init-yasnippet)
 
 ;;; init-yasnippet.el ends here
