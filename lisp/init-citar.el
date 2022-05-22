@@ -37,6 +37,15 @@
   (setq citar-library-paths my-envi-bib-files-directories)
   (setq citar-notes-paths (list my-envi-ref-notes-directory))
 
+  (with-eval-after-load 'modus-themes
+    (let ((file-col (cdr (assoc 'magenta-intense modus-themes-vivendi-colors)))
+          (link-col (cdr (assoc 'blue-intense modus-themes-vivendi-colors)))
+          (note-col (cdr (assoc 'cyan-intense modus-themes-vivendi-colors))))
+      (setq citar-symbols
+            `((file ,(propertize "F" 'face (list :foreground file-col)) . " ")
+              (link ,(propertize "L" 'face (list :foreground link-col)) . " ")
+              (note ,(propertize "N" 'face (list :foreground note-col)) . " ")))))
+
   )
 
 (provide 'init-citar)
