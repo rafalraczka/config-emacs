@@ -37,6 +37,9 @@
   (setq citar-library-paths my-envi-bib-files-directories)
   (setq citar-notes-paths (list my-envi-ref-notes-directory))
 
+  (with-eval-after-load 'init-embark
+    (setq citar-at-point-function 'embark-act))
+
   (with-eval-after-load 'modus-themes
     (let ((file-col (cdr (assoc 'magenta-intense modus-themes-vivendi-colors)))
           (link-col (cdr (assoc 'blue-intense modus-themes-vivendi-colors)))
