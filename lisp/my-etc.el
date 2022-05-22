@@ -24,7 +24,16 @@
 
 ;;; Code:
 
+(defun my-etc-blink-mode-line-bg (&optional color)
+  (let ((blink-color (or color "#762422"))
+        (original-color (face-background 'mode-line)))
+    (set-face-background 'mode-line blink-color)
+    (run-with-idle-timer 0.1 nil
+                         (lambda (col) (set-face-background 'mode-line col))
+                         original-color)))
+
 (setq delete-by-moving-to-trash t)
+(setq ring-bell-function #'my-etc-blink-mode-line-bg)
 
 (provide 'my-etc)
 
