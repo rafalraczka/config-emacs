@@ -44,6 +44,7 @@
 (require 'init-citar)
 (require 'init-company)
 (require 'init-company-quickhelp)
+(require 'init-counsel)
 (require 'init-ctrlf)
 (require 'init-custom)
 (require 'init-dired)
