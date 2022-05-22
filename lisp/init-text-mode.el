@@ -35,6 +35,10 @@
 
   (add-hook 'text-mode-hook 'my/text-mode-config)
 
+  (when (executable-find "aspell")
+    (add-hook 'text-mode-hook 'flyspell-mode)
+    (add-hook 'text-mode-hook 'ispell-minor-mode))
+
   )
 
 (provide 'init-text-mode)
