@@ -110,6 +110,7 @@
 (require 'init-which-key)
 (require 'init-ws-butler)
 (require 'init-yaml-mode)
+(require 'init-yasnippet)
 
 (when my-envi-chemacs-directory
   (require 'my-chemacs))
