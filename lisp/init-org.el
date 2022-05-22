@@ -27,6 +27,9 @@
 (straight-use-package 'org)
 
 (with-eval-after-load 'org
+
+  (require 'oc-csl)
+
   (defcustom my/org-fill-column 72
     "Default `fill-column' for Org mode."
     :type 'integer)
@@ -39,6 +42,7 @@
   (add-hook 'org-clock-out-hook #'save-buffer)
   (add-hook 'org-mode-hook #'my/org-mode-config)
 
+  (setq org-cite-global-bibliography my-envi-bib-files)
   (setq org-default-priority ?C)
 
   ;; Default directory for org files.
@@ -107,6 +111,11 @@
                 (_ (file-exists-p path-eps)))
 	  (setq org-ditaa-eps-jar-path path-eps))
 	(org-babel-do-load-languages 'org-babel-load-languages '((ditaa . t))))
+
+  (with-eval-after-load 'init-citar
+    (setq org-cite-insert-processor 'citar)
+    (setq org-cite-follow-processor 'citar)
+    (setq org-cite-activate-processor 'citar))
 
   )
 
