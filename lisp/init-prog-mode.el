@@ -39,6 +39,9 @@
   (add-hook 'prog-mode-hook 'my/prog-mode-set-fill-column)
   (add-hook 'prog-mode-hook 'outline-minor-mode)
 
+  (when (executable-find "aspell")
+    (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+
   (with-eval-after-load 'init-hl-todo
     (add-hook 'prog-mode-hook 'hl-todo-mode))
 
