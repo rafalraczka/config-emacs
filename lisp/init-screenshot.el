@@ -31,6 +31,15 @@
               :bulid (:not compile)
               :fork (:repo "rafalraczka/screenshot")))
 
+(with-eval-after-load 'screenshot
+
+  (setq screenshot-border-width 0)
+  (setq screenshot-shadow-offset-horizontal 0)
+  (setq screenshot-shadow-offset-vertical 0)
+  (setq screenshot-shadow-radius 0)
+
+  )
+
 (provide 'init-screenshot)
 
 ;;; init-screenshot.el ends here
