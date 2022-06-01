@@ -38,6 +38,18 @@
   (setq screenshot-shadow-offset-vertical 0)
   (setq screenshot-shadow-radius 0)
 
+  (with-eval-after-load 'flyspell
+    (defun my/screenshot-disable-flyspell-mode ()
+      (flyspell-mode -1))
+    (add-hook 'screenshot-buffer-creation-hook
+              'my/screenshot-disable-flyspell-mode))
+
+  (with-eval-after-load 'smartparens
+    (defun my/screenshot-disable-show-smartparens-mode ()
+      (show-smartparens-mode -1))
+    (add-hook 'screenshot-buffer-creation-hook
+              'my/screenshot-disable-show-smartparens-mode))
+
   )
 
 (provide 'init-screenshot)
