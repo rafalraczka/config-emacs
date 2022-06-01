@@ -99,6 +99,7 @@
 (require 'init-projectile)
 (require 'init-rainbow-delimiters)
 (require 'init-savehist)
+(require 'init-screenshot)
 (require 'init-selectrum)
 (require 'init-smartparens)
 (require 'init-startup)
