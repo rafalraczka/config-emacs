@@ -28,6 +28,12 @@
  '(sql-indent :fork (:repo "rafalraczka/emacs-sql-indent"
                      :branch "main")))
 
+(with-eval-after-load 'sql-indent
+
+  (setq-default sqlind-basic-offset 4)
+
+  )
+
 (provide 'init-sql-indent)
 
 ;;; init-sql-indent.el ends here
