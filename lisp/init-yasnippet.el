@@ -24,7 +24,10 @@
 
 ;;; Code:
 
-(my/package-ensure 'yasnippet)
+(straight-use-package
+ '(yasnippet
+   :fork (:repo "rafalraczka/yasnippet"
+          :branch "main")))
 
 (defun my/yasnippet-global-mode-no-message ()
   (let ((inhibit-message t)
