@@ -111,6 +111,7 @@
 (require 'init-visual-fill)
 (require 'init-which-key)
 (require 'init-ws-butler)
+(require 'init-yaml)
 (require 'init-yaml-mode)
 (require 'init-yasnippet)
 
