@@ -57,8 +57,10 @@ number.  Disable if ARG is a negative number."
   "Mode which disable some of the Emacs GUI elements."
   :global t
   (if my-mini-gui-global-mode
-      (mapc (lambda (f) (funcall f 1)) my-mini-gui-disabled-modes)
-    (mapc (lambda (f) (funcall f -1)) my-mini-gui-disabled-modes))
+      (mapc (lambda (f)
+              (when (functionp f) (funcall f 1))) my-mini-gui-disabled-modes)
+    (mapc (lambda (f)
+            (when (functionp f) (funcall f -1))) my-mini-gui-disabled-modes))
   (setq my-mini-gui-global-mode (not my-mini-gui-global-mode)))
 
 (if (daemonp)
