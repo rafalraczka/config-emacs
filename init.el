@@ -122,6 +122,10 @@
 (require 'my-keymap)
 (require 'my-mini-gui)
 
+(when (and my-envi-exwm-required
+           (executable-find "polybar"))
+  (require 'my-polybar))
+
 (provide 'init)
 
 ;;; init.el ends here
