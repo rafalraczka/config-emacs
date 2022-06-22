@@ -26,6 +26,8 @@
 
 (my/package-ensure 'beacon)
 
+(add-hook 'my-init-first-interaction-hook 'beacon-mode)
+
 (provide 'init-beacon)
 
 ;;; init-beacon.el ends here
