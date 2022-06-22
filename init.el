@@ -104,6 +104,7 @@
 (require 'init-screenshot)
 (require 'init-selectrum)
 (require 'init-smartparens)
+(require 'init-speed-type)
 (require 'init-sql-indent)
 (require 'init-startup)
 (require 'init-tab-bar)
