@@ -43,21 +43,20 @@ or first `find-file' non-interactive call.")
   (interactive)
   (let ((init-time (float-time (time-subtract after-init-time before-init-time)))
 	(startup-time (float-time (time-subtract my-init-after-startup-time before-init-time))))
-    (message "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s"
-	     "         Emacs startup time         "
-	     "                                    "
-	     "| stage       | time [s] |   gcs   |"
-	     "+-------------+----------+---------+"
-	   (format "| init:       | %.2e | %.1e |"
-		   init-time
-		   my-init-gcs-done-during-init)
-	   (format "| after init: | %.2e | %.1e |"
-		   (- startup-time init-time)
-		   (- my-init-gcs-done-during-startup my-init-gcs-done-during-init))
-	   "+-------------+----------+---------+"
-	   (format "| startup:    | %.2e | %.1e |"
-		   startup-time
-		   my-init-gcs-done-during-startup))))
+    (message (concat "         Emacs startup time         \n"
+	             "                                    \n"
+	             "| stage       | time [s] | gcs     |\n"
+	             "+-------------+----------+---------+\n"
+	             "| init:       | %.2e | %.1e |\n"
+	             "| after init: | %.2e | %.1e |\n"
+	             "+-------------+----------+---------+\n"
+	             "| startup:    | %.2e | %.1e |")
+             init-time
+             my-init-gcs-done-during-init
+             (- startup-time init-time)
+             (- my-init-gcs-done-during-startup my-init-gcs-done-during-init)
+             startup-time
+             my-init-gcs-done-during-startup)))
 
 (defun my-init-check-emacs-version (ver)
   "Give warning about old Emacs if `emacs-version' is lower than VER."
