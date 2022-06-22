@@ -26,6 +26,11 @@
 
 (with-eval-after-load 'dired
 
+  (defun my/dired-do-delete-permanently (&optional arg)
+    (interactive "P")
+    (let ((delete-by-moving-to-trash nil))
+      (dired-do-delete arg)))
+
   (defun my/dired-enable-truncate-lines ()
     (setq truncate-lines t))
 
