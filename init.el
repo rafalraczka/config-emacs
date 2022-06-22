@@ -48,6 +48,7 @@
 (require 'init-ctrlf)
 (require 'init-custom)
 (require 'init-dired)
+(require 'init-dired-collapse)
 (require 'init-dired-ranger)
 (require 'init-dired-single)
 (require 'init-doom-modeline)
