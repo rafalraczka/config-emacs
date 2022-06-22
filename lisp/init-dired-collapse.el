@@ -26,6 +26,8 @@
 
 (my/package-ensure 'dired-collapse)
 
+(add-hook 'dired-mode-hook 'dired-collapse-mode)
+
 (provide 'init-dired-collapse)
 
 ;;; init-dired-collapse.el ends here
