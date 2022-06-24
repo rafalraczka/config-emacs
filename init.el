@@ -59,6 +59,7 @@
 (require 'init-faces)
 (require 'init-files)
 (require 'init-flycheck)
+(require 'init-forge)
 (require 'init-format-all)
 (require 'init-git-timemachine)
 (require 'init-help)
