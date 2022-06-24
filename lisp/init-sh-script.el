@@ -24,6 +24,13 @@
 
 ;;; Code:
 
+(with-eval-after-load 'sh-mode
+
+  (with-eval-after-load 'init-lsp-mode
+    (add-hook 'sh-mode-hook #'lsp-deferred))
+
+  )
+
 (provide 'init-sh-script)
 
 ;;; init-sh-script.el ends here
