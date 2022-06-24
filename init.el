@@ -107,6 +107,7 @@
 (require 'init-smartparens)
 (require 'init-speed-type)
 (require 'init-sql-indent)
+(require 'init-sh-script)
 (require 'init-startup)
 (require 'init-tab-bar)
 (require 'init-text-mode)
