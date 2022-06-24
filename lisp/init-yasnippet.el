@@ -36,6 +36,14 @@
 
 (add-hook 'my-init-first-interaction-hook #'my/yasnippet-global-mode-no-message)
 
+(with-eval-after-load 'yasnippet
+
+  (require 'warnings)
+
+  (push '(yasnippet backquote-change) warning-suppress-types)
+
+  )
+
 (provide 'init-yasnippet)
 
 ;;; init-yasnippet.el ends here
