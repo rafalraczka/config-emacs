@@ -84,6 +84,7 @@
 (require 'init-minions)
 (require 'init-modus-themes)
 (require 'init-notmuch)
+(require 'init-ol-notmuch)
 
 (when (not my-envi-android)
   (require 'init-olivetti))
