@@ -112,6 +112,7 @@
 (require 'init-startup)
 (require 'init-tab-bar)
 (require 'init-text-mode)
+(require 'init-tramp)
 (require 'init-undo-tree)
 ;; (require 'init-vertico)
 (require 'init-visual-fill)
