@@ -26,6 +26,8 @@
 
 (my/package-ensure 'super-save)
 
+(add-hook 'my-init-first-interaction-hook #'super-save-mode)
+
 (provide 'init-super-save)
 
 ;;; init-super-save.el ends here
