@@ -28,6 +28,12 @@
 
 (add-hook 'my-init-first-interaction-hook #'super-save-mode)
 
+(with-eval-after-load 'super-save
+
+  (setq super-save-auto-save-when-idle t)
+
+  )
+
 (provide 'init-super-save)
 
 ;;; init-super-save.el ends here
