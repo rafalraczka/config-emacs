@@ -24,17 +24,26 @@
 
 ;;; Code:
 
-(with-eval-after-load 'help
+(defun my/help-set-display-buffer-action ()
+  (let* ((w (pcase (frame-width)
+              ((pred (> 40)) 'display-buffer-same-window)
+              ((pred (>= 160)) 0.5)
+              ((pred (>= 240)) 80)
+              ((pred (>= 320)) 0.33)
+              ((pred (>= 400)) 120)))
+         (action (if (symbolp w)
+                     `("\\*Help.*"
+                       (,w))
+                   `("\\*Help.*"
+                     (display-buffer-in-side-window)
+                     (side . left)
+                     (slot . -1)
+                     (window-width . ,w)))))
+    (push action
+          display-buffer-alist)))
 
-  (push '("\\*Help.*"
-          (display-buffer-in-side-window)
-          (side . left)
-          (slot . -1)
-          (window-width . 0.33))
-        display-buffer-alist)
+  (add-hook 'my-init-first-interaction-hook #'my/help-set-display-buffer-action)
 
-  )
-
-(provide 'init-help)
+  (provide 'init-help)
 
 ;;; init-help.el ends here
