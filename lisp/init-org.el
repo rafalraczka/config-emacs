@@ -40,7 +40,9 @@
   (add-hook 'org-clock-cancel-hook #'save-buffer)
   (add-hook 'org-clock-in-hook #'save-buffer)
   (add-hook 'org-clock-out-hook #'save-buffer)
+  (add-hook 'org-mode-hook #'auto-fill-mode)
   (add-hook 'org-mode-hook #'my/org-mode-config)
+  (add-hook 'org-mode-hook #'visual-line-mode)
 
   (setq org-cite-global-bibliography my-envi-bib-files)
   (setq org-default-priority ?C)
