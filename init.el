@@ -110,6 +110,7 @@
 (require 'init-sql-indent)
 (require 'init-sh-script)
 (require 'init-startup)
+(require 'init-super-save)
 (require 'init-tab-bar)
 (require 'init-text-mode)
 (require 'init-tramp)
