@@ -35,6 +35,8 @@
 (advice-add 'yes-or-no-p
             :override 'y-or-n-p)
 
+(add-hook 'my-init-first-interaction-hook #'column-number-mode)
+
 (setq delete-by-moving-to-trash t)
 (setq ring-bell-function #'my-etc-blink-mode-line-bg)
 
