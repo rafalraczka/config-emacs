@@ -32,6 +32,9 @@
                          (lambda (col) (set-face-background 'mode-line col))
                          original-color)))
 
+(advice-add 'yes-or-no-p
+            :override 'y-or-n-p)
+
 (setq delete-by-moving-to-trash t)
 (setq ring-bell-function #'my-etc-blink-mode-line-bg)
 
