@@ -95,6 +95,7 @@
 (require 'init-org-noter)
 (require 'init-org-roam)
 (require 'init-org-roam-ui)
+(require 'init-org-super-agenda)
 (require 'init-org-transclusion)
 (require 'init-password-store)
 (require 'init-pdf-tools)
