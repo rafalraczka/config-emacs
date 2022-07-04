@@ -56,6 +56,7 @@
 (require 'init-emacs-lisp)
 (require 'init-embark)
 (require 'init-ess)
+(require 'init-face-remap)
 (require 'init-faces)
 (require 'init-files)
 (require 'init-flycheck)
