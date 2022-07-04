@@ -96,23 +96,24 @@
 
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((C . t)
-     (emacs-lisp . t)
+   `(,@org-babel-load-languages
+     (C . t)
+     (R . t)
      (julia . t)
      (latex . t)
      (lilypond . t)
      (python . t)
      (shell . t)
-     (sql . t)
-     (R . t)))
+     (sql . t)))
 
   (when-let* ((path "/usr/share/java/ditaa/ditaa-0.11.jar")
               (_ (file-exists-p path)))
-	(setq org-ditaa-jar-path path)
-	(when-let* ((path-eps "/usr/share/java/ditaa-eps/DitaaEps.jar")
+    (setq org-ditaa-jar-path path)
+    (when-let* ((path-eps "/usr/share/java/ditaa-eps/DitaaEps.jar")
                 (_ (file-exists-p path-eps)))
-	  (setq org-ditaa-eps-jar-path path-eps))
-	(org-babel-do-load-languages 'org-babel-load-languages '((ditaa . t))))
+      (setq org-ditaa-eps-jar-path path-eps))
+    (org-babel-do-load-languages 'org-babel-load-languages
+                                 `(,@org-babel-load-languages (ditaa . t))))
 
   (with-eval-after-load 'init-citar
     (setq org-cite-insert-processor 'citar)
