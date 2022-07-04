@@ -47,7 +47,18 @@
           (ess-fl-keyword:operators . t)
           (ess-fl-keyword:delimiters . nil)
           (ess-fl-keyword:= . nil)
-          (ess-R-fl-keyword:F&T . t))))
+          (ess-R-fl-keyword:F&T . t)))
+
+  ;; This is quick fix for Windows when Polish diacritics in data caused
+  ;; problems.
+
+  (when my-envi-windows
+    (defun my/ess-r-set-iso-latin-1-coding-system ()
+      (if my-envi-windows (set-buffer-file-coding-system 'iso-latin-1)))
+
+    (add-hook 'ess-r-post-run-hook 'my/ess-r-set-iso-latin-1-coding-system))
+
+  )
 
 (provide 'init-ess)
 
