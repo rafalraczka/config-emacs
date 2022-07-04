@@ -24,6 +24,45 @@
 
 ;;; Code:
 
+(with-eval-after-load 'face-remap
+
+  (defcustom my/face-remap-variable-pitch-height-multiplier 1.05
+    "The height of the `variable-pitch' as a multiplier of the `default' face height."
+    :type 'number
+    :group 'display)
+
+  ;; TODO: Modify this approach to be local instead of global.
+  (defface my/face-remap-fixed-pitch-copy '((t))
+    "Copy of the `fixed-pitch' face.")
+  (copy-face 'fixed-pitch 'my/face-remap-fixed-pitch-copy)
+
+  (defun my/face-remap-set-default-fixed-pitch-height ()
+    (custom-theme-set-faces
+     'user
+     '(fixed-pitch ((t :height 1.0)))))
+
+  (defun my/face-remap-set-relative-pitch-height (&optional multiplier)
+    (let* ((multi (or multiplier my/face-remap-variable-pitch-height-multiplier))
+           (default-height (face-attribute 'default :height))
+           (fixed-height-multiplier (/ 1 multi))
+           (variable-family (face-attribute 'variable-pitch :family))
+           (fixed-family (face-attribute 'default :family))
+           (variable-height (round (* default-height multi))))
+      (custom-theme-set-faces
+       'user
+       `(variable-pitch ((t (:family ,variable-family :height ,variable-height))))
+       `(fixed-pitch ((t (:family ,fixed-family :height ,fixed-height-multiplier)))))))
+
+  (defun my/face-remap-toggle-relative-height ()
+    (if (and buffer-face-mode
+             (string-equal buffer-face-mode-face "variable-pitch"))
+        (my/face-remap-set-relative-pitch-height)
+      (my/face-remap-set-default-fixed-pitch-height)))
+
+  (add-hook 'buffer-face-mode-hook 'my/face-remap-toggle-relative-height)
+
+  )
+
 (provide 'init-face-remap)
 
 ;;; init-face-remap.el ends here
