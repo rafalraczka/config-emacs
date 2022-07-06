@@ -94,6 +94,7 @@
 (require 'init-org)
 (require 'init-org-contrib)
 (require 'init-org-noter)
+(require 'init-org-ql)
 (require 'init-org-roam)
 (require 'init-org-roam-ui)
 (require 'init-org-super-agenda)
