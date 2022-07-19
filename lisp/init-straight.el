@@ -43,6 +43,8 @@
 ;; value to the recommended one in official =straight= repository.
 ;; https://github.com/raxod502/straight.el/blob/master/README.md#my-init-time-got-slower
 
+(setq straight-vc-git-default-clone-depth 1)
+
 (if (executable-find "watchexec")
     (setq straight-check-for-modifications '(watch-files find-when-checking))
   (setq straight-check-for-modifications '(check-on-save find-when-checking)))
