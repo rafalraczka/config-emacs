@@ -31,6 +31,12 @@
     (let ((delete-by-moving-to-trash nil))
       (dired-do-delete arg)))
 
+  (defun my/dired-create-dwim (path)
+    (interactive (list (read-file-name "Create: " (dired-current-directory))))
+    (if (directory-name-p path)
+        (dired-create-directory path)
+      (dired-create-empty-file path)))
+
   (defun my/dired-enable-truncate-lines ()
     (setq truncate-lines t))
 
