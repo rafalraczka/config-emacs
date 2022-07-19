@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook #'savehist-mode)
+(add-hook 'my-init-first-interaction-hook #'savehist-mode)
 
 (provide 'init-savehist)
 
