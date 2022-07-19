@@ -36,6 +36,7 @@
           (:name "sent" :query "tag:sent" :key "s")
           (:name "today" :query "date:today" :key "t")
           (:name "unread" :query "tag:unread" :key "u")
+          (:name "week (this)" :query "date:\"this week\"" :key "w")
         ))
   )
 
