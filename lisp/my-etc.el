@@ -32,6 +32,11 @@
                          (lambda (col) (set-face-background 'mode-line col))
                          original-color)))
 
+(defun my-etc-upcase-previous-word ()
+  "Convert to upper case from point to the beginning of word and do not move."
+  (interactive)
+  (upcase-word -1))
+
 (advice-add 'yes-or-no-p
             :override 'y-or-n-p)
 
