@@ -26,11 +26,6 @@
 
 (my/package-ensure 'citar)
 
-(defun my/citar-add-watches ()
-  (citar-filenotify-setup '(LaTeX-mode-hook org-mode-hook)))
-
-(add-hook 'my-init-first-interaction-hook #'my/citar-add-watches)
-
 (with-eval-after-load 'citar
 
   (setq citar-bibliography my-envi-bib-files)
