@@ -29,6 +29,8 @@
 
 (with-eval-after-load 'ace-window
 
+  (setq aw-dispatch-when-more-than 1)
+
   (if my-envi-exwm-required
     (setq aw-scope 'frame)
     (setq aw-scope 'visible))
