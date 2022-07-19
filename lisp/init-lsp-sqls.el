@@ -26,6 +26,8 @@
 
 (require 'init-lsp-mode)
 
+(setq lsp-sqls-workspace-config-path nil)
+
 (with-eval-after-load 'sql
 
   (defun my/lsp-sqls-config-results-buffer ()
