@@ -30,12 +30,16 @@
     "Default `fill-column' for programming modes."
     :type 'integer)
 
+  (defun my/prog-mode-auto-fill-only-comments ()
+    (setq-local comment-auto-fill-only-comments t))
+
   (defun my/prog-mode-set-fill-column ()
     "Set `fill-column' for programming modes."
     (setq-local fill-column my/prog-mode-fill-column))
 
   (add-hook 'prog-mode-hook 'auto-fill-mode)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'prog-mode-hook 'my/prog-mode-auto-fill-only-comments)
   (add-hook 'prog-mode-hook 'my/prog-mode-set-fill-column)
   (add-hook 'prog-mode-hook 'outline-minor-mode)
 
