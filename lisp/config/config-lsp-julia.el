@@ -1,4 +1,4 @@
-;;; init-lsp-julia.el --- lsp-julia configuration -*- lexical-binding: t -*-
+;;; config-lsp-julia.el --- lsp-julia configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -30,11 +30,11 @@
 
   (require 'lsp-julia)
 
-  (with-eval-after-load 'init-lsp-mode
+  (with-eval-after-load 'config-lsp-mode
     (add-hook 'julia-mode-hook #'lsp-deferred))
 
   )
 
-(provide 'init-lsp-julia)
+(provide 'config-lsp-julia)
 
-;;; init-lsp-julia.el ends here
+;;; config-lsp-julia.el ends here

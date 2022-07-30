@@ -1,4 +1,4 @@
-;;; init-dired.el --- dired configuration -*- lexical-binding: t -*-
+;;; config-dired.el --- dired configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -55,6 +55,6 @@
 
   )
 
-(provide 'init-dired)
+(provide 'config-dired)
 
-;;; init-dired.el ends here
+;;; config-dired.el ends here

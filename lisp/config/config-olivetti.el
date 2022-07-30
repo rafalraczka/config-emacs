@@ -1,4 +1,4 @@
-;;; init-olivetti.el --- olivetti configuration -*- lexical-binding: t -*-
+;;; config-olivetti.el --- olivetti configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -53,6 +53,6 @@
                                           pdf-view-mode)))
   )
 
-(provide 'init-olivetti)
+(provide 'config-olivetti)
 
-;;; init-olivetti.el ends here
+;;; config-olivetti.el ends here

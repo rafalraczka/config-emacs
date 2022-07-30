@@ -1,4 +1,4 @@
-;;; init-help.el --- help configuration -*- lexical-binding: t -*-
+;;; config-help.el --- help configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -44,6 +44,6 @@
 
   (add-hook 'my-init-first-interaction-hook #'my/help-set-display-buffer-action)
 
-  (provide 'init-help)
+  (provide 'config-help)
 
-;;; init-help.el ends here
+;;; config-help.el ends here

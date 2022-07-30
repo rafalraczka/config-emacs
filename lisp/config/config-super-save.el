@@ -1,4 +1,4 @@
-;;; init-super-save.el --- super-save configuration -*- lexical-binding: t -*-
+;;; config-super-save.el --- super-save configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -34,6 +34,6 @@
 
   )
 
-(provide 'init-super-save)
+(provide 'config-super-save)
 
-;;; init-super-save.el ends here
+;;; config-super-save.el ends here

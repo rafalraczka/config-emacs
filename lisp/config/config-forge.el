@@ -1,4 +1,4 @@
-;;; init-forge.el --- forge configuration -*- lexical-binding: t -*-
+;;; config-forge.el --- forge configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -32,6 +32,6 @@
 
   )
 
-(provide 'init-forge)
+(provide 'config-forge)
 
-;;; init-forge.el ends here
+;;; config-forge.el ends here

@@ -1,4 +1,4 @@
-;;; init-straight.el --- straight configuration -*- lexical-binding: t -*-
+;;; core-straight.el --- straight configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -49,6 +49,6 @@
     (setq straight-check-for-modifications '(watch-files find-when-checking))
   (setq straight-check-for-modifications '(check-on-save find-when-checking)))
 
-(provide 'init-straight)
+(provide 'core-straight)
 
-;;; init-straight.el ends here
+;;; core-straight.el ends here

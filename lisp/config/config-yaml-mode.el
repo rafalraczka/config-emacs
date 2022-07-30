@@ -1,4 +1,4 @@
-;;; init-yaml-mode.el --- yaml-mode configuration -*- lexical-binding: t -*-
+;;; config-yaml-mode.el --- yaml-mode configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -32,6 +32,6 @@
 
 (add-hook 'my-init-first-interaction-hook #'my/yaml-mode-add-to-auto-mode-alist)
 
-(provide 'init-yaml-mode)
+(provide 'config-yaml-mode)
 
-;;; init-yaml-mode.el ends here
+;;; config-yaml-mode.el ends here

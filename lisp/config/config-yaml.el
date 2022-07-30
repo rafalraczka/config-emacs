@@ -1,4 +1,4 @@
-;;; init-yaml.el --- yaml configuration -*- lexical-binding: t -*-
+;;; config-yaml.el --- yaml configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'yaml)
 
-(provide 'init-yaml)
+(provide 'config-yaml)
 
-;;; init-yaml.el ends here
+;;; config-yaml.el ends here

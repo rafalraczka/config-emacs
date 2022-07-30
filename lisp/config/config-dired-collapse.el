@@ -1,4 +1,4 @@
-;;; init-dired-collapse.el --- dired-collapse configuration -*- lexical-binding: t -*-
+;;; config-dired-collapse.el --- dired-collapse configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -28,6 +28,6 @@
 
 (add-hook 'dired-mode-hook 'dired-collapse-mode)
 
-(provide 'init-dired-collapse)
+(provide 'config-dired-collapse)
 
-;;; init-dired-collapse.el ends here
+;;; config-dired-collapse.el ends here

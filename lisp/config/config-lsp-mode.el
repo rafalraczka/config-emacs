@@ -1,4 +1,4 @@
-;;; init-lsp-mode.el --- lsp-mode configuration -*- lexical-binding: t -*-
+;;; config-lsp-mode.el --- lsp-mode configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -31,14 +31,14 @@
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-signature-auto-activate nil)
 
-  (with-eval-after-load 'init-company
+  (with-eval-after-load 'config-company
     (add-hook 'lsp-mode-hook 'company-mode))
 
-  (with-eval-after-load 'init-which-key
+  (with-eval-after-load 'config-which-key
     (add-hook 'lsp-mode-hook 'lsp-enable-which-key-integration))
 
 )
 
-(provide 'init-lsp-mode)
+(provide 'config-lsp-mode)
 
-;;; init-lsp-mode.el ends here
+;;; config-lsp-mode.el ends here

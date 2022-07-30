@@ -1,4 +1,4 @@
-;;; init-doom-modeline.el --- doom-modeline configuration -*- lexical-binding: t -*-
+;;; config-doom-modeline.el --- doom-modeline configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -57,6 +57,6 @@
   (with-eval-after-load 'modus-themes
     (add-hook 'modus-themes-after-load-theme-hook 'my/doom-modeline-set-faces)))
 
-(provide 'init-doom-modeline)
+(provide 'config-doom-modeline)
 
-;;; init-doom-modeline.el ends here
+;;; config-doom-modeline.el ends here

@@ -1,4 +1,4 @@
-;;; init-beacon.el --- Beacon configuration -*- lexical-binding: t -*-
+;;; config-beacon.el --- Beacon configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -43,6 +43,6 @@
 
   )
 
-(provide 'init-beacon)
+(provide 'config-beacon)
 
-;;; init-beacon.el ends here
+;;; config-beacon.el ends here

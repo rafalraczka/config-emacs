@@ -1,4 +1,4 @@
-;;; init-elfeed.el --- elfeed configuration -*- lexical-binding: t -*-
+;;; config-elfeed.el --- elfeed configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'elfeed)
 
-(provide 'init-elfeed)
+(provide 'config-elfeed)
 
-;;; init-elfeed.el ends here
+;;; config-elfeed.el ends here

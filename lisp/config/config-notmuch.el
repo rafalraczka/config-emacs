@@ -1,4 +1,4 @@
-;;; init-notmuch.el --- notmuch configuration -*- lexical-binding: t -*-
+;;; config-notmuch.el --- notmuch configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -40,6 +40,6 @@
         ))
   )
 
-(provide 'init-notmuch)
+(provide 'config-notmuch)
 
-;;; init-notmuch.el ends here
+;;; config-notmuch.el ends here

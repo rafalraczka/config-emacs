@@ -1,4 +1,4 @@
-;;; init-startup.el --- startup configuration -*- lexical-binding: t -*-
+;;; config-startup.el --- startup configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -38,6 +38,6 @@
 
 (setq inhibit-startup-screen t)
 
-(provide 'init-startup)
+(provide 'config-startup)
 
-;;; init-startup.el ends here
+;;; config-startup.el ends here

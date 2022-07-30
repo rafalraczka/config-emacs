@@ -1,4 +1,4 @@
-;;; init-ess.el --- ess configuration -*- lexical-binding: t -*-
+;;; config-ess.el --- ess configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -60,6 +60,6 @@
 
   )
 
-(provide 'init-ess)
+(provide 'config-ess)
 
-;;; init-ess.el ends here
+;;; config-ess.el ends here

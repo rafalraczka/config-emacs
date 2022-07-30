@@ -1,4 +1,4 @@
-;;; init-server.el --- server configuration -*- lexical-binding: t -*-
+;;; config-server.el --- server configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -33,6 +33,6 @@
 
 (my/server-ensure-server)
 
-(provide 'init-server)
+(provide 'config-server)
 
-;;; init-server.el ends here
+;;; config-server.el ends here

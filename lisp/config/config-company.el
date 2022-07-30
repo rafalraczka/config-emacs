@@ -1,4 +1,4 @@
-;;; init-company.el --- company configuration -*- lexical-binding: t -*-
+;;; config-company.el --- company configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -35,6 +35,6 @@
 
   )
 
-(provide 'init-company)
+(provide 'config-company)
 
-;;; init-company.el ends here
+;;; config-company.el ends here

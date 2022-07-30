@@ -1,4 +1,4 @@
-;;; init-counsel.el --- counsel configuration -*- lexical-binding: t -*-
+;;; config-counsel.el --- counsel configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'counsel)
 
-(provide 'init-counsel)
+(provide 'config-counsel)
 
-;;; init-counsel.el ends here
+;;; config-counsel.el ends here

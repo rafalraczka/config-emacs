@@ -1,4 +1,4 @@
-;;; init-ctrlf.el --- ctrlf configuration -*- lexical-binding: t -*-
+;;; config-ctrlf.el --- ctrlf configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -38,6 +38,6 @@
 
   )
 
-(provide 'init-ctrlf)
+(provide 'config-ctrlf)
 
-;;; init-ctrlf.el ends here
+;;; config-ctrlf.el ends here

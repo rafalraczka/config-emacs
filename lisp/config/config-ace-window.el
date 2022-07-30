@@ -1,4 +1,4 @@
-;;; init-ace-window.el --- ace-window configuration -*- lexical-binding: t -*-
+;;; config-ace-window.el --- ace-window configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -37,6 +37,6 @@
 
   )
 
-(provide 'init-ace-window)
+(provide 'config-ace-window)
 
-;;; init-ace-window.el ends here
+;;; config-ace-window.el ends here

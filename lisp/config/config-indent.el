@@ -1,4 +1,4 @@
-;;; init-indent.el --- indent configuration -*- lexical-binding: t -*-
+;;; config-indent.el --- indent configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (setq tab-always-indent 'complete)
 
-(provide 'init-indent)
+(provide 'config-indent)
 
-;;; init-indent.el ends here
+;;; config-indent.el ends here

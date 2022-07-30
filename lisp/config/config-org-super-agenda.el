@@ -1,4 +1,4 @@
-;;; init-org-super-agenda.el ---  -*- lexical-binding: t -*-
+;;; config-org-super-agenda.el ---  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -55,6 +55,6 @@
 
   )
 
-(provide 'init-org-super-agenda)
+(provide 'config-org-super-agenda)
 
-;;; init-org-super-agenda.el ends here
+;;; config-org-super-agenda.el ends here

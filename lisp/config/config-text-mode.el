@@ -1,4 +1,4 @@
-;;; init-text-mode.el --- text-mode configuration -*- lexical-binding: t -*-
+;;; config-text-mode.el --- text-mode configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -41,6 +41,6 @@
 
   )
 
-(provide 'init-text-mode)
+(provide 'config-text-mode)
 
-;;; init-text-mode.el ends here
+;;; config-text-mode.el ends here

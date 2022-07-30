@@ -1,4 +1,4 @@
-;;; init-lsp-pyls.el --- lsp-pyls configuration -*- lexical-binding: t -*-
+;;; config-lsp-pyls.el --- lsp-pyls configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -24,17 +24,17 @@
 
 ;;; Code:
 
-(require 'init-lsp-mode)
+(require 'config-lsp-mode)
 
 (with-eval-after-load 'python
 
   (add-hook 'python-mode-hook #'flyspell-mode)
   (add-hook 'python-mode-hook 'lsp-deferred)
 
-  (with-eval-after-load 'init-company
+  (with-eval-after-load 'config-company
     (add-hook 'python-mode-hook #'company-mode))
 
-  (with-eval-after-load 'init-company-quickhelp
+  (with-eval-after-load 'config-company-quickhelp
 
     (defcustom my/lsp-pyls-company-quickhelp-max-lines 5
       "When not nil, limits the number of lines in the popup in Python mode.")
@@ -50,6 +50,6 @@
 
   )
 
-(provide 'init-lsp-pyls)
+(provide 'config-lsp-pyls)
 
-;;; init-lsp-pyls.el ends here
+;;; config-lsp-pyls.el ends here

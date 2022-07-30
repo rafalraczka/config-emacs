@@ -1,4 +1,4 @@
-;;; init-lsp-sqls.el --- lsp-sqls configuration -*- lexical-binding: t -*-
+;;; config-lsp-sqls.el --- lsp-sqls configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(require 'init-lsp-mode)
+(require 'config-lsp-mode)
 
 (setq lsp-sqls-workspace-config-path nil)
 
@@ -43,6 +43,6 @@
 
   )
 
-(provide 'init-lsp-sqls)
+(provide 'config-lsp-sqls)
 
-;;; init-lsp-sqls.el ends here
+;;; config-lsp-sqls.el ends here

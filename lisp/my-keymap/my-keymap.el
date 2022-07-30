@@ -33,10 +33,10 @@
 
 (define-prefix-command 'my-keymap-git-map)
 
-(with-eval-after-load 'init-git-timemachine
+(with-eval-after-load 'config-git-timemachine
   (define-key my-keymap-git-map (kbd "t") #'git-timemachine))
 
-(with-eval-after-load 'init-magit
+(with-eval-after-load 'config-magit
   (define-key my-keymap-git-map (kbd "l f") #'magit-log-buffer-file)
   (define-key my-keymap-git-map (kbd "l c") #'magit-log-current)
   (define-key my-keymap-git-map (kbd "r") #'magit-rebase)
@@ -48,7 +48,7 @@
 
 (set-keymap-parent my-keymap-help-map 'help-command)
 
-(with-eval-after-load 'init-helpful
+(with-eval-after-load 'config-helpful
   (define-key my-keymap-help-map (kbd "f") #'helpful-callable)
   (define-key my-keymap-help-map (kbd "v") #'helpful-variable)
   (define-key my-keymap-help-map (kbd "k") #'helpful-key))

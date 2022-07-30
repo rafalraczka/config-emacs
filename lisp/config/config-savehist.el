@@ -1,4 +1,4 @@
-;;; init-savehist.el --- savehist configuration -*- lexical-binding: t -*-
+;;; config-savehist.el --- savehist configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (add-hook 'my-init-first-interaction-hook #'savehist-mode)
 
-(provide 'init-savehist)
+(provide 'config-savehist)
 
-;;; init-savehist.el ends here
+;;; config-savehist.el ends here

@@ -1,4 +1,4 @@
-;;; init-ws-butler.el --- ws-butler configuration -*- lexical-binding: t -*-
+;;; config-ws-butler.el --- ws-butler configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -28,6 +28,6 @@
 
 (add-hook 'after-init-hook #'ws-butler-global-mode)
 
-(provide 'init-ws-butler)
+(provide 'config-ws-butler)
 
-;;; init-ws-butler.el ends here
+;;; config-ws-butler.el ends here

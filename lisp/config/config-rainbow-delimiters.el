@@ -1,4 +1,4 @@
-;;; init-rainbow-delimiters.el --- rainbow-delimiters configuration -*- lexical-binding: t -*-
+;;; config-rainbow-delimiters.el --- rainbow-delimiters configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'rainbow-delimiters)
 
-(provide 'init-rainbow-delimiters)
+(provide 'config-rainbow-delimiters)
 
-;;; init-rainbow-delimiters.el ends here
+;;; config-rainbow-delimiters.el ends here

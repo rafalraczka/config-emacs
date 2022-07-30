@@ -1,4 +1,4 @@
-;;; init-async.el --- async configuration -*- lexical-binding: t -*-
+;;; config-async.el --- async configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -29,6 +29,6 @@
 (with-eval-after-load 'dired
   (dired-async-mode))
 
-(provide 'init-async)
+(provide 'config-async)
 
-;;; init-async.el ends here
+;;; config-async.el ends here

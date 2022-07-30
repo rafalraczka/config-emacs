@@ -1,4 +1,4 @@
-;;; init-sh-script.el --- sh-script configuration -*- lexical-binding: t -*-
+;;; config-sh-script.el --- sh-script configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,11 +26,11 @@
 
 (with-eval-after-load 'sh-mode
 
-  (with-eval-after-load 'init-lsp-mode
+  (with-eval-after-load 'config-lsp-mode
     (add-hook 'sh-mode-hook #'lsp-deferred))
 
   )
 
-(provide 'init-sh-script)
+(provide 'config-sh-script)
 
-;;; init-sh-script.el ends here
+;;; config-sh-script.el ends here

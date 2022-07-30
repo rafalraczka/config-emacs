@@ -1,4 +1,4 @@
-;;; init-company-quickhelp.el --- company-quickhelp configuration -*- lexical-binding: t -*-
+;;; config-company-quickhelp.el --- company-quickhelp configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -32,6 +32,6 @@
 
   )
 
-(provide 'init-company-quickhelp)
+(provide 'config-company-quickhelp)
 
-;;; init-company-quickhelp.el ends here
+;;; config-company-quickhelp.el ends here

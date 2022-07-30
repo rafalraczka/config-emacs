@@ -1,4 +1,4 @@
-;;; init-org-contrib.el --- org-contrib configuration -*- lexical-binding: t -*-
+;;; config-org-contrib.el --- org-contrib configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -32,6 +32,6 @@
 
   )
 
-(provide 'init-org-contrib)
+(provide 'config-org-contrib)
 
-;;; init-org-contrib.el ends here
+;;; config-org-contrib.el ends here

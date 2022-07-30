@@ -1,4 +1,4 @@
-;;; init-hl-todo.el --- hl-todo configuration -*- lexical-binding: t -*-
+;;; config-hl-todo.el --- hl-todo configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -34,6 +34,6 @@
 
   )
 
-(provide 'init-hl-todo)
+(provide 'config-hl-todo)
 
-;;; init-hl-todo.el ends here
+;;; config-hl-todo.el ends here

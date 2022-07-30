@@ -1,4 +1,4 @@
-;;; init-files.el --- files configuration -*- lexical-binding: t -*-
+;;; config-files.el --- files configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -57,6 +57,6 @@
               (mkdir dir))))
         auto-save-file-name-transforms)
 
-(provide 'init-files)
+(provide 'config-files)
 
-;;; init-files.el ends here
+;;; config-files.el ends here

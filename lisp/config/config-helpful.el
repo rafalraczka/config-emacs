@@ -1,4 +1,4 @@
-;;; init-helpful.el --- Configuration of the helpful package -*- lexical-binding: t -*-
+;;; config-helpful.el --- Configuration of the helpful package -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'helpful)
 
-(provide 'init-helpful)
+(provide 'config-helpful)
 
-;;; init-helpful.el ends here
+;;; config-helpful.el ends here

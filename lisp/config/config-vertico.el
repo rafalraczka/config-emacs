@@ -1,4 +1,4 @@
-;;; init-vertico.el --- vertico configuration -*- lexical-binding: t -*-
+;;; config-vertico.el --- vertico configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -28,11 +28,6 @@
 
 (add-hook 'my-init-first-interaction-hook #'vertico-mode)
 
-(provide 'init-vertico)
+(provide 'config-vertico)
 
-;;; init-vertico.el ends here
-
-
-(provide 'init-vertico)
-
-;;; init-vertico.el ends here
+;;; config-vertico.el ends here

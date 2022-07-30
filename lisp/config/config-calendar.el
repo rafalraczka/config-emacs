@@ -1,4 +1,4 @@
-;;; init-calendar.el --- calendar configuration -*- lexical-binding: t -*-
+;;; config-calendar.el --- calendar configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -46,6 +46,6 @@
   (setq calendar-minimum-window-height 9)
   (setq calendar-week-start-day 1))
 
-(provide 'init-calendar)
+(provide 'config-calendar)
 
-;;; init-calendar.el ends here
+;;; config-calendar.el ends here

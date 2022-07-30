@@ -1,4 +1,4 @@
-;;; init-julia-mode.el --- julia-mode configuration -*- lexical-binding: t -*-
+;;; config-julia-mode.el --- julia-mode configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'julia-mode)
 
-(provide 'init-julia-mode)
+(provide 'config-julia-mode)
 
-;;; init-julia-mode.el ends here
+;;; config-julia-mode.el ends here

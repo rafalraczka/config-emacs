@@ -1,4 +1,4 @@
-;;; init-undo-tree.el --- undo-tree configuration -*- lexical-binding: t -*-
+;;; config-undo-tree.el --- undo-tree configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -31,6 +31,6 @@
 (with-eval-after-load 'undo-tree
   (setq undo-tree-auto-save-history nil))
 
-(provide 'init-undo-tree)
+(provide 'config-undo-tree)
 
-;;; init-undo-tree.el ends here
+;;; config-undo-tree.el ends here

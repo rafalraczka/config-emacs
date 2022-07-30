@@ -1,4 +1,4 @@
-;;; init-prog-mode.el --- prog-mode configuration -*- lexical-binding: t -*-
+;;; config-prog-mode.el --- prog-mode configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -46,10 +46,10 @@
   (when (executable-find "aspell")
     (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
-  (with-eval-after-load 'init-hl-todo
+  (with-eval-after-load 'config-hl-todo
     (add-hook 'prog-mode-hook 'hl-todo-mode))
 
-  (with-eval-after-load 'init-olivetti
+  (with-eval-after-load 'config-olivetti
     (defcustom my/prog-mode-olivetti-body-width 80
       "Default `olivetti-body-width' for programming modes."
       :type 'integer)
@@ -59,14 +59,14 @@
 
     (add-hook 'prog-mode-hook 'my/prog-mode-set-olivetti-body-width))
 
-  (with-eval-after-load 'init-rainbow-delimiters
+  (with-eval-after-load 'config-rainbow-delimiters
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-  (with-eval-after-load 'init-smartparens
+  (with-eval-after-load 'config-smartparens
     (add-hook 'prog-mode-hook 'smartparens-mode))
 
   )
 
-(provide 'init-prog-mode)
+(provide 'config-prog-mode)
 
-;;; init-prog-mode.el ends here
+;;; config-prog-mode.el ends here

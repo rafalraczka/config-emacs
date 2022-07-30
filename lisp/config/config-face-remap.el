@@ -1,4 +1,4 @@
-;;; init-face-remap.el --- face-remap configuration -*- lexical-binding: t -*-
+;;; config-face-remap.el --- face-remap configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -63,6 +63,6 @@
 
   )
 
-(provide 'init-face-remap)
+(provide 'config-face-remap)
 
-;;; init-face-remap.el ends here
+;;; config-face-remap.el ends here

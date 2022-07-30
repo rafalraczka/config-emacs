@@ -1,4 +1,4 @@
-;;; init-pdf-tools.el --- pdf-tools configuration -*- lexical-binding: t -*-
+;;; config-pdf-tools.el --- pdf-tools configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -31,6 +31,6 @@
 (with-eval-after-load 'pdf-tools
   (setq-default pdf-view-display-size 'fit-page))
 
-(provide 'init-pdf-tools)
+(provide 'config-pdf-tools)
 
-;;; init-pdf-tools.el ends here
+;;; config-pdf-tools.el ends here

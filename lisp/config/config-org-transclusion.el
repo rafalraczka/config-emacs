@@ -1,4 +1,4 @@
-;;; init-org-transclusion.el --- org-transclusion configuration -*- lexical-binding: t -*-
+;;; config-org-transclusion.el --- org-transclusion configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -34,6 +34,6 @@
 
   )
 
-(provide 'init-org-transclusion)
+(provide 'config-org-transclusion)
 
-;;; init-org-transclusion.el ends here
+;;; config-org-transclusion.el ends here

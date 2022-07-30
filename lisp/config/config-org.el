@@ -1,4 +1,4 @@
-;;; init-org.el --- org configuration -*- lexical-binding: t -*-
+;;; config-org.el --- org configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -115,13 +115,13 @@
     (org-babel-do-load-languages 'org-babel-load-languages
                                  `(,@org-babel-load-languages (ditaa . t))))
 
-  (with-eval-after-load 'init-citar
+  (with-eval-after-load 'config-citar
     (setq org-cite-insert-processor 'citar)
     (setq org-cite-follow-processor 'citar)
     (setq org-cite-activate-processor 'citar))
 
   )
 
-(provide 'init-org)
+(provide 'config-org)
 
-;;; init-org.el ends here
+;;; config-org.el ends here

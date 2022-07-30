@@ -1,4 +1,4 @@
-;;; init-speed-type.el --- speed-type configuration -*- lexical-binding: t -*-
+;;; config-speed-type.el --- speed-type configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -30,6 +30,6 @@
                         :repo "parkouss/speed-type"
 			:fork (:repo "rafalraczka/speed-type")))
 
-(provide 'init-speed-type)
+(provide 'config-speed-type)
 
-;;; init-speed-type.el ends here
+;;; config-speed-type.el ends here

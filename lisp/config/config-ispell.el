@@ -1,4 +1,4 @@
-;;; init-ispell.el --- ispell configuration -*- lexical-binding: t -*-
+;;; config-ispell.el --- ispell configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (setq ispell-dictionary "en_GB-ize")
 
-(provide 'init-ispell)
+(provide 'config-ispell)
 
-;;; init-ispell.el ends here
+;;; config-ispell.el ends here

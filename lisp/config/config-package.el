@@ -1,4 +1,4 @@
-;;; init-package.el --- package configuration -*- lexical-binding: t -*-
+;;; config-package.el --- package configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -49,6 +49,6 @@
 
 (package-initialize)
 
-(provide 'init-package)
+(provide 'config-package)
 
-;;; init-package.el ends here
+;;; config-package.el ends here

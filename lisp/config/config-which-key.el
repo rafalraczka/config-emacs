@@ -1,4 +1,4 @@
-;;; init-which-key.el --- which-key configuration -*- lexical-binding: t -*-
+;;; config-which-key.el --- which-key configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -34,6 +34,6 @@
 
   )
 
-(provide 'init-which-key)
+(provide 'config-which-key)
 
-;;; init-which-key.el ends here
+;;; config-which-key.el ends here

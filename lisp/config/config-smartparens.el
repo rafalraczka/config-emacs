@@ -1,4 +1,4 @@
-;;; init-smartparens.el --- smartparens configuration -*- lexical-binding: t -*-
+;;; config-smartparens.el --- smartparens configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'smartparens)
 
-(provide 'init-smartparens)
+(provide 'config-smartparens)
 
-;;; init-smartparens.el ends here
+;;; config-smartparens.el ends here

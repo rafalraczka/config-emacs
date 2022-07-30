@@ -1,4 +1,4 @@
-;;; init-embark.el --- embark-configuration -*- lexical-binding: t -*-
+;;; config-embark.el --- embark-configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'embark)
 
-(provide 'init-embark)
+(provide 'config-embark)
 
-;;; init-embark.el ends here
+;;; config-embark.el ends here

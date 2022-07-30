@@ -1,4 +1,4 @@
-;;; init-yasnippet.el --- yasnippet configuration -*- lexical-binding: t -*-
+;;; config-yasnippet.el --- yasnippet configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -44,6 +44,6 @@
 
   )
 
-(provide 'init-yasnippet)
+(provide 'config-yasnippet)
 
-;;; init-yasnippet.el ends here
+;;; config-yasnippet.el ends here

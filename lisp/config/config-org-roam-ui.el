@@ -1,4 +1,4 @@
-;;; init-org-roam-ui.el --- org-roam-ui configuration -*- lexical-binding: t -*-
+;;; config-org-roam-ui.el --- org-roam-ui configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'org-roam-ui)
 
-(provide 'init-org-roam-ui)
+(provide 'config-org-roam-ui)
 
-;;; init-org-roam-ui.el ends here
+;;; config-org-roam-ui.el ends here

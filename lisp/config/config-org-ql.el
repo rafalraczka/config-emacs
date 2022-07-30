@@ -1,4 +1,4 @@
-;;; init-org-ql.el --- org-ql configuration -*- lexical-binding: t -*-
+;;; config-org-ql.el --- org-ql configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'org-ql)
 
-(provide 'init-org-ql)
+(provide 'config-org-ql)
 
-;;; init-org-ql.el ends here
+;;; config-org-ql.el ends here

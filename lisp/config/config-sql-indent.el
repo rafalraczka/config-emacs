@@ -1,4 +1,4 @@
-;;; init-sql-indent.el --- sql-indent configuration -*- lexical-binding: t -*-
+;;; config-sql-indent.el --- sql-indent configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -38,6 +38,6 @@
 
   )
 
-(provide 'init-sql-indent)
+(provide 'config-sql-indent)
 
-;;; init-sql-indent.el ends here
+;;; config-sql-indent.el ends here

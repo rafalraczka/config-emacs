@@ -1,4 +1,4 @@
-;;; init-magit.el --- magit configuration -*- lexical-binding: t -*-
+;;; config-magit.el --- magit configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -35,6 +35,6 @@
 
 )
 
-(provide 'init-magit)
+(provide 'config-magit)
 
-;;; init-magit.el ends here
+;;; config-magit.el ends here

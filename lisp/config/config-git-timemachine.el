@@ -1,4 +1,4 @@
-;;; init-git-timemachine.el --- git-timemachine configuration -*- lexical-binding: t -*-
+;;; config-git-timemachine.el --- git-timemachine configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'git-timemachine)
 
-(provide 'init-git-timemachine)
+(provide 'config-git-timemachine)
 
-;;; init-git-timemachine.el ends here
+;;; config-git-timemachine.el ends here

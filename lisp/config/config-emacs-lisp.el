@@ -1,4 +1,4 @@
-;;; init-emacs-lisp.el --- emacs-lisp configuration -*- lexical-binding: t -*-
+;;; config-emacs-lisp.el --- emacs-lisp configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 ;;
@@ -26,14 +26,14 @@
 
 (with-eval-after-load 'lisp-mode
 
-  (with-eval-after-load 'init-company
+  (with-eval-after-load 'config-company
     (add-hook 'emacs-lisp-mode-hook 'company-mode))
 
-  (with-eval-after-load 'init-flycheck
+  (with-eval-after-load 'config-flycheck
     (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
 
   )
 
-(provide 'init-emacs-lisp)
+(provide 'config-emacs-lisp)
 
-;;; init-emacs-lisp.el ends here
+;;; config-emacs-lisp.el ends here

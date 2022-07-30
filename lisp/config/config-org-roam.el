@@ -1,4 +1,4 @@
-;;; init-org-roam.el --- org-roam configuration -*- lexical-binding: t -*-
+;;; config-org-roam.el --- org-roam configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -66,6 +66,6 @@
 
   )
 
-(provide 'init-org-roam)
+(provide 'config-org-roam)
 
-;;; init-org-roam.el ends here
+;;; config-org-roam.el ends here

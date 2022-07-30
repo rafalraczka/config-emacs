@@ -1,4 +1,4 @@
-;;; init-exwm.el --- EXMW configuration -*- lexical-binding: t -*-
+;;; config-exwm.el --- EXMW configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'exwm)
 
-(provide 'init-exwm)
+(provide 'config-exwm)
 
-;;; init-exwm.el ends here
+;;; config-exwm.el ends here

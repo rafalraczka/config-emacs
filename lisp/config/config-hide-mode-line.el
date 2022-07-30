@@ -1,4 +1,4 @@
-;;; init-hide-mode-line.el --- hide-mode-line configuration -*- lexical-binding: t -*-
+;;; config-hide-mode-line.el --- hide-mode-line configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'hide-mode-line)
 
-(provide 'init-hide-mode-line)
+(provide 'config-hide-mode-line)
 
-;;; init-hide-mode-line.el ends here
+;;; config-hide-mode-line.el ends here

@@ -1,4 +1,4 @@
-;;; init-lilypond.el --- lilypond configuration -*- lexical-binding: t -*-
+;;; config-lilypond.el --- lilypond configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -32,6 +32,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
 
-(provide 'init-lilypond)
+(provide 'config-lilypond)
 
-;;; init-lilypond.el ends here
+;;; config-lilypond.el ends here

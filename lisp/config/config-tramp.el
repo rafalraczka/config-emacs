@@ -1,4 +1,4 @@
-;;; init-tramp.el --- tramp configuration -*- lexical-binding: t -*-
+;;; config-tramp.el --- tramp configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (setq tramp-default-method "ssh")
 
-(provide 'init-tramp)
+(provide 'config-tramp)
 
-;;; init-tramp.el ends here
+;;; config-tramp.el ends here

@@ -1,4 +1,4 @@
-;;; init-magit-todos.el --- magit-todos-configuration -*- lexical-binding: t -*-
+;;; config-magit-todos.el --- magit-todos-configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -29,6 +29,6 @@
 (with-eval-after-load 'magit
   (magit-todos-mode))
 
-(provide 'init-magit-todos)
+(provide 'config-magit-todos)
 
-;;; init-magit-todos.el ends here
+;;; config-magit-todos.el ends here

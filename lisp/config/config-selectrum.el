@@ -1,4 +1,4 @@
-;;; init-selectrum.el --- selectrum configuration -*- lexical-binding: t -*-
+;;; config-selectrum.el --- selectrum configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -28,6 +28,6 @@
 
 (add-hook 'my-init-first-interaction-hook #'selectrum-mode)
 
-(provide 'init-selectrum)
+(provide 'config-selectrum)
 
-;;; init-selectrum.el ends here
+;;; config-selectrum.el ends here

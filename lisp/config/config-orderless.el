@@ -1,4 +1,4 @@
-;;; init-orderless.el --- orderless configuration -*- lexical-binding: t -*-
+;;; config-orderless.el --- orderless configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -29,6 +29,6 @@
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 (setq completion-styles '(orderless basic))
 
-(provide 'init-orderless)
+(provide 'config-orderless)
 
-;;; init-orderless.el ends here
+;;; config-orderless.el ends here

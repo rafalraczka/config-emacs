@@ -1,4 +1,4 @@
-;;; init-custom.el --- custom configuration -*- lexical-binding: t -*-
+;;; config-custom.el --- custom configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -32,6 +32,6 @@
 
 (add-hook 'after-init-hook 'my/custom-load-custom-file)
 
-(provide 'init-custom)
+(provide 'config-custom)
 
-;;; init-custom.el ends here
+;;; config-custom.el ends here

@@ -1,4 +1,4 @@
-;;; init-citar.el --- citar configuration -*- lexical-binding: t -*-
+;;; config-citar.el --- citar configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -32,7 +32,7 @@
   (setq citar-library-paths my-envi-bib-files-directories)
   (setq citar-notes-paths (list my-envi-ref-notes-directory))
 
-  (with-eval-after-load 'init-embark
+  (with-eval-after-load 'config-embark
     (setq citar-at-point-function 'embark-act))
 
   (with-eval-after-load 'modus-themes
@@ -46,6 +46,6 @@
 
   )
 
-(provide 'init-citar)
+(provide 'config-citar)
 
-;;; init-citar.el ends here
+;;; config-citar.el ends here

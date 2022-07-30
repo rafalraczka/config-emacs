@@ -1,4 +1,4 @@
-;;; init-dired-single.el --- dired-single configuration -*- lexical-binding: t -*-
+;;; config-dired-single.el --- dired-single configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'dired-single)
 
-(provide 'init-dired-single)
+(provide 'config-dired-single)
 
-;;; init-dired-single.el ends here
+;;; config-dired-single.el ends here

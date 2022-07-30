@@ -1,4 +1,4 @@
-;;; init-langtool.el --- langtool configuration -*- lexical-binding: t -*-
+;;; config-langtool.el --- langtool configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -30,6 +30,6 @@
   (setq langtool-java-classpath
 	"/usr/share/languagetool:/usr/share/java/languagetool/*"))
 
-(provide 'init-langtool)
+(provide 'config-langtool)
 
-;;; init-langtool.el ends here
+;;; config-langtool.el ends here

@@ -1,4 +1,4 @@
-;;; init-presentation.el --- presentation configuration -*- lexical-binding: t -*-
+;;; config-presentation.el --- presentation configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 ;;
@@ -43,6 +43,6 @@
 
   )
 
-(provide 'init-presentation)
+(provide 'config-presentation)
 
-;;; init-presentation.el ends here
+;;; config-presentation.el ends here

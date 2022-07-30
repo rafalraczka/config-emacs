@@ -1,4 +1,4 @@
-;;; init-projectile.el --- projectile configuration -*- lexical-binding: t -*-
+;;; config-projectile.el --- projectile configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -34,6 +34,6 @@
 
   )
 
-(provide 'init-projectile)
+(provide 'config-projectile)
 
-;;; init-projectile.el ends here
+;;; config-projectile.el ends here

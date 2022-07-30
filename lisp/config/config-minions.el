@@ -1,4 +1,4 @@
-;;; init-minions.el --- minions configuration -*- lexical-binding: t -*-
+;;; config-minions.el --- minions configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -28,6 +28,6 @@
 
 (add-hook 'after-init-hook 'minions-mode)
 
-(provide 'init-minions)
+(provide 'config-minions)
 
-;;; init-minions.el ends here
+;;; config-minions.el ends here

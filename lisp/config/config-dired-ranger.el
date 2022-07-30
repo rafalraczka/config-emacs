@@ -1,4 +1,4 @@
-;;; init-dired-ranger.el --- dired-ranger configuration -*- lexical-binding: t -*-
+;;; config-dired-ranger.el --- dired-ranger configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'dired-ranger)
 
-(provide 'init-dired-ranger)
+(provide 'config-dired-ranger)
 
-;;; init-dired-ranger.el ends here
+;;; config-dired-ranger.el ends here

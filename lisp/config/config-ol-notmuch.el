@@ -1,4 +1,4 @@
-;;; init-ol-notmuch.el --- ol-notmuch configuration -*- lexical-binding: t -*-
+;;; config-ol-notmuch.el --- ol-notmuch configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'ol-notmuch)
 
-(provide 'init-ol-notmuch)
+(provide 'config-ol-notmuch)
 
-;;; init-ol-notmuch.el ends here
+;;; config-ol-notmuch.el ends here

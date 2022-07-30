@@ -1,4 +1,4 @@
-;;; init-marginalia.el --- marginalia configuration -*- lexical-binding: t -*-
+;;; config-marginalia.el --- marginalia configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -28,6 +28,6 @@
 
 (add-hook 'my-init-first-interaction-hook #'marginalia-mode)
 
-(provide 'init-marginalia)
+(provide 'config-marginalia)
 
-;;; init-marginalia.el ends here
+;;; config-marginalia.el ends here

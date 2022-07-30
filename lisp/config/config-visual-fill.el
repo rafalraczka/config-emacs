@@ -1,4 +1,4 @@
-;;; init-visual-fill.el --- visual-fill configuration -*- lexical-binding: t -*-
+;;; config-visual-fill.el --- visual-fill configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'visual-fill)
 
-(provide 'init-visual-fill)
+(provide 'config-visual-fill)
 
-;;; init-visual-fill.el ends here
+;;; config-visual-fill.el ends here

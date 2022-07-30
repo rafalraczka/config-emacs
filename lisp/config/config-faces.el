@@ -1,4 +1,4 @@
-;;; init-faces.el --- faces configuration -*- lexical-binding: t -*-
+;;; config-faces.el --- faces configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (set-face-attribute 'default nil :height 120 :family "JuliaMono")
 
-(provide 'init-faces)
+(provide 'config-faces)
 
-;;; init-faces.el ends here
+;;; config-faces.el ends here

@@ -1,4 +1,4 @@
-;;; init-format-all.el --- format-all configuration -*- lexical-binding: t -*-
+;;; config-format-all.el --- format-all configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka
 
@@ -33,6 +33,6 @@
 
   )
 
-(provide 'init-format-all)
+(provide 'config-format-all)
 
-;;; init-format-all.el ends here
+;;; config-format-all.el ends here

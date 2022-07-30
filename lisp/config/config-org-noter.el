@@ -1,4 +1,4 @@
-;;; init-org-noter.el --- org-noter configuration -*- lexical-binding: t -*-
+;;; config-org-noter.el --- org-noter configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -34,6 +34,6 @@
 (with-eval-after-load 'org
   (require 'org-noter))
 
-(provide 'init-org-noter)
+(provide 'config-org-noter)
 
-;;; init-org-noter.el ends here
+;;; config-org-noter.el ends here

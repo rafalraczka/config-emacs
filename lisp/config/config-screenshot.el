@@ -1,4 +1,4 @@
-;;; init-screenshot.el --- screenshot configuration -*- lexical-binding: t -*-
+;;; config-screenshot.el --- screenshot configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -52,6 +52,6 @@
 
   )
 
-(provide 'init-screenshot)
+(provide 'config-screenshot)
 
-;;; init-screenshot.el ends here
+;;; config-screenshot.el ends here

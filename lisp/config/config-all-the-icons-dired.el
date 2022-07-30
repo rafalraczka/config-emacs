@@ -1,4 +1,4 @@
-;;; init-all-the-icons-dired.el --- all-the-icons-dired configuration -*- lexical-binding: t -*-
+;;; config-all-the-icons-dired.el --- all-the-icons-dired configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -32,6 +32,6 @@
 
   )
 
-(provide 'init-all-the-icons-dired)
+(provide 'config-all-the-icons-dired)
 
-;;; init-all-the-icons-dired.el ends here
+;;; config-all-the-icons-dired.el ends here

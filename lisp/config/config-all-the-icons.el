@@ -1,4 +1,4 @@
-;;; init-all-the-icons.el --- all-the-icons configuration -*- lexical-binding: t -*-
+;;; config-all-the-icons.el --- all-the-icons configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -33,6 +33,6 @@
 
   )
 
-(provide 'init-all-the-icons)
+(provide 'config-all-the-icons)
 
-;;; init-all-the-icons.el ends here
+;;; config-all-the-icons.el ends here

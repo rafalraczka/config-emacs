@@ -1,4 +1,4 @@
-;;; init-modus-themes.el --- modus-themes configuration -*- lexical-binding: t -*-
+;;; config-modus-themes.el --- modus-themes configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -88,6 +88,6 @@
                                                (fg-comment-yellow . "#d0ba95")))
   )
 
-(provide 'init-modus-themes)
+(provide 'config-modus-themes)
 
-;;; init-modus-themes.el ends here
+;;; config-modus-themes.el ends here

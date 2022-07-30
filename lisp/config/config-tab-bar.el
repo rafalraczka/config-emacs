@@ -1,4 +1,4 @@
-;;; init-tab-bar.el --- tab-bar configuration -*- lexical-binding: t -*-
+;;; config-tab-bar.el --- tab-bar configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -33,6 +33,6 @@
   (setq tab-bar-tab-name-function 'tab-bar-tab-name-truncated)
   (setq tab-bar-tab-name-truncated-max 10))
 
-(provide 'init-tab-bar)
+(provide 'config-tab-bar)
 
-;;; init-tab-bar.el ends here
+;;; config-tab-bar.el ends here

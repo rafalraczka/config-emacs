@@ -1,4 +1,4 @@
-;;; init-flycheck.el --- flycheck configuration -*- lexical-binding: t -*-
+;;; config-flycheck.el --- flycheck configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,6 +26,6 @@
 
 (my/package-ensure 'flycheck)
 
-(provide 'init-flycheck)
+(provide 'config-flycheck)
 
-;;; init-flycheck.el ends here
+;;; config-flycheck.el ends here
