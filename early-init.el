@@ -3,7 +3,7 @@
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
-;; URL: https://github.com/rafalraczka/emacs-config
+;; URL: https://git.sr.ht/~rafalraczka/emacs-config
 
 ;; This file is NOT part of GNU Emacs.
 
