@@ -26,7 +26,7 @@
 
 (my/package-ensure 'undo-tree)
 
-(add-hook 'my-init-first-interaction-hook #'global-undo-tree-mode)
+(add-hook 'core-utils-first-interaction-hook #'global-undo-tree-mode)
 
 (with-eval-after-load 'undo-tree
   (setq undo-tree-auto-save-history nil))

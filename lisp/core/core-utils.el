@@ -1,4 +1,4 @@
-;;; my-init.el --- Utilities for Emacs initialization -*- lexical-binding: t; -*-
+;;; core-utils.el --- Utilities for Emacs initialization -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,25 +24,25 @@
 
 ;;; Code:
 
-(defvar my-init-after-startup-time nil
+(defvar core-utils-after-startup-time nil
   "Value of `current-time' after `after-init' hooks.")
 
-(defvar my-init-gcs-done-during-init nil
+(defvar core-utils-gcs-done-during-init nil
   "Number of garbage collections done after the Emacs initialization.")
 
-(defvar my-init-gcs-done-during-startup nil
+(defvar core-utils-gcs-done-during-startup nil
   "Number of garbage collections done after the Emacs startup.")
 
-(defvar my-init-first-interaction-hook nil
+(defvar core-utils-first-interaction-hook nil
   "Normal hook run before first interaction in the Emacs session.
 The first interaction is considered to be the first command call
 or first `find-file' non-interactive call.")
 
-(defun my-init-benchmark ()
+(defun core-utils-benchmark ()
   "Return benchmark of the Emacs startup."
   (interactive)
   (let ((init-time (float-time (time-subtract after-init-time before-init-time)))
-	(startup-time (float-time (time-subtract my-init-after-startup-time before-init-time))))
+	(startup-time (float-time (time-subtract core-utils-after-startup-time before-init-time))))
     (message (concat "         Emacs startup time         \n"
 	             "                                    \n"
 	             "| stage       | time [s] | gcs     |\n"
@@ -52,31 +52,31 @@ or first `find-file' non-interactive call.")
 	             "+-------------+----------+---------+\n"
 	             "| startup:    | %.2e | %.1e |")
              init-time
-             my-init-gcs-done-during-init
+             core-utils-gcs-done-during-init
              (- startup-time init-time)
-             (- my-init-gcs-done-during-startup my-init-gcs-done-during-init)
+             (- core-utils-gcs-done-during-startup core-utils-gcs-done-during-init)
              startup-time
-             my-init-gcs-done-during-startup)))
+             core-utils-gcs-done-during-startup)))
 
-(defun my-init-check-emacs-version (ver)
+(defun core-utils-check-emacs-version (ver)
   "Give warning about old Emacs if `emacs-version' is lower than VER."
   (when (version< emacs-version ver)
     (warn "%s %s\n  %s %s %s"
           "Your Emacs version is" emacs-version
 	  "this configuration was only tested with version" ver "or higher")))
 
-(defun my-init-run-first-interaction-hook ()
-  "Run `my-init-first-interaction-hook'."
-  (run-hooks 'my-init-first-interaction-hook)
-  (remove-hook 'find-file-hook #'my-init-run-first-interaction-hook)
-  (remove-hook 'pre-command-hook #'my-init-run-first-interaction-hook))
+(defun core-utils-run-first-interaction-hook ()
+  "Run `core-utils-first-interaction-hook'."
+  (run-hooks 'core-utils-first-interaction-hook)
+  (remove-hook 'find-file-hook #'core-utils-run-first-interaction-hook)
+  (remove-hook 'pre-command-hook #'core-utils-run-first-interaction-hook))
 
-(defun my-init-set-after-startup-time ()
-  "Set `my-init-after-startup-time' value to the value of `current-time'."
-  (unless my-init-after-startup-time
-    (setq my-init-after-startup-time (current-time))))
+(defun core-utils-set-after-startup-time ()
+  "Set `core-utils-after-startup-time' value to the value of `current-time'."
+  (unless core-utils-after-startup-time
+    (setq core-utils-after-startup-time (current-time))))
 
-(defun my-init-set-gc-cons-threshold (th &optional init-th)
+(defun core-utils-set-gc-cons-threshold (th &optional init-th)
   "Set `gc-cons-threshold' value equal to TH.
 If INIT-TH is provided then set its value for the initialization
 and change to TH value after the Emacs startup."
@@ -86,30 +86,30 @@ and change to TH value after the Emacs startup."
 		       (lambda () (setq gc-cons-threshold th))))
     (setq gc-cons-threshold th)))
 
-(defun my-init-set-init-gcs-done ()
-  "Set `my-init-gcs-done-during-init' value to the current value of `gcs-done'."
-  (unless my-init-gcs-done-during-init
-    (setq my-init-gcs-done-during-init gcs-done)))
+(defun core-utils-set-init-gcs-done ()
+  "Set `core-utils-gcs-done-during-init' value to the current value of `gcs-done'."
+  (unless core-utils-gcs-done-during-init
+    (setq core-utils-gcs-done-during-init gcs-done)))
 
-(defun my-init-set-startup-gcs-done ()
-  "Set `my-init-gcs-done-during-startup' value to the current value of `gcs-done'."
-  (unless my-init-gcs-done-during-startup
-    (setq my-init-gcs-done-during-startup gcs-done)))
+(defun core-utils-set-startup-gcs-done ()
+  "Set `core-utils-gcs-done-during-startup' value to the current value of `gcs-done'."
+  (unless core-utils-gcs-done-during-startup
+    (setq core-utils-gcs-done-during-startup gcs-done)))
 
-(add-hook 'after-init-hook 'my-init-set-init-gcs-done -100)
-(add-hook 'emacs-startup-hook 'my-init-benchmark 100)
-(add-hook 'emacs-startup-hook 'my-init-set-startup-gcs-done 99)
-(add-hook 'emacs-startup-hook 'my-init-set-after-startup-time 99)
-(add-hook 'find-file-hook #'my-init-run-first-interaction-hook -50)
-(add-hook 'pre-command-hook #'my-init-run-first-interaction-hook -50)
+(add-hook 'after-init-hook 'core-utils-set-init-gcs-done -100)
+(add-hook 'emacs-startup-hook 'core-utils-benchmark 100)
+(add-hook 'emacs-startup-hook 'core-utils-set-startup-gcs-done 99)
+(add-hook 'emacs-startup-hook 'core-utils-set-after-startup-time 99)
+(add-hook 'find-file-hook #'core-utils-run-first-interaction-hook -50)
+(add-hook 'pre-command-hook #'core-utils-run-first-interaction-hook -50)
 
-(my-init-check-emacs-version "27.2")
+(core-utils-check-emacs-version "27.2")
 
-(my-init-set-gc-cons-threshold 33554432 ; (* 32 1024 1024)
+(core-utils-set-gc-cons-threshold 33554432 ; (* 32 1024 1024)
 			       134217728) ; (* 128 1024 1024)
 
 ;;; Footer:
 
-(provide 'my-init)
+(provide 'core-utils)
 
-;;; my-init.el ends here
+;;; core-utils.el ends here

@@ -26,7 +26,7 @@
 
 (my/package-ensure 'which-key)
 
-(add-hook 'my-init-first-interaction-hook #'which-key-mode)
+(add-hook 'core-utils-first-interaction-hook #'which-key-mode)
 
 (with-eval-after-load 'which-key
 

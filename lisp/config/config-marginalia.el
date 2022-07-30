@@ -26,7 +26,7 @@
 
 (my/package-ensure 'marginalia)
 
-(add-hook 'my-init-first-interaction-hook #'marginalia-mode)
+(add-hook 'core-utils-first-interaction-hook #'marginalia-mode)
 
 ;;; Footer:
 

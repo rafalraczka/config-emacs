@@ -30,7 +30,7 @@
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
   (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode)))
 
-(add-hook 'my-init-first-interaction-hook #'my/yaml-mode-add-to-auto-mode-alist)
+(add-hook 'core-utils-first-interaction-hook #'my/yaml-mode-add-to-auto-mode-alist)
 
 ;;; Footer:
 

@@ -42,7 +42,7 @@
     (push action
           display-buffer-alist)))
 
-  (add-hook 'my-init-first-interaction-hook #'my/help-set-display-buffer-action)
+  (add-hook 'core-utils-first-interaction-hook #'my/help-set-display-buffer-action)
 
 ;;; Footer:
 

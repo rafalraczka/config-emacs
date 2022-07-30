@@ -26,7 +26,7 @@
 
 (my/package-ensure 'projectile)
 
-(add-hook 'my-init-first-interaction-hook #'projectile-mode)
+(add-hook 'core-utils-first-interaction-hook #'projectile-mode)
 
 (with-eval-after-load 'projectile
 

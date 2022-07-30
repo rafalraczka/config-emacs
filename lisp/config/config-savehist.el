@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(add-hook 'my-init-first-interaction-hook #'savehist-mode)
+(add-hook 'core-utils-first-interaction-hook #'savehist-mode)
 
 ;;; Footer:
 

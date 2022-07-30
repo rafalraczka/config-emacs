@@ -34,7 +34,7 @@
 	(message-log-max nil))
     (yas-global-mode)))
 
-(add-hook 'my-init-first-interaction-hook #'my/yasnippet-global-mode-no-message)
+(add-hook 'core-utils-first-interaction-hook #'my/yasnippet-global-mode-no-message)
 
 (with-eval-after-load 'yasnippet
 

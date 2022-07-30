@@ -26,7 +26,7 @@
 
 (my/package-ensure 'beacon)
 
-(add-hook 'my-init-first-interaction-hook 'beacon-mode)
+(add-hook 'core-utils-first-interaction-hook 'beacon-mode)
 
 (with-eval-after-load 'beacon
 

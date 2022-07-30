@@ -26,7 +26,7 @@
 
 (my/package-ensure 'vertico)
 
-(add-hook 'my-init-first-interaction-hook #'vertico-mode)
+(add-hook 'core-utils-first-interaction-hook #'vertico-mode)
 
 ;;; Footer:
 
