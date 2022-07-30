@@ -52,9 +52,9 @@
   ;; This is quick fix for Windows when Polish diacritics in data caused
   ;; problems.
 
-  (when my-envi-windows
+  (when core-envi-windows
     (defun my/ess-r-set-iso-latin-1-coding-system ()
-      (if my-envi-windows (set-buffer-file-coding-system 'iso-latin-1)))
+      (if core-envi-windows (set-buffer-file-coding-system 'iso-latin-1)))
 
     (add-hook 'ess-r-post-run-hook 'my/ess-r-set-iso-latin-1-coding-system))
 

@@ -30,7 +30,7 @@
 
 (with-eval-after-load 'projectile
 
-  (setq projectile-project-search-path my-envi-projects-directory)
+  (setq projectile-project-search-path core-envi-projects-directory)
 
   )
 

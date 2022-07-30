@@ -28,9 +28,9 @@
 
 (with-eval-after-load 'citar
 
-  (setq citar-bibliography my-envi-bib-files)
-  (setq citar-library-paths my-envi-bib-files-directories)
-  (setq citar-notes-paths (list my-envi-ref-notes-directory))
+  (setq citar-bibliography core-envi-bib-files)
+  (setq citar-library-paths core-envi-bib-files-directories)
+  (setq citar-notes-paths (list core-envi-ref-notes-directory))
 
   (with-eval-after-load 'config-embark
     (setq citar-at-point-function 'embark-act))

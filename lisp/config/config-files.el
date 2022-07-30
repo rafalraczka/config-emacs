@@ -44,7 +44,7 @@
 ;; Sources
 ;; - https://emacstragic.net/uncategorized/editing-files-using-sudo-and-emacs/
 
-(let ((dir (cond (my-envi-chemacs-directory)
+(let ((dir (cond (core-envi-chemacs-directory)
 		 (user-emacs-directory))))
   (setq auto-save-file-name-transforms`((".*" ,(concat dir "auto-saves/") t)))
   (setq backup-directory-alist `(("." . ,(concat dir "backups/")))))

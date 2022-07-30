@@ -30,7 +30,7 @@
 
   (setq aw-dispatch-when-more-than 1)
 
-  (if my-envi-exwm-required
+  (if core-envi-exwm-required
     (setq aw-scope 'frame)
     (setq aw-scope 'visible))
 

@@ -44,12 +44,12 @@
   (add-hook 'org-mode-hook #'my/org-mode-config)
   (add-hook 'org-mode-hook #'visual-line-mode)
 
-  (setq org-cite-global-bibliography my-envi-bib-files)
+  (setq org-cite-global-bibliography core-envi-bib-files)
   (setq org-default-priority ?C)
 
   ;; Default directory for org files.
 
-  (setq org-directory my-envi-org-directory)
+  (setq org-directory core-envi-org-directory)
   (setq org-ellipsis "…")
 
   ;; Hide all leading stars in a heading except the last one.

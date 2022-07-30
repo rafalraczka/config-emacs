@@ -39,7 +39,7 @@
 
 (add-hook 'after-init-hook 'doom-modeline-mode)
 
-(if my-envi-daemon
+(if core-envi-daemon
     (add-hook 'server-after-make-frame-hook 'my/doom-modeline-set-faces)
   (add-hook 'after-init-hook 'my/doom-modeline-set-faces 50))
 

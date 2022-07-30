@@ -1,4 +1,4 @@
-;;; my-envi.el --- Environment configuration -*- lexical-binding: t; -*-
+;;; core-envi.el --- Environment configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,83 +26,83 @@
 
 ;;;; System dependent variables -------
 
-(defun my-envi-android-p ()
+(defun core-envi-android-p ()
   "Return t if current system is Android, and return nil otherwise."
   (string-equal "Android\n" (shell-command-to-string "uname -o")))
 
-(defun my-envi-gnu-linux-p ()
+(defun core-envi-gnu-linux-p ()
   "Return t if current system is GNU/Linux, and return nil otherwise."
   (eq system-type 'gnu/linux))
 
-(defun my-envi-windows-p ()
+(defun core-envi-windows-p ()
   "Return t if current system is Windows, and return nil otherwise."
   (eq system-type 'windows-nt))
 
-(defconst my-envi-android (my-envi-android-p)
+(defconst core-envi-android (core-envi-android-p)
   "This constant specify whatever user is using Emacs on device with Android system.")
 
-(defconst my-envi-gnu-linux (my-envi-gnu-linux-p)
+(defconst core-envi-gnu-linux (core-envi-gnu-linux-p)
   "This constant specify whatever user is using Emacs on device with GNU/Linux system.")
 
-(defconst my-envi-windows (my-envi-windows-p)
+(defconst core-envi-windows (core-envi-windows-p)
   "This constant specify whatever user is using Emacs on device with Windows system.")
 
-(defconst my-envi-daemon (daemonp))
+(defconst core-envi-daemon (daemonp))
 
 ;;;; Paths ----------------------------
 
-(defconst my-envi-user-files-directory
-  (if my-envi-android
+(defconst core-envi-user-files-directory
+  (if core-envi-android
       "~/storage/shared/"
     "~/")
   "Default directory where user stores files.")
 
-(defun my-envi-concat-library-file-directory (path)
+(defun core-envi-concat-library-file-directory (path)
   (concat (file-name-directory path) "files/"))
 
-(defconst my-envi-library-directory
-  (let ((dir (expand-file-name "library/" my-envi-user-files-directory)))
+(defconst core-envi-library-directory
+  (let ((dir (expand-file-name "library/" core-envi-user-files-directory)))
     (when (file-exists-p dir)
       dir))
   "Default directory where user stores publications and its metadata.")
 
-(defconst my-envi-bib-files
-  (when my-envi-library-directory
-    (directory-files-recursively my-envi-library-directory "\\.bib$")))
+(defconst core-envi-bib-files
+  (when core-envi-library-directory
+    (directory-files-recursively core-envi-library-directory "\\.bib$")))
 
-(defconst my-envi-bib-files-directories
-  (when my-envi-library-directory
-    (mapcar 'my-envi-concat-library-file-directory my-envi-bib-files)))
+(defconst core-envi-bib-files-directories
+  (when core-envi-library-directory
+    (mapcar 'core-envi-concat-library-file-directory core-envi-bib-files)))
 
-(defconst my-envi-chemacs-directory
+(defconst core-envi-chemacs-directory
   (when-let ((file (car (rassoc '((require . chemacs)) load-history))))
     (file-name-directory file))
   "This constant specify directory from which chemacs.el has been required.
 If Chemacs is not in use in current session the constant value is
 nil.")
 
-(defconst my-envi-org-directory
-  (expand-file-name "org" my-envi-user-files-directory)
+(defconst core-envi-org-directory
+  (expand-file-name "org" core-envi-user-files-directory)
   "Default directory where user stores org files.")
 
-(defconst my-envi-projects-directory
-  (list (expand-file-name "projects/" my-envi-user-files-directory))
+(defconst core-envi-projects-directory
+  (list (expand-file-name "projects/" core-envi-user-files-directory))
   "Default directory with projects.")
 
-(defconst my-envi-ref-notes-directory
-  (expand-file-name "references" my-envi-org-directory))
+(defconst core-envi-ref-notes-directory
+  (expand-file-name "references" core-envi-org-directory))
 
 ;;;; Others ---------------------------
 
 
-(defun my-envi-exwm-require-p ()
+(defun core-envi-exwm-require-p ()
   (and (member "--use-exwm" command-line-args)
        (eq window-system 'x)))
 
-(defconst my-envi-exwm-required (my-envi-exwm-require-p))
+(defconst core-envi-exwm-required (core-envi-exwm-require-p))
 
 ;;; Footer:
 
-(provide 'my-envi)
+(provide 'core-envi)
 
-;;; my-envi.el ends here
+;;; core-envi.el ends here
