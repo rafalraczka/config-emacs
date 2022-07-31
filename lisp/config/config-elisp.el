@@ -1,4 +1,4 @@
-;;; config-emacs-lisp.el --- emacs-lisp configuration -*- lexical-binding: t; -*-
+;;; config-elisp.el --- elisp configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 ;;
@@ -36,6 +36,6 @@
 
 ;;; Footer:
 
-(provide 'config-emacs-lisp)
+(provide 'config-elisp)
 
-;;; config-emacs-lisp.el ends here
+;;; config-elisp.el ends here
