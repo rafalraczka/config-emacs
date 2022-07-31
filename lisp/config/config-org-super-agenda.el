@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-org-super-agenda.el ---  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,33 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
-
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq my/org-super-agenda-groups
+      '(
+        (:name "! Important"
+               :priority>= ("B")
+               :order 1)
+        (:name "! Overdue"
+               :deadline past
+               :order 5)
+        (:name "! Behind schedule"
+               :scheduled past
+               :order 8)
+        (:name "Today"
+               :deadline today
+               :scheduled today
+               :order 10)
+        (:name "Unfinished"
+               :todo "STRT"
+               :order 15)
+        (:name "Waiting"
+               :todo "WAIT"
+               :order 60)
+        ))
+(setq org-super-agenda-unmatched-name "Other items")
+(setq org-super-agenda-unmatched-order 50)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-org-super-agenda)
 
-;;; init.el ends here
+;;; config-org-super-agenda.el ends here

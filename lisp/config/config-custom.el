@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-custom.el --- custom configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,17 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(defun config-custom-load-custom-file ()
+  (when (file-exists-p custom-file)
+    (load custom-file)))
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(add-hook 'after-init-hook #'config-custom-load-custom-file)
 
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq custom-file
+      (expand-file-name "config-custom-file.el" user-emacs-directory))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-custom)
 
-;;; init.el ends here
+;;; config-custom.el ends here

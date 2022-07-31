@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; init-core.el --- core initialization -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,12 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/core/" user-emacs-directory))
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(require 'core)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'init-core)
 
-;;; init.el ends here
+;;; init-core.el ends here

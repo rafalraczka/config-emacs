@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-hl-todo.el --- hl-todo configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,10 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
-
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq hl-todo-highlight-punctuation ":")
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-hl-todo)
 
-;;; init.el ends here
+;;; config-hl-todo.el ends here

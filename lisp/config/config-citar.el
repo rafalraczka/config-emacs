@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-citar.el --- citar configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,24 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'embark)
+(require 'modus-themes)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(setq citar-at-point-function 'embark-act)
+(setq citar-bibliography core-envi-bib-files)
+(setq citar-library-paths core-envi-bib-files-directories)
+(setq citar-notes-paths (list core-envi-ref-notes-directory))
 
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(let ((file-col (cdr (assoc 'magenta-intense modus-themes-vivendi-colors)))
+      (link-col (cdr (assoc 'blue-intense modus-themes-vivendi-colors)))
+      (note-col (cdr (assoc 'cyan-intense modus-themes-vivendi-colors))))
+  (setq citar-symbols
+        `((file ,(propertize "F" 'face (list :foreground file-col)) . " ")
+          (link ,(propertize "L" 'face (list :foreground link-col)) . " ")
+          (note ,(propertize "N" 'face (list :foreground note-col)) . " "))))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-citar)
 
-;;; init.el ends here
+;;; config-citar.el ends here

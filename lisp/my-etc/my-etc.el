@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; my-etc.el --- miscellaneous tools -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,23 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+;;;###autoload
+(defun my-etc-blink-mode-line-bg (&optional color)
+  (let ((blink-color (or color "#762422"))
+        (original-color (face-background 'mode-line)))
+    (set-face-background 'mode-line blink-color)
+    (run-with-idle-timer 0.1 nil
+                         (lambda (col) (set-face-background 'mode-line col))
+                         original-color)))
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+;;;###autoload
+(defun my-etc-upcase-previous-word ()
+  "Convert to upper case from point to the beginning of word and do not move."
+  (interactive)
+  (upcase-word -1))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'my-etc)
 
-;;; init.el ends here
+;;; my-etc.el ends here

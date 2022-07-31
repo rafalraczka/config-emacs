@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-screenshot.el --- screenshot configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,28 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'smartparens)
+(require 'flyspell)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(setq screenshot-border-width 0)
+(setq screenshot-shadow-offset-horizontal 0)
+(setq screenshot-shadow-offset-vertical 0)
+(setq screenshot-shadow-radius 0)
 
-(add-to-list 'load-path init-directory)
+(defun my/screenshot-disable-flyspell-mode ()
+  (flyspell-mode -1))
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(defun my/screenshot-disable-show-smartparens-mode ()
+  (show-smartparens-mode -1))
+
+(add-hook 'screenshot-buffer-creation-hook
+          #'my/screenshot-disable-flyspell-mode)
+
+(add-hook 'screenshot-buffer-creation-hook
+          #'my/screenshot-disable-show-smartparens-mode)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-screenshot)
 
-;;; init.el ends here
+;;; config-screenshot.el ends here

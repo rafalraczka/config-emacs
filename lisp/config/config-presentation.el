@@ -1,12 +1,12 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-presentation.el --- presentation configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
-
+;;
 ;; Author: Rafał Rączka <info@rafalraczka.com>
 ;; URL: https://git.sr.ht/~rafalraczka/emacs-config
 
 ;; This file is NOT part of GNU Emacs.
-
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
@@ -22,20 +22,23 @@
 
 ;;; Commentary:
 
+;; =presentation= package allows for global usage of the `text-scale-mode'
+;; which effectively alter the height of the default face.  In other words,
+;; this allows to enlarge text in all buffers at once while the
+;; `text-scale-increase', `text-scale-decrease' and toggling `text-scale-mode'
+;; works only locally.  This is an excellent solution to make a presentation
+;; with Emacs when we would like to present more than a single buffer.
+
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+;; `text-scale-mode-amount' equal to 2 is optimal most of the time for me.
+;; For cases when it will not be enough it can be easily adjusted with
+;; `presentation-mode' enabled.
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq presentation-default-text-scale 2)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-presentation)
 
-;;; init.el ends here
+;;; config-presentation.el ends here

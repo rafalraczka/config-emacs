@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-yasnippet.el --- yasnippet configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,19 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'warnings)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defun my/yasnippet-global-mode-no-message ()
+  (let ((inhibit-message t)
+	(message-log-max nil))
+    (yas-global-mode)))
 
-(add-to-list 'load-path init-directory)
+(add-hook 'core-utils-first-interaction-hook #'my/yasnippet-global-mode-no-message)
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(push '(yasnippet backquote-change) warning-suppress-types)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-yasnippet)
 
-;;; init.el ends here
+;;; config-yasnippet.el ends here

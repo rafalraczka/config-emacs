@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-format-all.el --- format-all configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,11 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
-
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq-default format-all-formatters
+              '(("SQL" (pgformatter "--wrap-limit=80" "--wrap-comment"))))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-format-all)
 
-;;; init.el ends here
+;;; config-format-all.el ends here

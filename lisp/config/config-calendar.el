@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-calendar.el --- calendar configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,30 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defun my/calendar-mode-config ()
+  (setq-local fill-column 71))
 
-(add-to-list 'load-path init-directory)
+(add-hook 'calendar-mode-hook #'my/calendar-mode-config)
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+;; By default, calendar is displayed at the bottom of the frame or in the
+;; other window if more then one window is in the current frame and tab
+;; (side windows do not count).  I prefer to have consistent behaviour and
+;; have it always at the bottom of the frame.
+
+(push  '("\\*Calendar\\*"
+         (display-buffer-in-direction)
+         (direction . bottom))
+       display-buffer-alist)
+
+(setq calendar-left-margin 2)
+(setq calendar-date-style 'iso)
+
+(setq calendar-minimum-window-height 9)
+(setq calendar-week-start-day 1)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-calendar)
 
-;;; init.el ends here
+;;; config-calendar.el ends here

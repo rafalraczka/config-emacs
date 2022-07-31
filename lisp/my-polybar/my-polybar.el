@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; my-polybar.el --- Polybar tools -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,32 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(defvar my-polybar-panel-process nil)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+;;;###autoload
+(defun my-polybar-kill-panel ()
+  (interactive)
+  (when my-polybar-panel-process
+    (ignore-errors
+      (kill-process my-polybar-panel-process)))
+  (setq my-polybar-panel-process nil))
 
-(add-to-list 'load-path init-directory)
+;;;###autoload
+(defun my-polybar-start-panel ()
+  (interactive)
+  (my-polybar-kill-panel)
+  (setq my-polybar-panel-process (start-process-shell-command "polybar" nil "polybar panel")))
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+;;;###autoload
+(defun my-polybar-toggle-panel ()
+  "Enable polybar if disabled or disable if enabled."
+  (interactive)
+  (if my-polybar-panel-process
+      (my-polybar-kill-panel)
+    (my-polybar-start-panel)))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'my-polybar)
 
-;;; init.el ends here
+;;; my-polybar.el ends here

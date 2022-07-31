@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-help.el --- help configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,28 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(defun my/help-set-display-buffer-action ()
+  (let* ((w (pcase (frame-width)
+              ((pred (> 40)) 'display-buffer-same-window)
+              ((pred (>= 160)) 0.5)
+              ((pred (>= 240)) 80)
+              ((pred (>= 320)) 0.33)
+              ((pred (>= 400)) 120)))
+         (action (if (symbolp w)
+                     `("\\*Help.*"
+                       (,w))
+                   `("\\*Help.*"
+                     (display-buffer-in-side-window)
+                     (side . left)
+                     (slot . -1)
+                     (window-width . ,w)))))
+    (push action
+          display-buffer-alist)))
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(add-hook 'core-utils-first-interaction-hook #'my/help-set-display-buffer-action)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-help)
 
-;;; init.el ends here
+;;; config-help.el ends here

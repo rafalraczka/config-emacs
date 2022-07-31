@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-lsp-mode.el --- lsp-mode configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,17 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'company)
+(require 'which-key)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(setq lsp-headerline-breadcrumb-enable nil)
+(setq lsp-signature-auto-activate nil)
 
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(add-hook 'lsp-mode-hook #'company-mode)
+(add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-lsp-mode)
 
-;;; init.el ends here
+;;; config-lsp-mode.el ends here

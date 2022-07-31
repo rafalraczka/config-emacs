@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-lsp-pyls.el --- lsp-pyls configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,25 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'company)
+(require 'company-quickhelp)
+(require 'lsp-mode)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defcustom my/lsp-pyls-company-quickhelp-max-lines 5
+  "When not nil, limits the number of lines in the popup in Python mode.")
 
-(add-to-list 'load-path init-directory)
+(defun my/lsp-pyls-set-company-quickhelp-max-lines ()
+  (setq-local company-quickhelp-max-lines
+              my/lsp-pyls-company-quickhelp-max-lines))
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(add-hook 'python-mode-hook #'company-mode)
+(add-hook 'python-mode-hook #'company-quickhelp-local-mode)
+(add-hook 'python-mode-hook #'flyspell-mode)
+(add-hook 'python-mode-hook #'lsp-deferred)
+(add-hook 'python-mode-hook #'my/lsp-pyls-set-company-quickhelp-max-lines)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-lsp-pyls)
 
-;;; init.el ends here
+;;; config-lsp-pyls.el ends here

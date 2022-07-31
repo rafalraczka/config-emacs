@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-startup.el --- startup configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,22 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+;; `initial-major-mode' can be set to change the major
+;; mode of the =*scratch*= buffer.
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(setq initial-major-mode 'fundamental-mode)
 
-(add-to-list 'load-path init-directory)
+;; Changing content of the message for the scratch buffer.
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq initial-scratch-message ";; Scratch\n\n")
+
+;; Preventing startup screen for displaying as the initial screen for Emacs
+;; session.
+
+(setq inhibit-startup-screen t)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-startup)
 
-;;; init.el ends here
+;;; config-startup.el ends here

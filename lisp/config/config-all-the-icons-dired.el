@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-all-the-icons-dired.el --- all-the-icons-dired configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,10 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
-
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(add-hook 'dired-mode-hook #'all-the-icons-dired-mode)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-all-the-icons-dired)
 
-;;; init.el ends here
+;;; config-all-the-icons-dired.el ends here

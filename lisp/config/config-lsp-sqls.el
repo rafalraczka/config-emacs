@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-lsp-sqls.el --- lsp-sqls configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,22 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'lsp-mode)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defun my/lsp-sqls-config-results-buffer ()
+  "Configure buffer with results of the sql query."
+  (when (string-equal (buffer-name) "*sqls results*")
+    (setq truncate-lines t)
+    (when (featurep 'olivetti)
+      (olivetti-mode -1))))
 
-(add-to-list 'load-path init-directory)
+(add-hook 'help-mode-hook #'my/lsp-sqls-config-results-buffer 50)
+(add-hook 'sql-mode-hook #'lsp-deferred)
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq lsp-sqls-workspace-config-path nil)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-lsp-sqls)
 
-;;; init.el ends here
+;;; config-lsp-sqls.el ends here

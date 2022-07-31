@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-org-transclusion.el --- org-transclusion configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,12 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(setq org-transclusion-exclude-elements '(clock drawer planning property-drawer planning))
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(org-transclusion-activate)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-org-transclusion)
 
-;;; init.el ends here
+;;; config-org-transclusion.el ends here

@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-notmuch.el --- notmuch configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,19 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
-
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq notmuch-saved-searches
+      '(
+        (:name "all mail" :query "*" :key "a")
+        (:name "drafts" :query "tag:draft" :key "d")
+        (:name "flagged" :query "tag:flagged" :key "f")
+        (:name "sent" :query "tag:sent" :key "s")
+        (:name "today" :query "date:today" :key "t")
+        (:name "unread" :query "tag:unread" :key "u")
+        (:name "week (this)" :query "date:\"this week\"" :key "w")
+        ))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-notmuch)
 
-;;; init.el ends here
+;;; config-notmuch.el ends here

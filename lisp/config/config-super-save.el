@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-super-save.el --- super-save configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,12 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(add-hook 'core-utils-first-interaction-hook #'super-save-mode)
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq super-save-auto-save-when-idle t)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-super-save)
 
-;;; init.el ends here
+;;; config-super-save.el ends here

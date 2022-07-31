@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-server.el --- server configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,17 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'server)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defun my/server-ensure-server ()
+  "Ensure that the server is running."
+  (unless (server-running-p)
+    (server-start)))
 
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(my/server-ensure-server)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-server)
 
-;;; init.el ends here
+;;; config-server.el ends here

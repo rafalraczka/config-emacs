@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-magit.el --- magit configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,13 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(defun my/magit-mode-config ()
+  (setq-local fill-column 81))
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(add-hook 'magit-mode-hook #'my/magit-mode-config)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-magit)
 
-;;; init.el ends here
+;;; config-magit.el ends here

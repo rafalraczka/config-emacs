@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-text-mode.el --- text-mode configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,21 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(defcustom my/text-mode-fill-column 72
+  "Default `fill-column' for Text mode."
+  :type 'integer)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defun my/text-mode-config ()
+  (setq-local fill-column my/text-mode-fill-column))
 
-(add-to-list 'load-path init-directory)
+(add-hook 'text-mode-hook #'my/text-mode-config)
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(when (executable-find "aspell")
+  (add-hook 'text-mode-hook #'flyspell-mode)
+  (add-hook 'text-mode-hook #'ispell-minor-mode))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-text-mode)
 
-;;; init.el ends here
+;;; config-text-mode.el ends here

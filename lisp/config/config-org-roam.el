@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-org-roam.el --- org-roam configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,30 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(require 'org-roam-overlay)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(defun my/org-roam-buffer-startup ()
+  (when (and (org-roam-buffer-p) (not (buffer-narrowed-p)))
+    (setq org-startup-folded 'show2levels)
+    (org-set-startup-visibility)))
 
-(add-to-list 'load-path init-directory)
+(add-hook 'org-mode-hook #'my/org-roam-buffer-startup)
+(add-hook 'org-mode-hook #'org-roam-db-autosync-mode)
 
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(push '("\\*org-roam\\*"
+        (display-buffer-in-direction)
+        (direction . right)
+        (window-width . 0.33)
+        (window-height . fit-window-to-buffer))
+      display-buffer-alist)
+
+(setq org-roam-completion-everywhere t)
+(setq org-roam-dailies-directory "journal/")
+(setq org-roam-db-extra-links-exclude-keys '((node-property . ("ROAM_REFS"))))
+(setq org-roam-directory org-directory)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-org-roam)
 
-;;; init.el ends here
+;;; config-org-roam.el ends here

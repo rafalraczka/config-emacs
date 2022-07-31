@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-ace-window.el --- ace-window configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,14 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(setq aw-dispatch-when-more-than 1)
 
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(if core-envi-exwm-required
+    (setq aw-scope 'frame)
+  (setq aw-scope 'visible))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-ace-window)
 
-;;; init.el ends here
+;;; config-ace-window.el ends here

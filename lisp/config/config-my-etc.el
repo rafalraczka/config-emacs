@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-my-etc.el --- miscellaneous configurations -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,15 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(advice-add 'yes-or-no-p :override 'y-or-n-p)
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(add-hook 'core-utils-first-interaction-hook #'column-number-mode)
 
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(setq delete-by-moving-to-trash t)
+(setq ring-bell-function 'my-etc-blink-mode-line-bg)
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-my-etc)
 
-;;; init.el ends here
+;;; config-my-etc.el ends here

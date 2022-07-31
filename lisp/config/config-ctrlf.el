@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-ctrlf.el --- ctrlf configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,16 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
+(defun my/ctrlf-disable-local-mode ()
+  (ctrlf-local-mode -1))
 
-(defvar init-files (directory-files init-directory t ".el$"))
+(add-hook 'after-init-hook #'ctrlf-mode)
 
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(with-eval-after-load 'pdf-tools
+  (add-hook 'pdf-isearch-minor-mode-hook #'my/ctrlf-disable-local-mode))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-ctrlf)
 
-;;; init.el ends here
+;;; config-ctrlf.el ends here

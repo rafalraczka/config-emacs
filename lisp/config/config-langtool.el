@@ -1,4 +1,4 @@
-;;; init.el --- Initialization file for Emacs -*- lexical-binding: t; -*-
+;;; config-langtool.el --- langtool configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,18 +24,12 @@
 
 ;;; Code:
 
-(defvar init-directory (expand-file-name "lisp/init/" user-emacs-directory))
-
-(defvar init-files (directory-files init-directory t ".el$"))
-
-(add-to-list 'load-path init-directory)
-
-(mapc (lambda (file)
-        (require (intern (file-name-base file))))
-      init-files)
+(when core-envi-gnu-linux
+  (setq langtool-java-classpath
+	"/usr/share/languagetool:/usr/share/java/languagetool/*"))
 
 ;;; Footer:
 
-(provide 'init)
+(provide 'config-langtool)
 
-;;; init.el ends here
+;;; config-langtool.el ends here
