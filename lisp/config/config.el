@@ -24,6 +24,11 @@
 
 ;;; Code:
 
+(require 'core)
+(require 'config-straight)
+
+(setq core-use-module-prefix 'config)
+
 ;;; Footer:
 
 (provide 'config)
