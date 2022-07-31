@@ -52,6 +52,7 @@
   :execute ((add-hook 'core-utils-first-interaction-hook #'beacon-mode)))
 
 (core-use-module 'bibtex-completion
+  :disable t
   :after 'bibtex-completion
   :install 'package)
 
