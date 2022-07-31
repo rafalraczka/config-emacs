@@ -51,6 +51,10 @@
   :install 'package
   :execute ((add-hook 'core-utils-first-interaction-hook #'beacon-mode)))
 
+(core-use-module 'bibtex-completion
+  :after 'bibtex-completion
+  :install 'package)
+
 (core-use-module 'calendar
   :after 'calendar)
 
