@@ -90,6 +90,7 @@
   :install 'package)
 
 (core-use-module 'doom-modeline
+  :disable t
   :after 'config
   :install 'package)
 
