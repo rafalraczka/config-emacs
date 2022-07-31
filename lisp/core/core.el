@@ -26,6 +26,7 @@
 
 (require 'core-envi)
 (require 'core-straight)
+(require 'core-package)
 (require 'core-utils)
 
 ;;; Footer:

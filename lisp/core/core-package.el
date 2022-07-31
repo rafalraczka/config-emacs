@@ -1,4 +1,4 @@
-;;; config-package.el --- package configuration -*- lexical-binding: t; -*-
+;;; core-package.el --- package configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -28,29 +28,29 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-(defvar my/package-contents-refreshed nil)
+(defvar core-package-contents-refreshed nil)
 
-(defun my/package-ensure (package)
+(defun core-package-ensure (package)
   "Ensure that PACKAGE is installed and return non-nil if successful."
   (or (package-installed-p package)
       (progn (if (assoc package package-archive-contents)
                  (condition-case err
                      (package-install package)
-                   (error (my/package-refresh-maybe-and-install package)))
-               (my/package-refresh-maybe-and-install package))
+                   (error (core-package-refresh-maybe-and-install package)))
+               (core-package-refresh-maybe-and-install package))
              (package-installed-p package))))
 
-(defun my/package-refresh-maybe-and-install (package)
+(defun core-package-refresh-maybe-and-install (package)
   "Refresh archive contents if not done yet and install PACKAGE."
-  (when (not my/package-contents-refreshed)
+  (when (not core-package-contents-refreshed)
     (package-refresh-contents)
-    (setq my/package-contents-refreshed t))
+    (setq core-package-contents-refreshed t))
   (package-install package))
 
 (package-initialize)
 
 ;;; Footer:
 
-(provide 'config-package)
+(provide 'core-package)
 
-;;; config-package.el ends here
+;;; core-package.el ends here
