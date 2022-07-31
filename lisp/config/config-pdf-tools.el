@@ -24,12 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'pdf-tools)
-
-(add-hook 'after-init-hook 'pdf-loader-install)
-
-(with-eval-after-load 'pdf-tools
-  (setq-default pdf-view-display-size 'fit-page))
+(setq-default pdf-view-display-size 'fit-page)
 
 ;;; Footer:
 

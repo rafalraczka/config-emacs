@@ -24,36 +24,30 @@
 
 ;;; Code:
 
-(my/package-ensure 'org-super-agenda)
-
-(with-eval-after-load 'org-agenda
-
-    (setq my/org-super-agenda-groups
-        '(
-          (:name "! Important"
-                 :priority>= ("B")
-                 :order 1)
-          (:name "! Overdue"
-                 :deadline past
-                 :order 5)
-          (:name "! Behind schedule"
-                 :scheduled past
-                 :order 8)
-          (:name "Today"
-                 :deadline today
-                 :scheduled today
-                 :order 10)
-          (:name "Unfinished"
-                 :todo "STRT"
-                 :order 15)
-          (:name "Waiting"
-                 :todo "WAIT"
-                 :order 60)
-          ))
-  (setq org-super-agenda-unmatched-name "Other items")
-  (setq org-super-agenda-unmatched-order 50)
-
-  )
+(setq my/org-super-agenda-groups
+      '(
+        (:name "! Important"
+               :priority>= ("B")
+               :order 1)
+        (:name "! Overdue"
+               :deadline past
+               :order 5)
+        (:name "! Behind schedule"
+               :scheduled past
+               :order 8)
+        (:name "Today"
+               :deadline today
+               :scheduled today
+               :order 10)
+        (:name "Unfinished"
+               :todo "STRT"
+               :order 15)
+        (:name "Waiting"
+               :todo "WAIT"
+               :order 60)
+        ))
+(setq org-super-agenda-unmatched-name "Other items")
+(setq org-super-agenda-unmatched-order 50)
 
 ;;; Footer:
 

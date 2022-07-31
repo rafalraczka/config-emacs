@@ -24,17 +24,11 @@
 
 ;;; Code:
 
-(my/package-ensure 'ace-window)
+(setq aw-dispatch-when-more-than 1)
 
-(with-eval-after-load 'ace-window
-
-  (setq aw-dispatch-when-more-than 1)
-
-  (if core-envi-exwm-required
+(if core-envi-exwm-required
     (setq aw-scope 'frame)
-    (setq aw-scope 'visible))
-
-  )
+  (setq aw-scope 'visible))
 
 ;;; Footer:
 

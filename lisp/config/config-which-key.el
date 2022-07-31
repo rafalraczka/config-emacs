@@ -24,15 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'which-key)
-
-(add-hook 'core-utils-first-interaction-hook #'which-key-mode)
-
-(with-eval-after-load 'which-key
-
-  (setq which-key-idle-delay 0.5)
-
-  )
+(setq which-key-idle-delay 0.5)
 
 ;;; Footer:
 

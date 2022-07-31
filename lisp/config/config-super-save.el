@@ -24,15 +24,9 @@
 
 ;;; Code:
 
-(my/package-ensure 'super-save)
-
 (add-hook 'core-utils-first-interaction-hook #'super-save-mode)
 
-(with-eval-after-load 'super-save
-
-  (setq super-save-auto-save-when-idle t)
-
-  )
+(setq super-save-auto-save-when-idle t)
 
 ;;; Footer:
 

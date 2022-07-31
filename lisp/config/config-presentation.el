@@ -31,17 +31,11 @@
 
 ;;; Code:
 
-(my/package-ensure 'presentation)
+;; `text-scale-mode-amount' equal to 2 is optimal most of the time for me.
+;; For cases when it will not be enough it can be easily adjusted with
+;; `presentation-mode' enabled.
 
-(with-eval-after-load 'presentation
-
-  ;; `text-scale-mode-amount' equal to 2 is optimal most of the time for me.
-  ;; For cases when it will not be enough it can be easily adjusted with
-  ;; `presentation-mode' enabled.
-
-  (setq presentation-default-text-scale 2)
-
-  )
+(setq presentation-default-text-scale 2)
 
 ;;; Footer:
 

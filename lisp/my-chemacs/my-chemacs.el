@@ -26,6 +26,7 @@
 
 (require 'chemacs)
 
+;;;###autoload
 (defun my-chemacs-read-profile (&optional prompt)
   "Read a PROFILE by its name.
 PROMPT can overwrite the default prompt."
@@ -37,6 +38,7 @@ PROMPT can overwrite the default prompt."
         (prompt (or prompt "Profile: ")))
     (completing-read prompt profiles)))
 
+;;;###autoload
 (defun my-chemacs-run-emacs (profile)
   "Test Emacs startup with PROFILE."
   (interactive

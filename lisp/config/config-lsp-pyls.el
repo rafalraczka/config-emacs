@@ -24,31 +24,22 @@
 
 ;;; Code:
 
-(require 'config-lsp-mode)
+(require 'company)
+(require 'company-quickhelp)
+(require 'lsp-mode)
 
-(with-eval-after-load 'python
+(defcustom my/lsp-pyls-company-quickhelp-max-lines 5
+  "When not nil, limits the number of lines in the popup in Python mode.")
 
-  (add-hook 'python-mode-hook #'flyspell-mode)
-  (add-hook 'python-mode-hook 'lsp-deferred)
+(defun my/lsp-pyls-set-company-quickhelp-max-lines ()
+  (setq-local company-quickhelp-max-lines
+              my/lsp-pyls-company-quickhelp-max-lines))
 
-  (with-eval-after-load 'config-company
-    (add-hook 'python-mode-hook #'company-mode))
-
-  (with-eval-after-load 'config-company-quickhelp
-
-    (defcustom my/lsp-pyls-company-quickhelp-max-lines 5
-      "When not nil, limits the number of lines in the popup in Python mode.")
-
-    (defun my/lsp-pyls-set-company-quickhelp-max-lines ()
-      (setq-local company-quickhelp-max-lines
-                  my/lsp-pyls-company-quickhelp-max-lines))
-
-    (add-hook 'python-mode-hook #'company-quickhelp-local-mode)
-    (add-hook 'python-mode-hook #'my/lsp-pyls-set-company-quickhelp-max-lines)
-
-    )
-
-  )
+(add-hook 'python-mode-hook #'company-mode)
+(add-hook 'python-mode-hook #'company-quickhelp-local-mode)
+(add-hook 'python-mode-hook #'flyspell-mode)
+(add-hook 'python-mode-hook #'lsp-deferred)
+(add-hook 'python-mode-hook #'my/lsp-pyls-set-company-quickhelp-max-lines)
 
 ;;; Footer:
 

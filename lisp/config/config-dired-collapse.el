@@ -24,9 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'dired-collapse)
-
-(add-hook 'dired-mode-hook 'dired-collapse-mode)
+(add-hook 'dired-mode-hook #'dired-collapse-mode)
 
 ;;; Footer:
 

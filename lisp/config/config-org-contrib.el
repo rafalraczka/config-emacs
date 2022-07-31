@@ -24,13 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'org-contrib)
-
-(with-eval-after-load 'org
-
-  (require 'ol-git-link)
-
-  )
+(require 'ol-git-link)
 
 ;;; Footer:
 

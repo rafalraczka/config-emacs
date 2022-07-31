@@ -24,22 +24,18 @@
 
 ;;; Code:
 
-(with-eval-after-load 'text-mode
+(defcustom my/text-mode-fill-column 72
+  "Default `fill-column' for Text mode."
+  :type 'integer)
 
-  (defcustom my/text-mode-fill-column 72
-    "Default `fill-column' for Text mode."
-    :type 'integer)
+(defun my/text-mode-config ()
+  (setq-local fill-column my/text-mode-fill-column))
 
-  (defun my/text-mode-config ()
-    (setq-local fill-column my/text-mode-fill-column))
+(add-hook 'text-mode-hook #'my/text-mode-config)
 
-  (add-hook 'text-mode-hook 'my/text-mode-config)
-
-  (when (executable-find "aspell")
-    (add-hook 'text-mode-hook 'flyspell-mode)
-    (add-hook 'text-mode-hook 'ispell-minor-mode))
-
-  )
+(when (executable-find "aspell")
+  (add-hook 'text-mode-hook #'flyspell-mode)
+  (add-hook 'text-mode-hook #'ispell-minor-mode))
 
 ;;; Footer:
 

@@ -24,10 +24,7 @@
 
 ;;; Code:
 
-(straight-use-package
- '(yasnippet
-   :fork (:repo "rafalraczka/yasnippet"
-          :branch "main")))
+(require 'warnings)
 
 (defun my/yasnippet-global-mode-no-message ()
   (let ((inhibit-message t)
@@ -36,13 +33,7 @@
 
 (add-hook 'core-utils-first-interaction-hook #'my/yasnippet-global-mode-no-message)
 
-(with-eval-after-load 'yasnippet
-
-  (require 'warnings)
-
-  (push '(yasnippet backquote-change) warning-suppress-types)
-
-  )
+(push '(yasnippet backquote-change) warning-suppress-types)
 
 ;;; Footer:
 

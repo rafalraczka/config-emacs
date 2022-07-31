@@ -24,15 +24,11 @@
 
 ;;; Code:
 
-(with-eval-after-load 'lisp-mode
+(require 'company)
+(require 'flycheck)
 
-  (with-eval-after-load 'config-company
-    (add-hook 'emacs-lisp-mode-hook 'company-mode))
-
-  (with-eval-after-load 'config-flycheck
-    (add-hook 'emacs-lisp-mode-hook 'flycheck-mode))
-
-  )
+(add-hook 'emacs-lisp-mode-hook #'company-mode)
+(add-hook 'emacs-lisp-mode-hook #'flycheck-mode)
 
 ;;; Footer:
 

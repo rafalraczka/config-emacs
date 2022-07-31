@@ -24,16 +24,10 @@
 
 ;;; Code:
 
-(my/package-ensure 'magit)
+(defun my/magit-mode-config ()
+  (setq-local fill-column 81))
 
-(with-eval-after-load 'magit
-
-  (defun my/magit-mode-config ()
-    (setq-local fill-column 81))
-
-  (add-hook 'magit-mode-hook 'my/magit-mode-config)
-
-)
+(add-hook 'magit-mode-hook #'my/magit-mode-config)
 
 ;;; Footer:
 

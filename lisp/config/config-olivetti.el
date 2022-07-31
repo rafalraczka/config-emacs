@@ -24,34 +24,25 @@
 
 ;;; Code:
 
-(straight-use-package
- '(olivetti :type git :flavor melpa :host github
-            :repo "rnkn/olivetti"
-            :fork (:type git :flavor melpa :host github
-                   :repo "rafalraczka/olivetti")))
+(add-hook 'after-init-hook #'olivetti-global-mode)
 
-(add-hook 'after-init-hook 'olivetti-global-mode)
+(defun my/olivetti-set-body-width ()
+  "Set olivetti body width according to `fill-column' value."
+  (let* ((col (if (local-variable-p 'olivetti-body-width)
+                  olivetti-body-width
+                (or fill-column 80)))
+         (width (if (and (boundp 'display-line-numbers-mode)
+                         display-line-numbers-mode)
+                    (+ col 4)
+                  col)))
+    (setq-local olivetti-body-width width)
+    (setq-local olivetti-minimum-body-width width)))
 
-(with-eval-after-load 'olivetti
+(add-hook 'olivetti-mode-on-hook #'my/olivetti-set-body-width)
 
-  (defun my/olivetti-set-body-width ()
-    "Set olivetti body width according to `fill-column' value."
-    (let* ((col (if (local-variable-p 'olivetti-body-width)
-                    olivetti-body-width
-                  (or fill-column 80)))
-           (width (if (and (boundp 'display-line-numbers-mode)
-                           display-line-numbers-mode)
-                      (+ col 4)
-                    col)))
-      (setq-local olivetti-body-width width)
-      (setq-local olivetti-minimum-body-width width)))
-
-  (add-hook 'olivetti-mode-on-hook 'my/olivetti-set-body-width)
-
-  (setq olivetti-global-modes '(:exclude (exwm-mode
-                                          image-mode
-                                          pdf-view-mode)))
-  )
+(setq olivetti-global-modes '(:exclude (exwm-mode
+                                        image-mode
+                                        pdf-view-mode)))
 
 ;;; Footer:
 

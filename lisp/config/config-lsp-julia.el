@@ -24,16 +24,10 @@
 
 ;;; Code:
 
-(my/package-ensure 'lsp-julia)
+(require 'lsp-julia)
+(require 'lsp-mode)
 
-(with-eval-after-load 'julia-mode
-
-  (require 'lsp-julia)
-
-  (with-eval-after-load 'config-lsp-mode
-    (add-hook 'julia-mode-hook #'lsp-deferred))
-
-  )
+(add-hook 'julia-mode-hook #'lsp-deferred)
 
 ;;; Footer:
 

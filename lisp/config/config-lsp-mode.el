@@ -24,20 +24,14 @@
 
 ;;; Code:
 
-(my/package-ensure 'lsp-mode)
+(require 'company)
+(require 'which-key)
 
-(with-eval-after-load 'lsp-mode
+(setq lsp-headerline-breadcrumb-enable nil)
+(setq lsp-signature-auto-activate nil)
 
-  (setq lsp-headerline-breadcrumb-enable nil)
-  (setq lsp-signature-auto-activate nil)
-
-  (with-eval-after-load 'config-company
-    (add-hook 'lsp-mode-hook 'company-mode))
-
-  (with-eval-after-load 'config-which-key
-    (add-hook 'lsp-mode-hook 'lsp-enable-which-key-integration))
-
-)
+(add-hook 'lsp-mode-hook #'company-mode)
+(add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
 
 ;;; Footer:
 

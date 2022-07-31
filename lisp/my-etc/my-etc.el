@@ -1,4 +1,4 @@
-;;; my-etc.el --- miscellaneous configurations -*- lexical-binding: t; -*-
+;;; my-etc.el --- miscellaneous tools -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,6 +24,7 @@
 
 ;;; Code:
 
+;;;###autoload
 (defun my-etc-blink-mode-line-bg (&optional color)
   (let ((blink-color (or color "#762422"))
         (original-color (face-background 'mode-line)))
@@ -32,18 +33,11 @@
                          (lambda (col) (set-face-background 'mode-line col))
                          original-color)))
 
+;;;###autoload
 (defun my-etc-upcase-previous-word ()
   "Convert to upper case from point to the beginning of word and do not move."
   (interactive)
   (upcase-word -1))
-
-(advice-add 'yes-or-no-p
-            :override 'y-or-n-p)
-
-(add-hook 'core-utils-first-interaction-hook #'column-number-mode)
-
-(setq delete-by-moving-to-trash t)
-(setq ring-bell-function #'my-etc-blink-mode-line-bg)
 
 ;;; Footer:
 

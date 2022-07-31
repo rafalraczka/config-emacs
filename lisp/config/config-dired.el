@@ -24,36 +24,32 @@
 
 ;;; Code:
 
-(with-eval-after-load 'dired
+(defun my/dired-do-delete-permanently (&optional arg)
+  (interactive "P")
+  (let ((delete-by-moving-to-trash nil))
+    (dired-do-delete arg)))
 
-  (defun my/dired-do-delete-permanently (&optional arg)
-    (interactive "P")
-    (let ((delete-by-moving-to-trash nil))
-      (dired-do-delete arg)))
+(defun my/dired-create-dwim (path)
+  (interactive (list (read-file-name "Create: " (dired-current-directory))))
+  (if (directory-name-p path)
+      (dired-create-directory path)
+    (dired-create-empty-file path)))
 
-  (defun my/dired-create-dwim (path)
-    (interactive (list (read-file-name "Create: " (dired-current-directory))))
-    (if (directory-name-p path)
-        (dired-create-directory path)
-      (dired-create-empty-file path)))
+(defun my/dired-enable-truncate-lines ()
+  (setq truncate-lines t))
 
-  (defun my/dired-enable-truncate-lines ()
-    (setq truncate-lines t))
+(add-hook 'dired-after-readin-hook #'my/dired-enable-truncate-lines)
 
-  (add-hook 'dired-after-readin-hook 'my/dired-enable-truncate-lines)
+;; Use different approach to group directories first when =ls= is not
+;; available.  This also set default switches.
 
-  ;; Use different approach to group directories first when =ls= is not
-  ;; available.  This also set default switches.
+(if (executable-find "ls")
+    (setq dired-listing-switches "-Ahl --group-directories-first")
+  (progn (setq dired-listing-switches "-Ahl")
+         (setq ls-lisp-dirs-first t)))
 
-  (if (executable-find "ls")
-      (setq dired-listing-switches "-Ahl --group-directories-first")
-    (progn (setq dired-listing-switches "-Ahl")
-           (setq ls-lisp-dirs-first t)))
-
-  (when core-envi-android
-    (add-hook 'dired-mode-hook 'dired-hide-details-mode))
-
-  )
+(when core-envi-android
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode))
 
 ;;; Footer:
 

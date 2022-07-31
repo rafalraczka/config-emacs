@@ -24,24 +24,16 @@
 
 ;;; Code:
 
-(my/package-ensure 'beacon)
+(defvar my/beacon-cursor-color
+  (let* ((color (face-attribute 'cursor :background))
+         (color-num (string-to-number (string-remove-prefix "#" color) 16)))
+    (format "#%x" (1+ color-num))))
 
-(add-hook 'core-utils-first-interaction-hook 'beacon-mode)
-
-(with-eval-after-load 'beacon
-
-  (defvar my/beacon-cursor-color
-    (let* ((color (face-attribute 'cursor :background))
-           (color-num (string-to-number (string-remove-prefix "#" color) 16)))
-      (format "#%x" (1+ color-num))))
-
-  (setq beacon-blink-delay 0.2)
-  (setq beacon-blink-duration 0.5)
-  (setq beacon-color my/beacon-cursor-color)
-  (setq beacon-blink-when-point-moves-vertically 10)
-  (setq beacon-push-mark 30)
-
-  )
+(setq beacon-blink-delay 0.2)
+(setq beacon-blink-duration 0.5)
+(setq beacon-color my/beacon-cursor-color)
+(setq beacon-blink-when-point-moves-vertically 10)
+(setq beacon-push-mark 30)
 
 ;;; Footer:
 

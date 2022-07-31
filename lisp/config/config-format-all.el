@@ -24,14 +24,8 @@
 
 ;;; Code:
 
-(straight-use-package 'format-all)
-
-(with-eval-after-load 'format-all
-
-  (setq-default format-all-formatters
-                '(("SQL" (pgformatter "--wrap-limit=80" "--wrap-comment"))))
-
-  )
+(setq-default format-all-formatters
+              '(("SQL" (pgformatter "--wrap-limit=80" "--wrap-comment"))))
 
 ;;; Footer:
 

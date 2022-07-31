@@ -24,19 +24,7 @@
 
 ;;; Code:
 
-(straight-use-package
- '(sql-indent :type git
-              :host github
-              :repo "alex-hhh/emacs-sql-indent"
-              :files ("*" (:exclude ".git"))
-              :fork (:repo "rafalraczka/emacs-sql-indent"
-                     :branch "main")))
-
-(with-eval-after-load 'sql-indent
-
-  (setq-default sqlind-basic-offset 4)
-
-  )
+(setq-default sqlind-basic-offset 4)
 
 ;;; Footer:
 

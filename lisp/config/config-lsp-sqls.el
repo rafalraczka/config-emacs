@@ -24,24 +24,19 @@
 
 ;;; Code:
 
-(require 'config-lsp-mode)
+(require 'lsp-mode)
+
+(defun my/lsp-sqls-config-results-buffer ()
+  "Configure buffer with results of the sql query."
+  (when (string-equal (buffer-name) "*sqls results*")
+    (setq truncate-lines t)
+    (when (featurep 'olivetti)
+      (olivetti-mode -1))))
+
+(add-hook 'help-mode-hook #'my/lsp-sqls-config-results-buffer 50)
+(add-hook 'sql-mode-hook #'lsp-deferred)
 
 (setq lsp-sqls-workspace-config-path nil)
-
-(with-eval-after-load 'sql
-
-  (defun my/lsp-sqls-config-results-buffer ()
-    "Configure buffer with results of the sql query."
-    (when (string-equal (buffer-name) "*sqls results*")
-      (setq truncate-lines t)
-      (when (featurep 'olivetti)
-        (olivetti-mode -1))))
-
-  (add-hook 'help-mode-hook #'my/lsp-sqls-config-results-buffer 50)
-
-  (add-hook 'sql-mode-hook #'lsp-deferred)
-
-  )
 
 ;;; Footer:
 

@@ -24,10 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'magit-todos)
-
-(with-eval-after-load 'magit
-  (magit-todos-mode))
+(magit-todos-mode)
 
 ;;; Footer:
 

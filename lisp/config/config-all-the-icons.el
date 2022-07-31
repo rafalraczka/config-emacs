@@ -24,13 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'all-the-icons)
-
-(with-eval-after-load 'all-the-icons
-
-  (setq all-the-icons-scale-factor 1.0)
-
-  )
+(setq all-the-icons-scale-factor 1.0)
 
 ;;; Footer:
 

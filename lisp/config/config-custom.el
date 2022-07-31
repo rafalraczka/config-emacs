@@ -24,13 +24,14 @@
 
 ;;; Code:
 
-(setq custom-file (expand-file-name "custom-file.el" user-emacs-directory))
-
-(defun my/custom-load-custom-file ()
+(defun config-custom-load-custom-file ()
   (when (file-exists-p custom-file)
     (load custom-file)))
 
-(add-hook 'after-init-hook 'my/custom-load-custom-file)
+(add-hook 'after-init-hook #'config-custom-load-custom-file)
+
+(setq custom-file
+      (expand-file-name "config-custom-file.el" user-emacs-directory))
 
 ;;; Footer:
 

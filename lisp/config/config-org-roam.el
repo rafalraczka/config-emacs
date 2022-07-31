@@ -24,46 +24,27 @@
 
 ;;; Code:
 
-(straight-use-package
- '(org-roam :types git
-            :flavor melpa
-            :files (:defaults "extensions/*" "org-roam-pkg.el")
-            :host github
-            :repo "org-roam/org-roam"
-            :fork (:repo "rafalraczka/org-roam")))
+(require 'org-roam-overlay)
 
-(unless (file-exists-p (expand-file-name "org-roam.db" user-emacs-directory))
-  (add-hook 'after-init-hook 'org-roam-db-sync))
+(defun my/org-roam-buffer-startup ()
+  (when (and (org-roam-buffer-p) (not (buffer-narrowed-p)))
+    (setq org-startup-folded 'show2levels)
+    (org-set-startup-visibility)))
 
-(with-eval-after-load 'org
+(add-hook 'org-mode-hook #'my/org-roam-buffer-startup)
+(add-hook 'org-mode-hook #'org-roam-db-autosync-mode)
 
-  (defun my/org-roam-buffer-startup ()
-    (when (and (org-roam-buffer-p) (not (buffer-narrowed-p)))
-      (setq org-startup-folded 'show2levels)
-      (org-set-startup-visibility)))
+(push '("\\*org-roam\\*"
+        (display-buffer-in-direction)
+        (direction . right)
+        (window-width . 0.33)
+        (window-height . fit-window-to-buffer))
+      display-buffer-alist)
 
-  (add-hook 'org-mode-hook #'my/org-roam-buffer-startup)
-  (add-hook 'org-mode-hook #'org-roam-db-autosync-mode)
-
-  )
-
-(with-eval-after-load 'org-roam
-
-  (require 'org-roam-overlay)
-
-  (push '("\\*org-roam\\*"
-         (display-buffer-in-direction)
-         (direction . right)
-         (window-width . 0.33)
-         (window-height . fit-window-to-buffer))
-        display-buffer-alist)
-
-  (setq org-roam-completion-everywhere t)
-  (setq org-roam-dailies-directory "journal/")
-  (setq org-roam-db-extra-links-exclude-keys '((node-property . ("ROAM_REFS"))))
-  (setq org-roam-directory org-directory)
-
-  )
+(setq org-roam-completion-everywhere t)
+(setq org-roam-dailies-directory "journal/")
+(setq org-roam-db-extra-links-exclude-keys '((node-property . ("ROAM_REFS"))))
+(setq org-roam-directory org-directory)
 
 ;;; Footer:
 

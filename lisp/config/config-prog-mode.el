@@ -24,48 +24,41 @@
 
 ;;; Code:
 
-(with-eval-after-load 'prog-mode
+(require 'hl-todo)
+(require 'olivetti)
+(require 'rainbow-delimiters)
+(require 'smartparens)
 
-  (defcustom my/prog-mode-fill-column 72
-    "Default `fill-column' for programming modes."
-    :type 'integer)
+(defcustom my/prog-mode-fill-column 72
+  "Default `fill-column' for programming modes."
+  :type 'integer)
 
-  (defun my/prog-mode-auto-fill-only-comments ()
-    (setq-local comment-auto-fill-only-comments t))
+(defcustom my/prog-mode-olivetti-body-width 80
+  "Default `olivetti-body-width' for programming modes."
+  :type 'integer)
 
-  (defun my/prog-mode-set-fill-column ()
-    "Set `fill-column' for programming modes."
-    (setq-local fill-column my/prog-mode-fill-column))
+(defun my/prog-mode-auto-fill-only-comments ()
+  (setq-local comment-auto-fill-only-comments t))
 
-  (add-hook 'prog-mode-hook 'auto-fill-mode)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  (add-hook 'prog-mode-hook 'my/prog-mode-auto-fill-only-comments)
-  (add-hook 'prog-mode-hook 'my/prog-mode-set-fill-column)
-  (add-hook 'prog-mode-hook 'outline-minor-mode)
+(defun my/prog-mode-set-fill-column ()
+  "Set `fill-column' for programming modes."
+  (setq-local fill-column my/prog-mode-fill-column))
 
-  (when (executable-find "aspell")
-    (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+(defun my/prog-mode-set-olivetti-body-width ()
+  (setq-local olivetti-body-width my/prog-mode-olivetti-body-width))
 
-  (with-eval-after-load 'config-hl-todo
-    (add-hook 'prog-mode-hook 'hl-todo-mode))
+(add-hook 'prog-mode-hook #'auto-fill-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'hl-todo-mode)
+(add-hook 'prog-mode-hook #'my/prog-mode-auto-fill-only-comments)
+(add-hook 'prog-mode-hook #'my/prog-mode-set-fill-column)
+(add-hook 'prog-mode-hook #'my/prog-mode-set-olivetti-body-width)
+(add-hook 'prog-mode-hook #'outline-minor-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'smartparens-mode)
 
-  (with-eval-after-load 'config-olivetti
-    (defcustom my/prog-mode-olivetti-body-width 80
-      "Default `olivetti-body-width' for programming modes."
-      :type 'integer)
-
-    (defun my/prog-mode-set-olivetti-body-width ()
-      (setq-local olivetti-body-width my/prog-mode-olivetti-body-width))
-
-    (add-hook 'prog-mode-hook 'my/prog-mode-set-olivetti-body-width))
-
-  (with-eval-after-load 'config-rainbow-delimiters
-    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
-
-  (with-eval-after-load 'config-smartparens
-    (add-hook 'prog-mode-hook 'smartparens-mode))
-
-  )
+(when (executable-find "aspell")
+  (add-hook 'prog-mode-hook #'flyspell-prog-mode))
 
 ;;; Footer:
 

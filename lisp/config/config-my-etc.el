@@ -1,4 +1,4 @@
-;;; config-dired-single.el --- dired-single configuration -*- lexical-binding: t; -*-
+;;; config-my-etc.el --- miscellaneous configurations -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -24,10 +24,15 @@
 
 ;;; Code:
 
-(my/package-ensure 'dired-single)
+(advice-add 'yes-or-no-p :override 'y-or-n-p)
+
+(add-hook 'core-utils-first-interaction-hook #'column-number-mode)
+
+(setq delete-by-moving-to-trash t)
+(setq ring-bell-function 'my-etc-blink-mode-line-bg)
 
 ;;; Footer:
 
-(provide 'config-dired-single)
+(provide 'config-my-etc)
 
-;;; config-dired-single.el ends here
+;;; config-my-etc.el ends here

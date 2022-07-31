@@ -24,8 +24,6 @@
 
 ;;; Code:
 
-(my/package-ensure 'langtool)
-
 (when core-envi-gnu-linux
   (setq langtool-java-classpath
 	"/usr/share/languagetool:/usr/share/java/languagetool/*"))

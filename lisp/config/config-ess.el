@@ -24,41 +24,34 @@
 
 ;;; Code:
 
+(defun my/ess-mode-config ()
+  (ess-set-style 'C++ 'quiet))
 
-(my/package-ensure 'ess)
+(add-hook 'ess-r-mode-hook #'my/ess-mode-config)
 
-(with-eval-after-load 'ess
+(setq ess-eval-visibly nil)
+(setq ess-R-font-lock-keywords
+      '((ess-R-fl-keyword:keywords . t)
+        (ess-R-fl-keyword:constants . t)
+        (ess-R-fl-keyword:modifiers . t)
+        (ess-R-fl-keyword:fun-defs . t)
+        (ess-R-fl-keyword:assign-ops . t)
+        (ess-R-fl-keyword:%op% . nil)
+        (ess-fl-keyword:fun-calls . nil)
+        (ess-fl-keyword:numbers . t)
+        (ess-fl-keyword:operators . t)
+        (ess-fl-keyword:delimiters . nil)
+        (ess-fl-keyword:= . nil)
+        (ess-R-fl-keyword:F&T . t)))
 
-  (defun my/ess-mode-config ()
-    (ess-set-style 'C++ 'quiet))
+;; This is quick fix for Windows when Polish diacritics in data caused
+;; problems.
 
-  (add-hook 'ess-r-mode-hook 'my/ess-mode-config)
+(when core-envi-windows
+  (defun my/ess-r-set-iso-latin-1-coding-system ()
+    (when core-envi-windows (set-buffer-file-coding-system 'iso-latin-1)))
 
-  (setq ess-eval-visibly nil)
-  (setq ess-R-font-lock-keywords
-        '((ess-R-fl-keyword:keywords . t)
-          (ess-R-fl-keyword:constants . t)
-          (ess-R-fl-keyword:modifiers . t)
-          (ess-R-fl-keyword:fun-defs . t)
-          (ess-R-fl-keyword:assign-ops . t)
-          (ess-R-fl-keyword:%op% . nil)
-          (ess-fl-keyword:fun-calls . nil)
-          (ess-fl-keyword:numbers . t)
-          (ess-fl-keyword:operators . t)
-          (ess-fl-keyword:delimiters . nil)
-          (ess-fl-keyword:= . nil)
-          (ess-R-fl-keyword:F&T . t)))
-
-  ;; This is quick fix for Windows when Polish diacritics in data caused
-  ;; problems.
-
-  (when core-envi-windows
-    (defun my/ess-r-set-iso-latin-1-coding-system ()
-      (if core-envi-windows (set-buffer-file-coding-system 'iso-latin-1)))
-
-    (add-hook 'ess-r-post-run-hook 'my/ess-r-set-iso-latin-1-coding-system))
-
-  )
+  (add-hook 'ess-r-post-run-hook #'my/ess-r-set-iso-latin-1-coding-system))
 
 ;;; Footer:
 

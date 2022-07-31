@@ -24,13 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'all-the-icons-dired)
-
-(with-eval-after-load 'dired
-
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-
-  )
+(add-hook 'dired-mode-hook #'all-the-icons-dired-mode)
 
 ;;; Footer:
 

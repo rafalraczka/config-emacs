@@ -24,13 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'forge)
-
-(with-eval-after-load 'magit
-
-  (require 'forge)
-
-  )
+(require 'forge)
 
 ;;; Footer:
 

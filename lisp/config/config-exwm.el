@@ -1,4 +1,4 @@
-;;; config-exwm.el --- EXMW configuration -*- lexical-binding: t; -*-
+;;; config-exwm.el --- exwm configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -23,8 +23,6 @@
 ;;; Commentary:
 
 ;;; Code:
-
-(my/package-ensure 'exwm)
 
 ;;; Footer:
 

@@ -24,12 +24,9 @@
 
 ;;; Code:
 
-(with-eval-after-load 'sh-mode
+(require 'lsp-mode)
 
-  (with-eval-after-load 'config-lsp-mode
-    (add-hook 'sh-mode-hook #'lsp-deferred))
-
-  )
+(add-hook 'sh-mode-hook #'lsp-deferred)
 
 ;;; Footer:
 

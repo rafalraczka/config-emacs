@@ -24,103 +24,97 @@
 
 ;;; Code:
 
-(straight-use-package 'org)
+(require 'citar)
+(require 'oc-csl)
 
-(with-eval-after-load 'org
+(defcustom my/org-fill-column 72
+  "Default `fill-column' for Org mode."
+  :type 'integer)
 
-  (require 'oc-csl)
+(defun my/org-mode-config ()
+  (setq fill-column my/org-fill-column))
 
-  (defcustom my/org-fill-column 72
-    "Default `fill-column' for Org mode."
-    :type 'integer)
+(add-hook 'org-clock-cancel-hook #'save-buffer)
+(add-hook 'org-clock-in-hook #'save-buffer)
+(add-hook 'org-clock-out-hook #'save-buffer)
+(add-hook 'org-mode-hook #'auto-fill-mode)
+(add-hook 'org-mode-hook #'my/org-mode-config)
+(add-hook 'org-mode-hook #'visual-line-mode)
 
-  (defun my/org-mode-config ()
-    (setq fill-column my/org-fill-column))
+(setq org-cite-global-bibliography core-envi-bib-files)
+(setq org-default-priority ?C)
 
-  (add-hook 'org-clock-cancel-hook #'save-buffer)
-  (add-hook 'org-clock-in-hook #'save-buffer)
-  (add-hook 'org-clock-out-hook #'save-buffer)
-  (add-hook 'org-mode-hook #'auto-fill-mode)
-  (add-hook 'org-mode-hook #'my/org-mode-config)
-  (add-hook 'org-mode-hook #'visual-line-mode)
+;; Default directory for org files.
 
-  (setq org-cite-global-bibliography core-envi-bib-files)
-  (setq org-default-priority ?C)
+(setq org-directory core-envi-org-directory)
+(setq org-ellipsis "…")
 
-  ;; Default directory for org files.
+;; Hide all leading stars in a heading except the last one.
 
-  (setq org-directory core-envi-org-directory)
-  (setq org-ellipsis "…")
+(setq org-hide-leading-stars t)
+(setq org-highest-priority ?A)
 
-  ;; Hide all leading stars in a heading except the last one.
+;; Use id property when storing links to org entries and id property is
+;; present.
 
-  (setq org-hide-leading-stars t)
-  (setq org-highest-priority ?A)
+(setq org-id-link-to-org-use-id 'use-existing)
 
-  ;; Use id property when storing links to org entries and id property is
-  ;; present.
+(setq org-lowest-priority  ?E)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-targets
+      '((nil :maxlevel . 8)
+        (org-agenda-files :maxlevel . 1)))
+(setq org-refile-use-outline-path t)
 
-  (setq org-id-link-to-org-use-id 'use-existing)
+;; - =CANC= - The task has been cancelled.
+;;
+;; - =DONE= - The task has been done.
+;;
+;; - =MYBE= - The task is optional and completion or participation is not
+;;   required.
+;;
+;; - =STRT= - The task has been started but not finalized.
+;;
+;; - =TODO= - The task has to be done.
+;;
+;; - =WAIT= - Task cannot be done right now and I have to wait for some event
+;;   to occur which would make this task actionable again e.g. somebody will
+;;   do other task, some time will pass or the weather will change.
 
-  (setq org-lowest-priority  ?E)
-  (setq org-outline-path-complete-in-steps nil)
-  (setq org-refile-targets
-        '((nil :maxlevel . 8)
-          (org-agenda-files :maxlevel . 1)))
-  (setq org-refile-use-outline-path t)
+(setq org-todo-keywords
+      '((sequence "TODO(t!)" "STRT(s!)" "|" "DONE(d!)")
+        (sequence "MYBE(m!)" "WAIT(w!)" "|" "CANC(c!)" "UNDN(u!)")))
 
-  ;; - =CANC= - The task has been cancelled.
-  ;;
-  ;; - =DONE= - The task has been done.
-  ;;
-  ;; - =MYBE= - The task is optional and completion or participation is not
-  ;;   required.
-  ;;
-  ;; - =STRT= - The task has been started but not finalized.
-  ;;
-  ;; - =TODO= - The task has to be done.
-  ;;
-  ;; - =WAIT= - Task cannot be done right now and I have to wait for some event
-  ;;   to occur which would make this task actionable again e.g. somebody will
-  ;;   do other task, some time will pass or the weather will change.
+(push '(".+\\.org-.*"
+        (display-buffer-in-direction)
+        (direction . right)
+        (window-width . 0.33))
+      display-buffer-alist)
 
-  (setq org-todo-keywords
-        '((sequence "TODO(t!)" "STRT(s!)" "|" "DONE(d!)")
-          (sequence "MYBE(m!)" "WAIT(w!)" "|" "CANC(c!)" "UNDN(u!)")))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ `(,@org-babel-load-languages
+   (C . t)
+   (R . t)
+   (julia . t)
+   (latex . t)
+   (lilypond . t)
+   (python . t)
+   (shell . t)
+   (sql . t)))
 
-  (push '(".+\\.org-.*"
-          (display-buffer-in-direction)
-          (direction . right)
-          (window-width . 0.33))
-        display-buffer-alist)
+(when-let* ((path "/usr/share/java/ditaa/ditaa-0.11.jar")
+            (_ (file-exists-p path)))
+  (setq org-ditaa-jar-path path)
+  (when-let* ((path-eps "/usr/share/java/ditaa-eps/DitaaEps.jar")
+              (_ (file-exists-p path-eps)))
+    (setq org-ditaa-eps-jar-path path-eps))
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               `(,@org-babel-load-languages (ditaa . t))))
 
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   `(,@org-babel-load-languages
-     (C . t)
-     (R . t)
-     (julia . t)
-     (latex . t)
-     (lilypond . t)
-     (python . t)
-     (shell . t)
-     (sql . t)))
-
-  (when-let* ((path "/usr/share/java/ditaa/ditaa-0.11.jar")
-              (_ (file-exists-p path)))
-    (setq org-ditaa-jar-path path)
-    (when-let* ((path-eps "/usr/share/java/ditaa-eps/DitaaEps.jar")
-                (_ (file-exists-p path-eps)))
-      (setq org-ditaa-eps-jar-path path-eps))
-    (org-babel-do-load-languages 'org-babel-load-languages
-                                 `(,@org-babel-load-languages (ditaa . t))))
-
-  (with-eval-after-load 'config-citar
-    (setq org-cite-insert-processor 'citar)
-    (setq org-cite-follow-processor 'citar)
-    (setq org-cite-activate-processor 'citar))
-
-  )
+(setq org-cite-insert-processor 'citar)
+(setq org-cite-follow-processor 'citar)
+(setq org-cite-activate-processor 'citar)
 
 ;;; Footer:
 

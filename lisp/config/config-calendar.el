@@ -24,27 +24,27 @@
 
 ;;; Code:
 
-(with-eval-after-load 'calendar
-  (defun my/calendar-mode-config ()
-    (setq-local fill-column 71))
 
-  (add-hook 'calendar-mode-hook 'my/calendar-mode-config)
+(defun my/calendar-mode-config ()
+  (setq-local fill-column 71))
 
-  ;; By default, calendar is displayed at the bottom of the frame or in the
-  ;; other window if more then one window is in the current frame and tab
-  ;; (side windows do not count).  I prefer to have consistent behaviour and
-  ;; have it always at the bottom of the frame.
+(add-hook 'calendar-mode-hook #'my/calendar-mode-config)
 
-  (push  '("\\*Calendar\\*"
-           (display-buffer-in-direction)
-           (direction . bottom))
-	 display-buffer-alist)
+;; By default, calendar is displayed at the bottom of the frame or in the
+;; other window if more then one window is in the current frame and tab
+;; (side windows do not count).  I prefer to have consistent behaviour and
+;; have it always at the bottom of the frame.
 
-  (setq calendar-left-margin 2)
-  (setq calendar-date-style 'iso)
+(push  '("\\*Calendar\\*"
+         (display-buffer-in-direction)
+         (direction . bottom))
+       display-buffer-alist)
 
-  (setq calendar-minimum-window-height 9)
-  (setq calendar-week-start-day 1))
+(setq calendar-left-margin 2)
+(setq calendar-date-style 'iso)
+
+(setq calendar-minimum-window-height 9)
+(setq calendar-week-start-day 1)
 
 ;;; Footer:
 

@@ -96,10 +96,10 @@ and change to TH value after the Emacs startup."
   (unless core-utils-gcs-done-during-startup
     (setq core-utils-gcs-done-during-startup gcs-done)))
 
-(add-hook 'after-init-hook 'core-utils-set-init-gcs-done -100)
-(add-hook 'emacs-startup-hook 'core-utils-benchmark 100)
-(add-hook 'emacs-startup-hook 'core-utils-set-startup-gcs-done 99)
-(add-hook 'emacs-startup-hook 'core-utils-set-after-startup-time 99)
+(add-hook 'after-init-hook #'core-utils-set-init-gcs-done -100)
+(add-hook 'emacs-startup-hook #'core-utils-benchmark 100)
+(add-hook 'emacs-startup-hook #'core-utils-set-after-startup-time 99)
+(add-hook 'emacs-startup-hook #'core-utils-set-startup-gcs-done 99)
 (add-hook 'find-file-hook #'core-utils-run-first-interaction-hook -50)
 (add-hook 'pre-command-hook #'core-utils-run-first-interaction-hook -50)
 

@@ -24,13 +24,7 @@
 
 ;;; Code:
 
-(my/package-ensure 'company-quickhelp)
-
-(with-eval-after-load 'company-quickhelp
-
-  (setq company-quickhelp-delay 0.25)
-
-  )
+(setq company-quickhelp-delay 0.25)
 
 ;;; Footer:
 

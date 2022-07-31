@@ -24,27 +24,21 @@
 
 ;;; Code:
 
-(my/package-ensure 'citar)
+(require 'embark)
+(require 'modus-themes)
 
-(with-eval-after-load 'citar
+(setq citar-at-point-function 'embark-act)
+(setq citar-bibliography core-envi-bib-files)
+(setq citar-library-paths core-envi-bib-files-directories)
+(setq citar-notes-paths (list core-envi-ref-notes-directory))
 
-  (setq citar-bibliography core-envi-bib-files)
-  (setq citar-library-paths core-envi-bib-files-directories)
-  (setq citar-notes-paths (list core-envi-ref-notes-directory))
-
-  (with-eval-after-load 'config-embark
-    (setq citar-at-point-function 'embark-act))
-
-  (with-eval-after-load 'modus-themes
-    (let ((file-col (cdr (assoc 'magenta-intense modus-themes-vivendi-colors)))
-          (link-col (cdr (assoc 'blue-intense modus-themes-vivendi-colors)))
-          (note-col (cdr (assoc 'cyan-intense modus-themes-vivendi-colors))))
-      (setq citar-symbols
-            `((file ,(propertize "F" 'face (list :foreground file-col)) . " ")
-              (link ,(propertize "L" 'face (list :foreground link-col)) . " ")
-              (note ,(propertize "N" 'face (list :foreground note-col)) . " ")))))
-
-  )
+(let ((file-col (cdr (assoc 'magenta-intense modus-themes-vivendi-colors)))
+      (link-col (cdr (assoc 'blue-intense modus-themes-vivendi-colors)))
+      (note-col (cdr (assoc 'cyan-intense modus-themes-vivendi-colors))))
+  (setq citar-symbols
+        `((file ,(propertize "F" 'face (list :foreground file-col)) . " ")
+          (link ,(propertize "L" 'face (list :foreground link-col)) . " ")
+          (note ,(propertize "N" 'face (list :foreground note-col)) . " "))))
 
 ;;; Footer:
 

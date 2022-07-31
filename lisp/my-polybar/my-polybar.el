@@ -24,32 +24,29 @@
 
 ;;; Code:
 
-(with-eval-after-load 'exwm
+(defvar my-polybar-panel-process nil)
 
-  (defvar my-polybar-panel-process nil)
+;;;###autoload
+(defun my-polybar-kill-panel ()
+  (interactive)
+  (when my-polybar-panel-process
+    (ignore-errors
+      (kill-process my-polybar-panel-process)))
+  (setq my-polybar-panel-process nil))
 
-  (defun my-polybar-kill-panel ()
-    (interactive)
-    (when my-polybar-panel-process
-      (ignore-errors
-        (kill-process my-polybar-panel-process)))
-    (setq my-polybar-panel-process nil))
+;;;###autoload
+(defun my-polybar-start-panel ()
+  (interactive)
+  (my-polybar-kill-panel)
+  (setq my-polybar-panel-process (start-process-shell-command "polybar" nil "polybar panel")))
 
-  (defun my-polybar-start-panel ()
-    (interactive)
-    (my-polybar-kill-panel)
-    (setq my-polybar-panel-process (start-process-shell-command "polybar" nil "polybar panel")))
-
-  (defun my-polybar-toggle-panel ()
-    "Enable polybar if disabled or disable if enabled."
-    (interactive)
-    (if my-polybar-panel-process
-        (my-polybar-kill-panel)
-      (my-polybar-start-panel)))
-
-  (add-hook 'exwm-init-hook #'my-polybar-start-panel)
-
-  )
+;;;###autoload
+(defun my-polybar-toggle-panel ()
+  "Enable polybar if disabled or disable if enabled."
+  (interactive)
+  (if my-polybar-panel-process
+      (my-polybar-kill-panel)
+    (my-polybar-start-panel)))
 
 ;;; Footer:
 
