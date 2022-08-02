@@ -133,6 +133,10 @@
   :after 'format-all
   :install 'straight)
 
+(core-use-module 'gcmh
+  :install 'package
+  :execute ((add-hook 'after-init-hook #'gcmh-mode)))
+
 (core-use-module 'git-timemachine
   :install 'straight)
 
