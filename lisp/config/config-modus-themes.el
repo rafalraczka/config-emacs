@@ -26,6 +26,8 @@
 
 (defun my/modus-themes-set-faces ()
   "Set faces which overrides `modus-themes' defaults."
+  (when (memq 'modus-vivendi custom-enabled-themes)
+    (my/modus-themes-set-faces-vivendi))
   (set-face-attribute 'fringe nil :inherit 'line-number :background 'unspecified)
   (set-face-attribute 'mode-line nil :box 'unspecified)
   (set-face-attribute 'mode-line-inactive nil :box nil)
@@ -45,9 +47,7 @@
     (set-face-attribute 'org-cite nil :inherit 'default)
     (set-face-attribute 'org-headline-done nil :inherit 'shadow)
     (set-face-attribute 'org-scheduled nil :foreground 'unspecified)
-    (set-face-attribute 'org-tag nil :foreground nil :inherit 'shadow))
-  (when (memq 'modus-vivendi custom-enabled-themes)
-    (my/modus-themes-set-faces-vivendi)))
+    (set-face-attribute 'org-tag nil :foreground nil :inherit 'shadow)))
 
 (defun my/modus-themes-set-faces-vivendi ()
   "Set faces which overrides Modus Vivendi defaults."
