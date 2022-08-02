@@ -111,7 +111,8 @@
 
 (core-use-module 'exwm
   :when core-envi-exwm-required
-  :install 'straight)
+  :install 'straight
+  :execute ((require 'config-exwm)))
 
 (core-use-module 'face-remap
   :after 'face-remap)
