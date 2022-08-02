@@ -80,6 +80,7 @@
                                              (bg-tab-active . "#323232")
                                              (bg-tab-inactive . "#100f10")
                                              (fg-comment-yellow . "#d0ba95")))
+
 (if (daemonp)
     (add-hook 'server-after-make-frame-hook #'modus-themes-load-vivendi -50)
   (add-hook 'after-init-hook #'modus-themes-load-vivendi -50))
