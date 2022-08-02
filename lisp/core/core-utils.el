@@ -103,10 +103,12 @@ and change to TH value after the Emacs startup."
 (add-hook 'find-file-hook #'core-utils-run-first-interaction-hook -50)
 (add-hook 'pre-command-hook #'core-utils-run-first-interaction-hook -50)
 
+(setq gc-cons-percentage 1.0)
+
 (core-utils-check-emacs-version "27.2")
 
-(core-utils-set-gc-cons-threshold 33554432 ; (* 32 1024 1024)
-			       134217728) ; (* 128 1024 1024)
+(core-utils-set-gc-cons-threshold 1073741824 ; (* 1 1024 1024 1024)
+			          most-positive-fixnum)
 
 ;;; Footer:
 
