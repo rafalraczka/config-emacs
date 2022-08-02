@@ -25,6 +25,7 @@
 ;;; Code:
 
 (require 'citar)
+(require 'modus-themes)
 (require 'oc-csl)
 
 (defcustom my/org-fill-column 72
@@ -84,6 +85,32 @@
 (setq org-todo-keywords
       '((sequence "TODO(t!)" "STRT(s!)" "|" "DONE(d!)")
         (sequence "MYBE(m!)" "WAIT(w!)" "|" "CANC(c!)" "UNDN(u!)")))
+
+(setq org-todo-keyword-faces
+      (let* ((palette modus-themes-vivendi-colors)
+             (blue (cdr (assoc 'blue palette)))
+             (cyan (cdr (assoc 'cyan palette)))
+             (gray "#545454")
+             (green (cdr (assoc 'green palette)))
+             (magenta (cdr (assoc 'magenta-intense palette))))
+        `(("CANC" . (:foreground ,gray))
+          ("DELG" . (:foreground ,cyan))
+          ("DONE" . (:foreground ,gray))
+          ("MYBE" . (:foreground ,blue))
+          ("STRT" . (:foreground ,green))
+          ("TODO" . (:foreground ,green))
+          ("UNDN" . (:foreground ,gray))
+          ("WAIT" . (:foreground ,magenta)))))
+
+(setq org-priority-faces
+      (let* ((palette modus-themes-vivendi-colors)
+             (blue (cdr (assoc 'blue palette)))
+             (magenta (cdr (assoc 'magenta-intense palette)))
+             (red (cdr (assoc 'red palette))))
+        '((?A . (:foreground red))
+          (?B . (:foreground magenta))
+          (?D . (:foreground blue))
+          (?E . (:foreground blue)))))
 
 (push '(".+\\.org-.*"
         (display-buffer-in-direction)
