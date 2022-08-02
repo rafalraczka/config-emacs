@@ -42,7 +42,10 @@
 (add-hook 'org-mode-hook #'my/org-mode-config)
 (add-hook 'org-mode-hook #'visual-line-mode)
 
+(setq org-cite-activate-processor 'citar)
+(setq org-cite-follow-processor 'citar)
 (setq org-cite-global-bibliography core-envi-bib-files)
+(setq org-cite-insert-processor 'citar)
 (setq org-default-priority ?C)
 
 ;; Default directory for org files.
@@ -60,11 +63,10 @@
 
 (setq org-id-link-to-org-use-id 'use-existing)
 
-(setq org-lowest-priority  ?E)
+(setq org-lowest-priority ?E)
 (setq org-outline-path-complete-in-steps nil)
-(setq org-refile-targets
-      '((nil :maxlevel . 8)
-        (org-agenda-files :maxlevel . 1)))
+(setq org-refile-targets '((nil :maxlevel . 8)
+                           (org-agenda-files :maxlevel . 1)))
 (setq org-refile-use-outline-path t)
 
 ;; - =CANC= - The task has been cancelled.
@@ -138,10 +140,6 @@
     (setq org-ditaa-eps-jar-path path-eps))
   (org-babel-do-load-languages 'org-babel-load-languages
                                `(,@org-babel-load-languages (ditaa . t))))
-
-(setq org-cite-insert-processor 'citar)
-(setq org-cite-follow-processor 'citar)
-(setq org-cite-activate-processor 'citar)
 
 ;;; Footer:
 
