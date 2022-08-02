@@ -26,6 +26,12 @@
 
 (require 'org-noter)
 
+(setq org-noter-always-create-frame nil)
+(setq org-noter-auto-save-last-location t)
+(setq org-noter-doc-split-fraction '(0.6 0.4))
+(setq org-noter-kill-frame-at-session-end nil)
+(setq org-noter-notes-search-path (list core-envi-ref-notes-directory))
+
 ;;; Footer:
 
 (provide 'config-org-noter)
