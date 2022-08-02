@@ -24,11 +24,11 @@
 
 ;;; Code:
 
+(require 'core-utils)
 (require 'core-envi)
 (require 'core-straight)
 (require 'core-package)
 (require 'core-use-module)
-(require 'core-utils)
 
 ;;; Footer:
 
