@@ -86,7 +86,10 @@ nil.")
   "Default directory where user stores org files.")
 
 (defconst core-envi-projects-directory
-  (list (expand-file-name "projects/" core-envi-user-files-directory))
+  (let ((cmd "xdg-user-dir"))
+    (if (executable-find cmd)
+        (list (string-trim (shell-command-to-string (concat cmd " PROJECTS"))))
+      (list (expand-file-name "prj/" core-envi-user-files-directory))))
   "Default directory with projects.")
 
 (defconst core-envi-ref-notes-directory
