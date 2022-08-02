@@ -273,7 +273,6 @@
               (add-hook 'after-init-hook #'org-roam-db-sync))))
 
 (core-use-module 'org-roam-ui
-  :after 'org-roam
   :install 'package)
 
 (core-use-module 'org-super-agenda
