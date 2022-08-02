@@ -24,6 +24,16 @@
 
 ;;; Code:
 
+;; =straight= is slower in comparison to built-in =package=.  To improve
+;; initialization time with =straight= it is recommended to change value of
+;; the `straight-check-for-modifications' variable.  Following code change its
+;; value to the recommended one in official =straight= repository.
+;; https://github.com/raxod502/straight.el/blob/master/README.md#my-init-time-got-slower
+
+(if (executable-find "watchexec")
+    (setq straight-check-for-modifications '(watch-files find-when-checking))
+  (setq straight-check-for-modifications '(check-on-save find-when-checking)))
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -36,16 +46,6 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-
-;; =straight= is slower in comparison to built-in =package=.  To improve
-;; initialization time with =straight= it is recommended to change value of
-;; the `straight-check-for-modifications' variable.  Following code change its
-;; value to the recommended one in official =straight= repository.
-;; https://github.com/raxod502/straight.el/blob/master/README.md#my-init-time-got-slower
-
-(if (executable-find "watchexec")
-    (setq straight-check-for-modifications '(watch-files find-when-checking))
-  (setq straight-check-for-modifications '(check-on-save find-when-checking)))
 
 ;;; Footer:
 
