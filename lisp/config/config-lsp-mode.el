@@ -28,6 +28,7 @@
 (require 'which-key)
 
 (setq lsp-headerline-breadcrumb-enable nil)
+(setq lsp-keymap-prefix nil)
 (setq lsp-signature-auto-activate nil)
 
 (add-hook 'lsp-mode-hook #'company-mode)
