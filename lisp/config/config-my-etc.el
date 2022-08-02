@@ -30,6 +30,8 @@
 
 (setq delete-by-moving-to-trash t)
 (setq ring-bell-function 'my-etc-blink-mode-line-bg)
+(setq visual-line-fringe-indicators `(left-curly-arrow ,nil))
+(setq-default indent-tabs-mode nil)
 
 ;;; Footer:
 
