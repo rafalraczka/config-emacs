@@ -29,10 +29,17 @@
   (set-face-attribute 'fringe nil :inherit 'line-number :background 'unspecified)
   (set-face-attribute 'mode-line nil :box 'unspecified)
   (set-face-attribute 'mode-line-inactive nil :box nil)
-  (set-face-attribute 'modus-themes-tab-active nil :box nil)
-  (set-face-attribute 'modus-themes-tab-backdrop nil :background 'unspecified :inherit 'mode-line-inactive)
-  (set-face-attribute 'tab-bar-tab nil :inherit 'mode-line)
-  (set-face-attribute 'tab-bar-tab-inactive nil :inherit 'mode-line-inactive :height 0.92)
+  (set-face-attribute 'modus-themes-tab-active nil :box 'unspecified)
+  (set-face-attribute 'modus-themes-tab-backdrop nil
+                      :background (face-attribute 'mode-line-inactive :background))
+  (set-face-attribute 'modus-themes-tab-inactive nil :box 'unspecified)
+  (set-face-attribute 'tab-bar-tab nil
+                      :background (face-attribute 'mode-line :background)
+                      :height 0.75)
+  (set-face-attribute 'tab-bar-tab-inactive nil
+                      :background (face-attribute 'mode-line-inactive :background)
+                      :inherit 'unspecified
+                      :height 0.75)
   (with-eval-after-load 'org-faces
     (set-face-attribute 'org-agenda-date-today nil :background 'unspecified)
     (set-face-attribute 'org-cite nil :inherit 'default)
