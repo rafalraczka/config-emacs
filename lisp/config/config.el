@@ -137,6 +137,9 @@
   :install 'package
   :execute ((add-hook 'after-init-hook #'gcmh-mode)))
 
+(core-use-module 'git-email
+  :install 'straight)
+
 (core-use-module 'git-timemachine
   :install 'straight)
 

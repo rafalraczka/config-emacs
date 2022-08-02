@@ -35,6 +35,9 @@
 
 (defvar config-straight-recipes
   '(
+    (git-email
+     :host source-hut :repo "~yoctocell/git-email"
+     :files ("git-email.el" "git-email-magit.el" "git-email-notmuch.el"))
     (lilypond
      :files ("elisp/*.el"))
     (modus-themes
