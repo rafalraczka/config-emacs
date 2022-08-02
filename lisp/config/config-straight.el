@@ -31,6 +31,8 @@
 (defvar config-straight-version-lockfile-name
   (symbol-name config-straight-name))
 
+(push '(source-hut "git.sr.ht" nil) straight-hosts)
+
 (defvar config-straight-recipes
   '(
     (lilypond
