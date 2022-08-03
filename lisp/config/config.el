@@ -357,6 +357,9 @@
 (core-use-module 'visual-fill
   :install 'package)
 
+(core-use-module 'visual-fill-column
+  :install 'package)
+
 (core-use-module 'volatile-highlights
   :install 'package
   :execute ((add-hook 'core-utils-first-interaction-hook #'volatile-highlights-mode)))
