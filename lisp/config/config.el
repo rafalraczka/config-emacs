@@ -355,7 +355,6 @@
   :execute ((add-hook 'core-utils-first-interaction-hook #'vertico-mode)))
 
 (core-use-module 'visual-fill
-  :disable 't
   :install 'package)
 
 (core-use-module 'which-key
