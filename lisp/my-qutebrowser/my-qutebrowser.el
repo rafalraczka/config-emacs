@@ -29,7 +29,8 @@
 ;;;###autoload
 (defun my-qutebrowser-switch-to-buffer (buffer-or-name)
   (interactive
-   (let ((inhibit-quit t))
+   (let ((inhibit-quit t)
+         (completion-styles '(orderless basic)))
      (minibuffer-with-setup-hook
          (lambda ()
            (insert "qutebrowser-exwm$ "))
