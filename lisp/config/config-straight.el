@@ -51,6 +51,10 @@
      :type git :flavor melpa
      :host github :repo "weirdNox/org-noter"
      :fork (:repo "rafalraczka/org-noter"))
+    (org-ref-prettify
+     :type git :flavor melpa :host github :repo "alezost/org-ref-prettify.el"
+     :fork (:host source-hut :repo "~rafalraczka/org-ref-prettify.el"
+            :branch "main"))
     (org-roam
      :types git :flavor melpa :host github :repo "org-roam/org-roam"
      :files (:defaults "extensions/*" "org-roam-pkg.el")

@@ -268,6 +268,9 @@
 (core-use-module 'org-ql
   :install 'straight)
 
+(core-use-module 'org-ref-prettify
+  :install 'straight)
+
 (core-use-module 'org-roam
   :after 'org
   :install 'straight
