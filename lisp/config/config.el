@@ -254,6 +254,9 @@
   :after 'org
   :install 'straight)
 
+(core-use-module 'org-agenda
+  :after 'org-agenda)
+
 (core-use-module 'org-contrib
   :after 'org
   :install 'package)
