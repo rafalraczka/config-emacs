@@ -31,7 +31,7 @@
 (defvar config-straight-version-lockfile-name
   (symbol-name config-straight-name))
 
-(push '(source-hut "git.sr.ht" nil) straight-hosts)
+(push '(source-hut "git.sr.ht" "") straight-hosts)
 
 (defvar config-straight-recipes
   '(
