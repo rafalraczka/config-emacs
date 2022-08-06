@@ -24,11 +24,6 @@
 
 ;;; Code:
 
-(require 'hl-todo)
-(require 'olivetti)
-(require 'rainbow-delimiters)
-(require 'smartparens)
-
 (defcustom my/prog-mode-fill-column 72
   "Default `fill-column' for programming modes."
   :type 'integer)
