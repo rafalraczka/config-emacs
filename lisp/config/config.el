@@ -219,8 +219,8 @@
   :install 'local)
 
 (core-use-module 'my-keymap
-  :after 'config
-  :install 'local)
+  :install 'local
+  :execute ((with-eval-after-load 'config (require 'my-keymap))))
 
 (core-use-module 'my-mini-gui
   :install 'local
