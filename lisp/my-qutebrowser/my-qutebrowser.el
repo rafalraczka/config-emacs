@@ -24,6 +24,7 @@
 
 ;;; Code:
 
+(require 'exwm)
 (require 'orderless)
 
 ;;;###autoload
