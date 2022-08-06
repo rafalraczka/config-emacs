@@ -41,7 +41,9 @@
 (add-hook 'org-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'my/org-mode-config)
 (add-hook 'org-mode-hook #'visual-line-mode)
+(add-hook 'org-timer-set-hook #'org-clock-in)
 
+(setq org-catch-invisible-edits 'smart)
 (setq org-cite-activate-processor 'citar)
 (setq org-cite-follow-processor 'citar)
 (setq org-cite-global-bibliography core-envi-bib-files)
@@ -51,7 +53,9 @@
 ;; Default directory for org files.
 
 (setq org-directory core-envi-org-directory)
+(setq org-edit-src-content-indentation 0)
 (setq org-ellipsis "…")
+(setq org-export-in-background t)
 
 ;; Hide all leading stars in a heading except the last one.
 
