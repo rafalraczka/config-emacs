@@ -59,6 +59,9 @@
      :types git :flavor melpa :host github :repo "org-roam/org-roam"
      :files (:defaults "extensions/*" "org-roam-pkg.el")
      :fork (:repo "rafalraczka/org-roam"))
+    (org-tree-slide
+     :type git :flavor melpa :host github :repo "takaxp/org-tree-slide"
+     :fork (:host source-hut :repo "~rafalraczka/org-tree-slide" :branch main))
     (screenshot
      :type git :host github :repo "tecosaur/screenshot" :bulid (:not compile)
      :fork (:repo "rafalraczka/screenshot"))

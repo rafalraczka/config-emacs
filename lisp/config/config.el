@@ -288,6 +288,10 @@
 (core-use-module 'org-transclusion
   :install 'straight)
 
+(core-use-module 'org-tree-slide
+  :after 'org
+  :install 'straight)
+
 (core-use-module 'pdf-tools
   :after 'pdf-tools
   :install 'package
