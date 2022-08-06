@@ -233,6 +233,10 @@
   :install 'local
   :execute ((add-hook 'exwm-init-hook #'my-polybar-start-panel)))
 
+(core-use-module 'my-qutebrowser
+  :when (and core-envi-exwm-required (executable-find "qutebrowser"))
+  :install 'local)
+
 (core-use-module 'notmuch
   :after 'notmuch
   :install 'package)
