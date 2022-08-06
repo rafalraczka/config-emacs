@@ -218,6 +218,9 @@
   :after 'config
   :install 'local)
 
+(core-use-module 'my-jabref
+  :install 'local)
+
 (core-use-module 'my-keymap
   :install 'local
   :execute ((with-eval-after-load 'config (require 'my-keymap))))
