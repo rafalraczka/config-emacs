@@ -304,6 +304,10 @@
   :install 'package
   :execute ((add-hook 'after-init-hook #'pdf-loader-install)))
 
+(core-use-module 'pico-dashboard
+  :after 'config
+  :install 'straight)
+
 (core-use-module 'presentation
   :after 'presentation
   :install 'package)

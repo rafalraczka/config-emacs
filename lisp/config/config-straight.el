@@ -62,6 +62,9 @@
     (org-tree-slide
      :type git :flavor melpa :host github :repo "takaxp/org-tree-slide"
      :fork (:host source-hut :repo "~rafalraczka/org-tree-slide" :branch main))
+    (pico-dashboard
+     :host source-hut :repo "~rafalraczka/pico-dashboard" :branch "devel"
+     :files (:defaults "banners"))
     (screenshot
      :type git :host github :repo "tecosaur/screenshot" :bulid (:not compile)
      :fork (:repo "rafalraczka/screenshot"))
