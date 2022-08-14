@@ -182,7 +182,8 @@
 
 (core-use-module 'lsp-mode
   :after 'lsp-mode
-  :install 'package)
+  :install 'package
+  :execute ((setq lsp-keymap-prefix nil)))
 
 (core-use-module 'lsp-pyls
   :after 'python)
