@@ -172,6 +172,7 @@
 
 (core-use-module 'langtool
   :when (executable-find "languagetool")
+  :after 'langtool
   :install 'package)
 
 (core-use-module 'lilypond
