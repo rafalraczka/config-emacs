@@ -171,8 +171,8 @@
   :install 'straight)
 
 (core-use-module 'langtool
-  :when (executable-find "languagetool")
   :after 'langtool
+  :when (and core-envi-gnu-linux (executable-find "languagetool"))
   :install 'package)
 
 (core-use-module 'lilypond

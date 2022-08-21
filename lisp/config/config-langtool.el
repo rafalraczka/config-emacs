@@ -24,9 +24,8 @@
 
 ;;; Code:
 
-(when core-envi-gnu-linux
-  (setq langtool-java-classpath
-	"/usr/share/languagetool:/usr/share/java/languagetool/*"))
+(setq langtool-java-classpath
+      "/usr/share/languagetool:/usr/share/java/languagetool/*")
 
 ;;; Footer:
 
