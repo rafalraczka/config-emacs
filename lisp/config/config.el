@@ -99,6 +99,9 @@
   :after 'config
   :install 'package)
 
+(core-use-module 'editorconfig
+  :install 'package)
+
 (core-use-module 'elisp
   :after 'elisp)
 
