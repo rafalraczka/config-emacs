@@ -410,7 +410,8 @@
 
 (core-use-module 'yasnippet
   :after 'config
-  :install 'straight)
+  :install 'straight
+  :execute ((setq yas-alias-to-yas/prefix-p nil)))
 
 ;;; Footer:
 
