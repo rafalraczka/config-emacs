@@ -406,6 +406,7 @@
   :install 'package)
 
 (core-use-module 'yaml-mode
+  :after 'yaml-mode
   :install 'package)
 
 (core-use-module 'yasnippet
