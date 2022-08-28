@@ -102,6 +102,9 @@
 (core-use-module 'editorconfig
   :install 'package)
 
+(core-use-module 'eglot
+  :install 'package)
+
 (core-use-module 'elisp
   :after 'elisp)
 
