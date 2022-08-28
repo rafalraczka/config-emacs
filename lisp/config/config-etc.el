@@ -1,4 +1,4 @@
-;;; config-my-etc.el --- miscellaneous configurations -*- lexical-binding: t; -*-
+;;; config-etc.el --- miscellaneous configurations -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -29,12 +29,13 @@
 (add-hook 'core-utils-first-interaction-hook #'column-number-mode)
 
 (setq delete-by-moving-to-trash t)
-(setq ring-bell-function 'my-etc-blink-mode-line-bg)
+(setq tab-always-indent 'complete)
 (setq visual-line-fringe-indicators `(left-curly-arrow ,nil))
+(setq-default fill-column 80)
 (setq-default indent-tabs-mode nil)
 
 ;;; Footer:
 
-(provide 'config-my-etc)
+(provide 'config-etc)
 
-;;; config-my-etc.el ends here
+;;; config-etc.el ends here

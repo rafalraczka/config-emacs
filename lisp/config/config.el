@@ -112,6 +112,9 @@
   :after 'ess
   :install 'package)
 
+(core-use-module 'etc
+  :after 'config)
+
 (core-use-module 'exwm
   :when core-envi-exwm-required
   :install 'straight
@@ -220,8 +223,8 @@
   :install 'local)
 
 (core-use-module 'my-etc
-  :after 'config
-  :install 'local)
+  :install 'local
+  :execute ((setq ring-bell-function 'my-etc-blink-mode-line-bg)))
 
 (core-use-module 'my-jabref
   :install 'local)
