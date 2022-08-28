@@ -32,22 +32,19 @@
   "Default `olivetti-body-width' for programming modes."
   :type 'integer)
 
-(defun my/prog-mode-auto-fill-only-comments ()
-  (setq-local comment-auto-fill-only-comments t))
+(defcustom my/prog-mode-comment-column 40
+  "Default `comment-column' for programming modes.")
 
-(defun my/prog-mode-set-fill-column ()
-  "Set `fill-column' for programming modes."
-  (setq-local fill-column my/prog-mode-fill-column))
-
-(defun my/prog-mode-set-olivetti-body-width ()
+(defun my/prog-mode-config ()
+  (setq-local comment-auto-fill-only-comments t)
+  (setq-local comment-column my/prog-mode-comment-column)
+  (setq-local fill-column my/prog-mode-fill-column)
   (setq-local olivetti-body-width my/prog-mode-olivetti-body-width))
 
 (add-hook 'prog-mode-hook #'auto-fill-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'hl-todo-mode)
-(add-hook 'prog-mode-hook #'my/prog-mode-auto-fill-only-comments)
-(add-hook 'prog-mode-hook #'my/prog-mode-set-fill-column)
-(add-hook 'prog-mode-hook #'my/prog-mode-set-olivetti-body-width)
+(add-hook 'prog-mode-hook #'my/prog-mode-config)
 (add-hook 'prog-mode-hook #'outline-minor-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'smartparens-mode)
