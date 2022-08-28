@@ -164,9 +164,6 @@
   :install 'package
   :execute ((add-hook 'core-utils-first-interaction-hook #'global-hl-todo-mode)))
 
-(core-use-module 'indent
-  :after 'config)
-
 (core-use-module 'ispell
   :after 'ispell)
 
