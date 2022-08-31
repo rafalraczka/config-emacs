@@ -64,6 +64,7 @@
         ?\C-c ?\C-h ?\C-u ?\C-x
         ?\M-! ?\M-& ?\M-: ?\M-` ?\M-x
         ?\s-+
+        f5 f6 f7 f8 f9
         ))
 
 (setq exwm-input-simulation-keys
