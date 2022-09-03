@@ -225,16 +225,12 @@
   :after 'config
   :install 'straight)
 
-(core-use-module 'my-etc
+(core-use-module 'my
   :install 'local
-  :execute ((setq ring-bell-function 'my-etc-blink-mode-line-bg)))
+  :execute ((add-hook 'exwm-init-hook #'my-polybar-start-panel)
+            (setq ring-bell-function 'my-etc-blink-mode-line-bg)
+            (with-eval-after-load 'config (require 'my-keymap))))
 
-(core-use-module 'my-jabref
-  :install 'local)
-
-(core-use-module 'my-keymap
-  :install 'local
-  :execute ((with-eval-after-load 'config (require 'my-keymap))))
 
 (core-use-module 'my-mini-gui
   :install 'local
@@ -242,14 +238,6 @@
                 (add-hook 'server-after-make-frame-hook #'my-mini-gui-mode)
               (add-hook 'after-init-hook #'my-mini-gui-mode))))
 
-(core-use-module 'my-polybar
-  :when (and core-envi-exwm-required (executable-find "polybar"))
-  :install 'local
-  :execute ((add-hook 'exwm-init-hook #'my-polybar-start-panel)))
-
-(core-use-module 'my-qutebrowser
-  :when (and core-envi-exwm-required (executable-find "qutebrowser"))
-  :install 'local)
 
 (core-use-module 'notmuch
   :after 'notmuch
