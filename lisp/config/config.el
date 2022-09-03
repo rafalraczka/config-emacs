@@ -38,6 +38,7 @@
   :install 'package)
 
 (core-use-module 'all-the-icons-dired
+  :disable t
   :after 'dired
   :install 'package)
 
