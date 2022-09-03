@@ -301,8 +301,11 @@
 
 (core-use-module 'pdf-tools
   :after 'pdf-tools
-  :install 'package
-  :execute ((add-hook 'after-init-hook #'pdf-loader-install)))
+  :install 'straight
+  :execute ((unless (file-exists-p
+                     (expand-file-name "epdfinfo"
+                                       (straight--build-dir "pdf-tools")))
+              (pdf-tools-install))))
 
 (core-use-module 'pico-dashboard
   :after 'config
