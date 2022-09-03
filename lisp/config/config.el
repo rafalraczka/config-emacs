@@ -81,6 +81,9 @@
 (core-use-module 'custom
   :after 'config)
 
+(core-use-module 'desktop-environment
+  :install 'package)
+
 (core-use-module 'dired
   :after 'dired)
 
