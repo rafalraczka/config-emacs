@@ -41,8 +41,8 @@
     (lilypond
      :files ("elisp/*.el"))
     (modus-themes
-     :type git :flavor melpa :host gitlab
-     :repo "protesilaos/modus-themes" :branch "main"
+     :type git :flavor melpa :host source-hut
+     :repo "~protesilaos/modus-themes" :branch "main"
      :fork (:repo "rafalraczka/modus-themes"))
     (olivetti
      :type git :flavor melpa :host github :repo "rnkn/olivetti"
