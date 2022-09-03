@@ -372,7 +372,7 @@
   :after 'text-mode)
 
 (core-use-module 'tramp
-  :after 'config)
+  :execute ((setq tramp-default-method "ssh")))
 
 (core-use-module 'undo-tree
   :after 'undo-tree
