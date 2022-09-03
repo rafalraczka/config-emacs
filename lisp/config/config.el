@@ -44,7 +44,7 @@
 
 (core-use-module 'async
   :install 'package
-  :execute ((add-hook 'core-utils-first-interaction-hook #'dired-async-mode)))
+  :execute ((add-hook 'dired-mode-hook #'dired-async-mode)))
 
 (core-use-module 'beacon
   :disable t
