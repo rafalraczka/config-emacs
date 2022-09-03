@@ -32,6 +32,7 @@
   (symbol-name config-straight-name))
 
 (push '(source-hut "git.sr.ht" "") straight-hosts)
+(push '(source-hut "codeberg.org" ".git") straight-hosts)
 
 (defvar config-straight-recipes
   '(
@@ -43,40 +44,40 @@
     (modus-themes
      :type git :flavor melpa :host source-hut
      :repo "~protesilaos/modus-themes" :branch "main"
-     :fork (:repo "rafalraczka/modus-themes"))
+     :fork (:host codeberg :repo "rafalraczka/modus-themes"))
     (olivetti
      :type git :flavor melpa :host github :repo "rnkn/olivetti"
-     :fork (:repo "rafalraczka/olivetti"))
+     :fork (:host codeberg :repo "rafalraczka/olivetti" :branch "main"))
     (org-noter
      :type git :flavor melpa
      :host github :repo "weirdNox/org-noter"
-     :fork (:repo "rafalraczka/org-noter"))
+     :fork (:host codeberg :repo "rafalraczka/org-noter" :branch "main"))
     (org-ref-prettify
      :type git :flavor melpa :host github :repo "alezost/org-ref-prettify.el"
-     :fork (:host source-hut :repo "~rafalraczka/org-ref-prettify.el"
+     :fork (:host codeberg :repo "rafalraczka/org-ref-prettify.el"
             :branch "main"))
     (org-roam
      :types git :flavor melpa :host github :repo "org-roam/org-roam"
      :files (:defaults "extensions/*" "org-roam-pkg.el")
-     :fork (:repo "rafalraczka/org-roam"))
+     :fork (:host codeberg :repo "rafalraczka/org-roam"))
     (org-tree-slide
      :type git :flavor melpa :host github :repo "takaxp/org-tree-slide"
-     :fork (:host source-hut :repo "~rafalraczka/org-tree-slide" :branch main))
+     :fork (:host codeberg :repo "rafalraczka/org-tree-slide" :branch "main"))
     (pico-dashboard
-     :host source-hut :repo "~rafalraczka/pico-dashboard" :branch "devel"
+     :host codeberg :repo "rafalraczka/pico-dashboard" :branch "devel"
      :files (:defaults "banners"))
     (screenshot
      :type git :host github :repo "tecosaur/screenshot" :bulid (:not compile)
-     :fork (:repo "rafalraczka/screenshot"))
+     :fork (:host codeberg :repo "rafalraczka/screenshot" :branch "main"))
     (speed-type
      :type git :host github :repo "parkouss/speed-type"
-     :fork (:repo "rafalraczka/speed-type"))
+     :fork (:host codeberg :repo "rafalraczka/speed-type" :branch "main"))
     (sql-indent
      :type git :host github :repo "alex-hhh/emacs-sql-indent"
      :files ("*" (:exclude ".git"))
-     :fork (:repo "rafalraczka/emacs-sql-indent" :branch "main"))
+     :fork (:host codeberg :repo "rafalraczka/emacs-sql-indent" :branch "main"))
     (yasnippet
-     :fork (:repo "rafalraczka/yasnippet" :branch "main"))
+     :fork (:host codeberg :repo "rafalraczka/yasnippet" :branch "main"))
     ))
 
 (push (cons config-straight-name config-straight-version-lockfile-name)
