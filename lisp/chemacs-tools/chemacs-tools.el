@@ -1,4 +1,4 @@
-;;; my-chemacs.el --- my-chemacs configuration -*- lexical-binding: t; -*-
+;;; chemacs-tools.el --- Tools for chemacs -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -27,7 +27,7 @@
 (require 'chemacs)
 
 ;;;###autoload
-(defun my-chemacs-read-profile (&optional prompt)
+(defun chemacs-tools-read-profile (&optional prompt)
   "Read a PROFILE by its name.
 PROMPT can overwrite the default prompt."
   (let ((profiles
@@ -39,10 +39,10 @@ PROMPT can overwrite the default prompt."
     (completing-read prompt profiles)))
 
 ;;;###autoload
-(defun my-chemacs-run-emacs (profile)
+(defun chemacs-tools-run-emacs (profile)
   "Test Emacs startup with PROFILE."
   (interactive
-   (list (my-chemacs-read-profile "Profile to run: ")))
+   (list (chemacs-tools-read-profile "Profile to run: ")))
   (let* ((cmd (format "emacs --fullscreen --with-profile %s" profile))
          cmd-parts)
     (when current-prefix-arg
@@ -52,6 +52,6 @@ PROMPT can overwrite the default prompt."
 
 ;;; Footer:
 
-(provide 'my-chemacs)
+(provide 'chemacs-tools)
 
-;;; my-chemacs.el ends here
+;;; chemacs-tools.el ends here

@@ -59,6 +59,10 @@
 (core-use-module 'calendar
   :after 'calendar)
 
+(core-use-module 'chemacs-tools
+  :when core-envi-chemacs-directory
+  :install 'local)
+
 (core-use-module 'citar
   :after 'citar
   :install 'straight)
@@ -220,10 +224,6 @@
 (core-use-module 'modus-themes
   :after 'config
   :install 'straight)
-
-(core-use-module 'my-chemacs
-  :when core-envi-chemacs-directory
-  :install 'local)
 
 (core-use-module 'my-etc
   :install 'local
