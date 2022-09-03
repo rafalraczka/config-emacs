@@ -49,14 +49,6 @@
 (add-hook 'after-init-hook #'config-exwm-restart-server)
 (add-hook 'exwm-mode-hook #'config-exwm-mode-line-format)
 
-(setq exwm-input-global-keys
-      (mapcar (lambda (i)
-                `(,(kbd (format "s-%d" i)) .
-                  (lambda ()
-                    (interactive)
-                    (exwm-workspace-switch-create ,i))))
-              (number-sequence 0 9)))
-
 (setq exwm-input-prefix-keys
       `(
         ,@(number-sequence ?\C-\s-a ?\C-\s-z)
