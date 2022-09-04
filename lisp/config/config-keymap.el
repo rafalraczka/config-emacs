@@ -29,29 +29,25 @@
 (global-set-key (kbd "C-s-g") #'config-keymap-git-map)
 (global-set-key (kbd "C-s-h") #'config-keymap-help-map)
 
-;;;; config-keymap-git-map ----------------
+;;;; Custom maps
 
-(define-prefix-command 'config-keymap-git-map)
+;;;;; config-keymap-git-map
 
-(with-eval-after-load 'config-git-timemachine
-  (define-key config-keymap-git-map (kbd "t") #'git-timemachine))
+(let ((map (define-prefix-command 'config-keymap-git-map)))
+  (define-key map (kbd "l") 'magit-log)
+  (define-key map (kbd "r") 'magit-rebase)
+  (define-key map (kbd "s") 'magit-status)
+  (define-key map (kbd "t") 'git-timemachine))
 
-(with-eval-after-load 'config-magit
-  (define-key config-keymap-git-map (kbd "l f") #'magit-log-buffer-file)
-  (define-key config-keymap-git-map (kbd "l c") #'magit-log-current)
-  (define-key config-keymap-git-map (kbd "r") #'magit-rebase)
-  (define-key config-keymap-git-map (kbd "s") #'magit-status))
-
-;;;; config-keymap-help-map ---------------
+;;;;; config-keymap-help-map
 
 (define-prefix-command 'config-keymap-help-map)
 
 (set-keymap-parent config-keymap-help-map 'help-command)
 
-(with-eval-after-load 'config-helpful
-  (define-key config-keymap-help-map (kbd "f") #'helpful-callable)
-  (define-key config-keymap-help-map (kbd "v") #'helpful-variable)
-  (define-key config-keymap-help-map (kbd "k") #'helpful-key))
+(define-key config-keymap-help-map (kbd "f") 'helpful-callable)
+(define-key config-keymap-help-map (kbd "v") 'helpful-variable)
+(define-key config-keymap-help-map (kbd "k") 'helpful-key)
 
 ;;; Footer:
 
