@@ -73,6 +73,13 @@
           (?? aw-show-dispatch-help)))
   (setq aw-keys '(?s ?e ?t ?n ?r ?i ?d ?h ?a ?o)))
 
+;;;;; emacs-lisp-mode-map
+
+(with-eval-after-load 'elisp-mode
+  (let ((map emacs-lisp-mode-map))
+    (define-key map (kbd "C-c C-c") 'eval-buffer)
+    (setq emacs-lisp-mode-map map)))
+
 ;;;;; org-agenda-mode-amp
 
 (with-eval-after-load 'org-agenda
