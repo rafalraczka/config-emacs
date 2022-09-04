@@ -93,11 +93,22 @@
 (define-key config-keymap-help-map (kbd "v") 'helpful-variable)
 (define-key config-keymap-help-map (kbd "k") 'helpful-key)
 
+;;;;; config-keymap-mail
+
+(autoload 'notmuch-mua-new-mail "notmuch")
+
+(let ((map (define-prefix-command 'config-keymap-mail-map)))
+  (define-key map (kbd "h") 'notmuch-hello)
+  (define-key map (kbd "j") 'notmuch-jump-search)
+  (define-key map (kbd "m") 'notmuch-mua-new-mail)
+  (define-key map (kbd "s") 'notmuch-search))
+
 ;;;;; config-keymap-maps-map
 
 (let ((map (define-prefix-command 'config-keymap-maps-map)))
   (define-key map (kbd "g") 'config-keymap-git-map)
   (define-key map (kbd "h") 'config-keymap-help-map)
+  (define-key map (kbd "m") 'config-keymap-mail-map)
   )
 
 ;;;;; config-keymap-workspace-map
