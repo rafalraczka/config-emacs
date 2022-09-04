@@ -73,6 +73,17 @@
           (?? aw-show-dispatch-help)))
   (setq aw-keys '(?s ?e ?t ?n ?r ?i ?d ?h ?a ?o)))
 
+;;;;; vterm-mode-map
+
+(with-eval-after-load 'vterm
+  (let ((map vterm-mode-map))
+    (define-key map (kbd "<f5>") nil)
+    (define-key map (kbd "<f6>") nil)
+    (define-key map (kbd "<f7>") nil)
+    (define-key map (kbd "<f8>") nil)
+    (define-key map (kbd "<f9>") nil)
+    (setq vterm-mode-map map)))
+
 ;;;; Custom maps
 
 ;;;;; config-keymap-git-map
