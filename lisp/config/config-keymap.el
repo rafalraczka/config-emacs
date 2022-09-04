@@ -103,6 +103,15 @@
     (define-key map [?\C-q] 'exwm-input-send-next-key)
     (setq exwm-mode map)))
 
+;;;;; outline-minor-mode-map
+
+(with-eval-after-load 'outline
+  (let ((map outline-minor-mode-map))
+    (define-key map (kbd "<backtab>") 'outline-cycle-buffer)
+    (define-key map (kbd "C-<return>") 'outline-insert-heading)
+    (define-key map (kbd "C-<tab>") 'outline-cycle)
+    (setf outline-mode-map map)))
+
 ;;;;; org-agenda-mode-amp
 
 (with-eval-after-load 'org-agenda
