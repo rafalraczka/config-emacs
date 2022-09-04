@@ -393,7 +393,7 @@
   :execute ((add-hook 'core-utils-first-interaction-hook #'volatile-highlights-mode)))
 
 (core-use-module 'vterm
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'which-key
   :after 'which-key
