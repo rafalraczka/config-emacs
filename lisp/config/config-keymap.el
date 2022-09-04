@@ -119,6 +119,14 @@
     (define-key map (kbd "<ret>") 'org-agenda-tree-to-indirect-buffer)
     (setq org-agenda-mode-map map)))
 
+;;;;; org-mode-map
+
+(with-eval-after-load 'org
+  (let ((map org-mode-map))
+    (define-key map (kbd "C-c c") 'org-cite-insert)
+    (define-key map (kbd "C-c i") 'org-roam-node-insert)
+    (setq org-mode-map map)))
+
 ;;;;; vterm-mode-map
 
 (with-eval-after-load 'vterm
