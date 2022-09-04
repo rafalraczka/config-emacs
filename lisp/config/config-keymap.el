@@ -73,6 +73,10 @@
           (?? aw-show-dispatch-help)))
   (setq aw-keys '(?s ?e ?t ?n ?r ?i ?d ?h ?a ?o)))
 
+;;;;; ctl-x-map
+
+(define-key ctl-x-map (kbd "C-z") nil)
+
 ;;;;; emacs-lisp-mode-map
 
 (with-eval-after-load 'elisp-mode
