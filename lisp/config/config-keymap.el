@@ -24,10 +24,26 @@
 
 ;;; Code:
 
-;;;; global-map -----------------------
+;;;; global-map
 
-(global-set-key (kbd "C-s-g") #'config-keymap-git-map)
-(global-set-key (kbd "C-s-h") #'config-keymap-help-map)
+(global-set-key (kbd "<XF86AudioLowerVolume>") 'desktop-environment-volume-decrement)
+(global-set-key (kbd "<XF86AudioMicMute>") 'desktop-environment-toggle-microphone-mute)
+(global-set-key (kbd "<XF86AudioMute>") 'desktop-environment-toggle-mute)
+(global-set-key (kbd "<XF86AudioNext>") 'desktop-environment-music-next)
+(global-set-key (kbd "<XF86AudioPlay>") 'desktop-environment-toggle-music)
+(global-set-key (kbd "<XF86AudioPrev>") 'desktop-environment-music-previous)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") 'desktop-environment-volume-increment)
+(global-set-key (kbd "<XF86AudioStop>") 'desktop-environment-music-stop)
+(global-set-key (kbd "<XF86Bluetooth>") 'desktop-environment-toggle-bluetooth)
+(global-set-key (kbd "<XF86MonBrightnessDown>") 'desktop-environment-brightness-decrement)
+(global-set-key (kbd "<XF86MonBrightnessUp>") 'desktop-environment-brightness-increment)
+(global-set-key (kbd "<XF86ScreenSaver>") 'desktop-environment-lock-screen)
+(global-set-key (kbd "<XF86WLAN>") 'desktop-environment-toggle-wifi)
+(global-set-key (kbd "<f9>") 'execute-extended-command)
+(global-set-key (kbd "<print>") 'desktop-environment-screenshot)
+(global-set-key (kbd "C-x C-j") 'dired-jump)
+(global-set-key (kbd "C-z") nil)
+(global-set-key (kbd "M-u") 'my-etc-upcase-previous-word)
 
 ;;;; Custom maps
 
