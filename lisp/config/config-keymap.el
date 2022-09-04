@@ -156,7 +156,9 @@
 ;;;;; config-keymap-git-map
 
 (let ((map (define-prefix-command 'config-keymap-git-map)))
+  (define-key map (kbd "b") 'magit-branch)
   (define-key map (kbd "l") 'magit-log)
+  (define-key map (kbd "m") 'magit-remote)
   (define-key map (kbd "r") 'magit-rebase)
   (define-key map (kbd "s") 'magit-status)
   (define-key map (kbd "t") 'git-timemachine))
