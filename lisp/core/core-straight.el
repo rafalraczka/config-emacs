@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(setq straight-enable-use-package-integration nil)
+
 ;; =straight= is slower in comparison to built-in =package=.  To improve
 ;; initialization time with =straight= it is recommended to change value of
 ;; the `straight-check-for-modifications' variable.  Following code change its
