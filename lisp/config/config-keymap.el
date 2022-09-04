@@ -46,6 +46,8 @@
 (global-set-key (kbd "<print>") 'desktop-environment-screenshot)
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 (global-set-key (kbd "C-z") nil)
+(global-set-key (kbd "M-<down>") 'transpose-paragraphs)
+(global-set-key (kbd "M-<up>") 'my-etc-transpose-paragraphs-previous)
 (global-set-key (kbd "M-u") 'my-etc-upcase-previous-word)
 (global-set-key config-keymap-maps-map-prefix 'config-keymap-maps-map)
 (global-set-key config-keymap-workspace-prefix 'config-keymap-workspace-map)

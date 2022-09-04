@@ -60,6 +60,12 @@ will appear for user to select a tab."
     (_ (call-interactively 'tab-bar-switch-to-tab))))
 
 ;;;###autoload
+(defun my-etc-transpose-paragraphs-previous (arg)
+  (interactive "*p")
+  (setq arg (if arg (- arg) -1))
+  (transpose-paragraphs arg))
+
+;;;###autoload
 (defun my-etc-upcase-previous-word ()
   "Convert to upper case from point to the beginning of word and do not move."
   (interactive)
