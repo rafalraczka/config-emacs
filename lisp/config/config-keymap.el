@@ -77,6 +77,13 @@
 
 (define-key ctl-x-map (kbd "C-z") nil)
 
+;;;;; company-active-map
+
+(with-eval-after-load 'company
+  (let ((map company-active-map))
+    (define-key map (kbd "M-n") nil)
+    (define-key map (kbd "M-p") nil)))
+
 ;;;;; dired-mode-map
 
 (with-eval-after-load 'dired
