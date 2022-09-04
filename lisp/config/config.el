@@ -31,31 +31,31 @@
 
 (core-use-module 'ace-window
   :after 'ace-window
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'all-the-icons
   :after 'all-the-icons
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'all-the-icons-dired
   :disable t
   :after 'dired
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'async
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'dired-mode-hook #'dired-async-mode)))
 
 (core-use-module 'beacon
   :disable t
   :after 'beacon
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'beacon-mode)))
 
 (core-use-module 'bibtex-completion
   :disable t
   :after 'bibtex-completion
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'calendar
   :after 'calendar)
@@ -70,58 +70,58 @@
 
 (core-use-module 'company
   :after 'company
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'company-quickhelp
   :after 'company
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'counsel
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'ctrlf
   :after 'config
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'custom
   :after 'config)
 
 (core-use-module 'desktop-environment
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'dired
   :after 'dired)
 
 (core-use-module 'dired-collapse
   :after 'dired
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'dired-ranger
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'dired-single
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'doom-modeline
   :disable t
   :after 'config
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'editorconfig
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'eglot
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'elisp
   :after 'elisp)
 
 (core-use-module 'embark
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'ess
   :after 'ess
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'etc
   :after 'config)
@@ -141,18 +141,18 @@
   :after 'config)
 
 (core-use-module 'flycheck
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'forge
   :after 'magit
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'format-all
   :after 'format-all
   :install 'straight)
 
 (core-use-module 'gcmh
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'after-init-hook #'gcmh-mode)))
 
 (core-use-module 'git-email
@@ -168,11 +168,11 @@
   :install 'straight)
 
 (core-use-module 'hide-mode-line
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'hl-todo
   :after 'hl-todo
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'global-hl-todo-mode)))
 
 (core-use-module 'ispell
@@ -184,7 +184,7 @@
 (core-use-module 'langtool
   :after 'langtool
   :when (and core-envi-gnu-linux (executable-find "languagetool"))
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'lilypond
   :install 'straight
@@ -193,11 +193,11 @@
 
 (core-use-module 'lsp-julia
   :after 'julia-mode
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'lsp-mode
   :after 'lsp-mode
-  :install 'package
+  :install 'straight
   :execute ((setq lsp-keymap-prefix nil)))
 
 (core-use-module 'lsp-pyls
@@ -212,14 +212,14 @@
 
 (core-use-module 'magit-todos
   :after 'magit
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'marginalia
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'marginalia-mode)))
 
 (core-use-module 'minions
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'after-init-hook #'minions-mode)))
 
 (core-use-module 'modus-themes
@@ -242,17 +242,17 @@
 
 (core-use-module 'notmuch
   :after 'notmuch
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'ol-notmuch
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'olivetti
   :after 'config
   :install 'straight)
 
 (core-use-module 'orderless
-  :install 'package
+  :install 'straight
   :execute ((setq completion-category-overrides
                   '((file (styles basic partial-completion))))
             (setq completion-styles '(orderless basic))))
@@ -266,7 +266,7 @@
 
 (core-use-module 'org-contrib
   :after 'org
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'org-noter
   :after 'org
@@ -290,11 +290,11 @@
               (add-hook 'after-init-hook #'org-roam-db-sync))))
 
 (core-use-module 'org-roam-ui
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'org-super-agenda
   :after 'org-agenda
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'org-transclusion
   :install 'straight)
@@ -317,18 +317,18 @@
 
 (core-use-module 'presentation
   :after 'presentation
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'prog-mode
   :after 'prog-mode)
 
 (core-use-module 'projectile
   :after 'projectile
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'projectile-mode)))
 
 (core-use-module 'rainbow-delimiters
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'save-hist
   :execute ((add-hook 'core-utils-first-interaction-hook #'savehist-mode)))
@@ -338,7 +338,7 @@
   :install 'straight)
 
 (core-use-module 'selectrum
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'selectrum-mode)))
 
 (core-use-module 'server
@@ -348,7 +348,7 @@
   :after 'sh-script)
 
 (core-use-module 'smartparens
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'speed-type
   :install 'straight)
@@ -362,7 +362,7 @@
 
 (core-use-module 'super-save
   :after 'config
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'tab-bar
   :after 'tab-bar)
@@ -375,21 +375,21 @@
 
 (core-use-module 'undo-tree
   :after 'undo-tree
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'global-undo-tree-mode)))
 
 (core-use-module 'vertico
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'vertico-mode)))
 
 (core-use-module 'visual-fill
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'visual-fill-column
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'volatile-highlights
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'volatile-highlights-mode)))
 
 (core-use-module 'vterm
@@ -397,19 +397,19 @@
 
 (core-use-module 'which-key
   :after 'which-key
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'core-utils-first-interaction-hook #'which-key-mode)))
 
 (core-use-module 'ws-butler
-  :install 'package
+  :install 'straight
   :execute ((add-hook 'after-init-hook #'ws-butler-global-mode)))
 
 (core-use-module 'yaml
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'yaml-mode
   :after 'yaml-mode
-  :install 'package)
+  :install 'straight)
 
 (core-use-module 'yasnippet
   :after 'config
