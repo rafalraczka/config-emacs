@@ -48,6 +48,29 @@
 (global-set-key (kbd "M-u") 'my-etc-upcase-previous-word)
 (global-set-key config-keymap-workspace-prefix 'config-keymap-workspace-map)
 
+;;;; Mode maps
+
+;;;;; ace-window
+
+(with-eval-after-load 'ace-window
+  (setq aw-dispatch-alist
+        '((?x aw-delete-window "Delete Window")
+          (?m aw-swap-window "Swap Windows")
+          (?M aw-move-window "Move Window")
+          (?c aw-copy-window "Copy Window")
+          (?j aw-switch-buffer-in-window "Select Buffer")
+          (?f aw-flip-window)
+          (?b aw-switch-buffer-other-window "Switch Buffer Other Window")
+          (?e aw-execute-command-other-window "Execute Command Other Window")
+          (?F aw-split-window-fair "Split Fair Window")
+          (?2 aw-split-window-vert "Split Vert Window")
+          (?3 aw-split-window-horz "Split Horz Window")
+          (?1 delete-other-windows "Delete Other Windows")
+          (?T aw-transpose-frame "Transpose Frame")
+          ;; ?i ?r ?t are used by hyperbole.el
+          (?? aw-show-dispatch-help)))
+  (setq aw-keys '(?s ?e ?t ?n ?r ?i ?d ?h ?a ?o)))
+
 ;;;; Custom maps
 
 ;;;;; config-keymap-git-map
