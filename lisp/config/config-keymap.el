@@ -96,6 +96,13 @@
     (define-key map (kbd "C-c C-c") 'eval-buffer)
     (setq emacs-lisp-mode-map map)))
 
+;;;;; exwm-mode-map
+
+(with-eval-after-load 'exwm
+  (let ((map exwm-mode-map))
+    (define-key map [?\C-q] 'exwm-input-send-next-key)
+    (setq exwm-mode map)))
+
 ;;;;; org-agenda-mode-amp
 
 (with-eval-after-load 'org-agenda
