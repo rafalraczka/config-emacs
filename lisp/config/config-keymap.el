@@ -25,6 +25,7 @@
 ;;; Code:
 
 (defvar config-keymap-workspace-prefix [f5])
+(defvar config-keymap-maps-map-prefix [f6])
 
 ;;;; global-map
 
@@ -46,6 +47,7 @@
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 (global-set-key (kbd "C-z") nil)
 (global-set-key (kbd "M-u") 'my-etc-upcase-previous-word)
+(global-set-key config-keymap-maps-map-prefix 'config-keymap-maps-map)
 (global-set-key config-keymap-workspace-prefix 'config-keymap-workspace-map)
 
 ;;;; Mode maps
@@ -90,6 +92,13 @@
 (define-key config-keymap-help-map (kbd "f") 'helpful-callable)
 (define-key config-keymap-help-map (kbd "v") 'helpful-variable)
 (define-key config-keymap-help-map (kbd "k") 'helpful-key)
+
+;;;;; config-keymap-maps-map
+
+(let ((map (define-prefix-command 'config-keymap-maps-map)))
+  (define-key map (kbd "g") 'config-keymap-git-map)
+  (define-key map (kbd "h") 'config-keymap-help-map)
+  )
 
 ;;;;; config-keymap-workspace-map
 
