@@ -181,6 +181,9 @@
 (core-use-module 'julia-mode
   :install 'straight)
 
+(core-use-module 'keymap
+  :after 'config)
+
 (core-use-module 'langtool
   :after 'langtool
   :when (and core-envi-gnu-linux (executable-find "languagetool"))
@@ -229,9 +232,7 @@
 (core-use-module 'my
   :install 'local
   :execute ((add-hook 'exwm-init-hook #'my-polybar-start-panel)
-            (setq ring-bell-function 'my-etc-blink-mode-line-bg)
-            (with-eval-after-load 'config (require 'my-keymap))))
-
+            (setq ring-bell-function 'my-etc-blink-mode-line-bg)))
 
 (core-use-module 'my-mini-gui
   :install 'local

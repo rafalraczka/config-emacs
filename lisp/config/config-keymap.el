@@ -1,4 +1,4 @@
-;;; my-keymap.el --- Custom keybindings  -*- lexical-binding: t; -*-
+;;; config-keymap.el --- keymap configuration  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
@@ -26,35 +26,35 @@
 
 ;;;; global-map -----------------------
 
-(global-set-key (kbd "C-s-g") #'my-keymap-git-map)
-(global-set-key (kbd "C-s-h") #'my-keymap-help-map)
+(global-set-key (kbd "C-s-g") #'config-keymap-git-map)
+(global-set-key (kbd "C-s-h") #'config-keymap-help-map)
 
-;;;; my-keymap-git-map ----------------
+;;;; config-keymap-git-map ----------------
 
-(define-prefix-command 'my-keymap-git-map)
+(define-prefix-command 'config-keymap-git-map)
 
 (with-eval-after-load 'config-git-timemachine
-  (define-key my-keymap-git-map (kbd "t") #'git-timemachine))
+  (define-key config-keymap-git-map (kbd "t") #'git-timemachine))
 
 (with-eval-after-load 'config-magit
-  (define-key my-keymap-git-map (kbd "l f") #'magit-log-buffer-file)
-  (define-key my-keymap-git-map (kbd "l c") #'magit-log-current)
-  (define-key my-keymap-git-map (kbd "r") #'magit-rebase)
-  (define-key my-keymap-git-map (kbd "s") #'magit-status))
+  (define-key config-keymap-git-map (kbd "l f") #'magit-log-buffer-file)
+  (define-key config-keymap-git-map (kbd "l c") #'magit-log-current)
+  (define-key config-keymap-git-map (kbd "r") #'magit-rebase)
+  (define-key config-keymap-git-map (kbd "s") #'magit-status))
 
-;;;; my-keymap-help-map ---------------
+;;;; config-keymap-help-map ---------------
 
-(define-prefix-command 'my-keymap-help-map)
+(define-prefix-command 'config-keymap-help-map)
 
-(set-keymap-parent my-keymap-help-map 'help-command)
+(set-keymap-parent config-keymap-help-map 'help-command)
 
 (with-eval-after-load 'config-helpful
-  (define-key my-keymap-help-map (kbd "f") #'helpful-callable)
-  (define-key my-keymap-help-map (kbd "v") #'helpful-variable)
-  (define-key my-keymap-help-map (kbd "k") #'helpful-key))
+  (define-key config-keymap-help-map (kbd "f") #'helpful-callable)
+  (define-key config-keymap-help-map (kbd "v") #'helpful-variable)
+  (define-key config-keymap-help-map (kbd "k") #'helpful-key))
 
 ;;; Footer:
 
-(provide 'my-keymap)
+(provide 'config-keymap)
 
-;;; my-keymap.el ends here
+;;; config-keymap.el ends here
