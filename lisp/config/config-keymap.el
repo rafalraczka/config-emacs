@@ -73,6 +73,13 @@
           (?? aw-show-dispatch-help)))
   (setq aw-keys '(?s ?e ?t ?n ?r ?i ?d ?h ?a ?o)))
 
+;;;;; org-agenda-mode-amp
+
+(with-eval-after-load 'org-agenda
+  (let ((map org-agenda-mode-map))
+    (define-key map (kbd "<ret>") 'org-agenda-tree-to-indirect-buffer)
+    (setq org-agenda-mode-map map)))
+
 ;;;;; vterm-mode-map
 
 (with-eval-after-load 'vterm
