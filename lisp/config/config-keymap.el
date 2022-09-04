@@ -146,6 +146,7 @@
   (define-key map (kbd "m") 'config-keymap-mail-map)
   (define-key map (kbd "p") 'config-keymap-project-map)
   (define-key map (kbd "r") 'config-keymap-ref-map)
+  (define-key map (kbd "w") 'config-keymap-web-browser-map)
   )
 
 ;;;;; config-keymap-project-map
@@ -221,6 +222,12 @@
   (define-key map (kbd "o") 'citar-open)
   (define-key map (kbd "n") 'citar-open-notes)
   (define-key map (kbd "l") 'citar-open-links))
+
+;;;;; config-keymap-web-browser-map
+
+(let ((map (define-prefix-command 'config-keymap-web-browser-map)))
+  (define-key map (kbd "f") 'my-qutebrowser-switch-to-buffer)
+  (define-key map (kbd "s") 'my-qutebrowser-start-process))
 
 ;;;;; config-keymap-workspace-map
 
