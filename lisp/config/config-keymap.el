@@ -77,6 +77,18 @@
 
 (define-key ctl-x-map (kbd "C-z") nil)
 
+;;;;; dired-mode-map
+
+(with-eval-after-load 'dired
+  (let ((map dired-mode-map))
+    (define-key map (kbd "e") 'my/dired-create-dwim)
+    (define-key map [remap dired-find-file] 'dired-single-buffer)
+    (define-key map [remap dired-up-directory] 'dired-single-up-directory)
+    (define-key map (kbd "C-w") 'dired-ranger-copy)
+    (define-key map (kbd "C-y") 'dired-ranger-move)
+    (define-key map (kbd "M-y") 'dired-ranger-paste)
+    (setq dired-mode-map map)))
+
 ;;;;; emacs-lisp-mode-map
 
 (with-eval-after-load 'elisp-mode
