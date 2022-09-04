@@ -52,6 +52,9 @@
      :type git :flavor melpa
      :host github :repo "weirdNox/org-noter"
      :fork (:host codeberg :repo "rafalraczka/org-noter" :branch "main"))
+    (org-pdftools
+     :type git :flavor melpa :host github :repo "fuxialexander/org-pdftools"
+     :fork (:host codeberg :repo "rafalraczka/org-pdftools" :branch "main"))
     (org-ref-prettify
      :type git :flavor melpa :host github :repo "alezost/org-ref-prettify.el"
      :fork (:host codeberg :repo "rafalraczka/org-ref-prettify.el"

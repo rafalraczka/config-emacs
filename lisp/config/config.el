@@ -272,6 +272,10 @@
   :after 'org
   :install 'straight)
 
+(core-use-module 'org-pdftools
+  :after 'org
+  :install 'straight)
+
 (core-use-module 'org-ql
   :install 'straight)
 
