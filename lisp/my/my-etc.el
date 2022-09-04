@@ -34,6 +34,32 @@
                          original-color)))
 
 ;;;###autoload
+(defun my-etc-delete-window-dwim ()
+  "Delete current window or tab if the window cannot be deleted."
+  (interactive)
+  (or (ignore-error t (or (delete-window) t))
+      (ignore-error t (or (tab-bar-close-tab) t))
+      (when-let* ((dashboard (or (when (featurep 'pico-dashboard)
+                                   pico-dashboard-buffer-name)
+                                 "*dashboard*"))
+                  (buffer (get-buffer dashboard)))
+        (switch-to-buffer buffer))
+      (t (switch-to-buffer "*scratch*"))))
+
+;;;###autoload
+(defun my-etc-tab-bar-switch-tab-dwim ()
+  "Switch to the tab by NAME or do other action if there are fewer tabs.
+If there is only one tab this function will create a new tab.  If
+there are two tabs, this function will switch to the other tab
+without prompt.  If there are more than two tabs than, prompt
+will appear for user to select a tab."
+  (interactive)
+  (pcase (length (tab-bar-tabs))
+    (1 (tab-bar-new-tab))
+    (2 (tab-bar-switch-to-next-tab))
+    (_ (call-interactively 'tab-bar-switch-to-tab))))
+
+;;;###autoload
 (defun my-etc-upcase-previous-word ()
   "Convert to upper case from point to the beginning of word and do not move."
   (interactive)

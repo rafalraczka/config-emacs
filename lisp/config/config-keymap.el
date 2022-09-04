@@ -292,6 +292,7 @@
   (define-key map (kbd "9") (lambda () (interactive) (config-keymap-workspace-switch-index 9)))
   (define-key map (kbd "+") 'balance-windows)
   (define-key map (kbd "b") 'switch-to-buffer)
+  (define-key map (kbd "d") 'my-etc-delete-window-dwim)
   (define-key map (kbd "k") 'kill-current-buffer)
   (define-key map (kbd "l") 'counsel-linux-app)
   (define-key map (kbd "n") 'tab-bar-switch-to-next-tab)
@@ -299,6 +300,7 @@
   (define-key map (kbd "r") 'config-keymap-bookmark-map)
   (define-key map (kbd "s") 'ace-window)
   (define-key map (kbd "s") 'window-toggle-side-windows)
+  (define-key map (kbd "t") 'my-etc-tab-bar-switch-tab-dwim)
   (define-key map (kbd "w") 'ace-window))
 
 ;; To use =s-p= while using =gnome= you have to disable system
@@ -328,6 +330,7 @@
 (global-set-key (kbd "s-p") 'tab-bar-switch-to-prev-tab)
 (global-set-key (kbd "s-r") 'config-keymap-bookmark-map)
 (global-set-key (kbd "s-s") 'ace-window)
+(global-set-key (kbd "s-t") 'my-etc-tab-bar-switch-tab-dwim)
 (global-set-key (kbd "s-w") 'ace-window)
 
 ;;; Footer:
