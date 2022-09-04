@@ -109,7 +109,17 @@
   (define-key map (kbd "g") 'config-keymap-git-map)
   (define-key map (kbd "h") 'config-keymap-help-map)
   (define-key map (kbd "m") 'config-keymap-mail-map)
+  (define-key map (kbd "r") 'config-keymap-ref-map)
   )
+
+;;;;; config-keymap-ref-map
+
+(let ((map (define-prefix-command 'config-keymap-ref-map)))
+  (define-key map (kbd "c") 'citar-copy-reference)
+  (define-key map (kbd "i") 'citar-insert-citation)
+  (define-key map (kbd "o") 'citar-open)
+  (define-key map (kbd "n") 'citar-open-notes)
+  (define-key map (kbd "l") 'citar-open-links))
 
 ;;;;; config-keymap-workspace-map
 
