@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(defvar config-keymap-workspace-prefix [f5])
+
 ;;;; global-map
 
 (global-set-key (kbd "<XF86AudioLowerVolume>") 'desktop-environment-volume-decrement)
@@ -44,6 +46,7 @@
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 (global-set-key (kbd "C-z") nil)
 (global-set-key (kbd "M-u") 'my-etc-upcase-previous-word)
+(global-set-key config-keymap-workspace-prefix 'config-keymap-workspace-map)
 
 ;;;; Custom maps
 
@@ -64,6 +67,60 @@
 (define-key config-keymap-help-map (kbd "f") 'helpful-callable)
 (define-key config-keymap-help-map (kbd "v") 'helpful-variable)
 (define-key config-keymap-help-map (kbd "k") 'helpful-key)
+
+;;;;; config-keymap-workspace-map
+
+(defun config-keymap-workspace-switch-index (index)
+  (exwm-workspace-switch-create index))
+
+(let ((map (define-prefix-command 'config-keymap-workspace-map)))
+  (define-key map (kbd "0") (lambda () (interactive) (config-keymap-workspace-switch-index 0)))
+  (define-key map (kbd "1") (lambda () (interactive) (config-keymap-workspace-switch-index 1)))
+  (define-key map (kbd "2") (lambda () (interactive) (config-keymap-workspace-switch-index 2)))
+  (define-key map (kbd "3") (lambda () (interactive) (config-keymap-workspace-switch-index 3)))
+  (define-key map (kbd "4") (lambda () (interactive) (config-keymap-workspace-switch-index 4)))
+  (define-key map (kbd "5") (lambda () (interactive) (config-keymap-workspace-switch-index 5)))
+  (define-key map (kbd "6") (lambda () (interactive) (config-keymap-workspace-switch-index 6)))
+  (define-key map (kbd "7") (lambda () (interactive) (config-keymap-workspace-switch-index 7)))
+  (define-key map (kbd "8") (lambda () (interactive) (config-keymap-workspace-switch-index 8)))
+  (define-key map (kbd "9") (lambda () (interactive) (config-keymap-workspace-switch-index 9)))
+  (define-key map (kbd "+") 'balance-windows)
+  (define-key map (kbd "b") 'switch-to-buffer)
+  (define-key map (kbd "k") 'kill-current-buffer)
+  (define-key map (kbd "l") 'counsel-linux-app)
+  (define-key map (kbd "n") 'tab-bar-switch-to-next-tab)
+  (define-key map (kbd "p") 'tab-bar-switch-to-prev-tab)
+  (define-key map (kbd "s") 'ace-window)
+  (define-key map (kbd "s") 'window-toggle-side-windows)
+  (define-key map (kbd "w") 'ace-window))
+
+;; To use =s-p= while using =gnome= you have to disable system
+;; shortcut for that keybinding first. It can be done with the
+;; following command, seems to work on gnome 41.3.
+;;
+;; #+begin_src sh
+;;   $ gsettings set org.gnome.mutter.keybindings switch-monitor '[]'
+;; #+end_src
+
+(global-set-key (kbd "s-+") 'balance-windows)
+(global-set-key (kbd "s-0") (lambda () (interactive) (config-keymap-workspace-switch-index 0)))
+(global-set-key (kbd "s-1") (lambda () (interactive) (config-keymap-workspace-switch-index 1)))
+(global-set-key (kbd "s-2") (lambda () (interactive) (config-keymap-workspace-switch-index 2)))
+(global-set-key (kbd "s-3") (lambda () (interactive) (config-keymap-workspace-switch-index 3)))
+(global-set-key (kbd "s-4") (lambda () (interactive) (config-keymap-workspace-switch-index 4)))
+(global-set-key (kbd "s-5") (lambda () (interactive) (config-keymap-workspace-switch-index 5)))
+(global-set-key (kbd "s-6") (lambda () (interactive) (config-keymap-workspace-switch-index 6)))
+(global-set-key (kbd "s-7") (lambda () (interactive) (config-keymap-workspace-switch-index 7)))
+(global-set-key (kbd "s-8") (lambda () (interactive) (config-keymap-workspace-switch-index 8)))
+(global-set-key (kbd "s-9") (lambda () (interactive) (config-keymap-workspace-switch-index 9)))
+(global-set-key (kbd "s-b") 'switch-to-buffer)
+(global-set-key (kbd "s-i") 'window-toggle-side-windows)
+(global-set-key (kbd "s-k") 'kill-current-buffer)
+(global-set-key (kbd "s-l") 'counsel-linux-app)
+(global-set-key (kbd "s-n") 'tab-bar-switch-to-next-tab)
+(global-set-key (kbd "s-p") 'tab-bar-switch-to-prev-tab)
+(global-set-key (kbd "s-s") 'ace-window)
+(global-set-key (kbd "s-w") 'ace-window)
 
 ;;; Footer:
 
