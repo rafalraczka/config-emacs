@@ -100,6 +100,12 @@
 
 ;;;; Custom maps
 
+;;;;; config-keymap-bookmark-map
+
+(define-prefix-command 'config-keymap-bookmark-map)
+
+(set-keymap-parent config-keymap-bookmark-map 'bookmark-map)
+
 ;;;;; config-keymap-git-map
 
 (let ((map (define-prefix-command 'config-keymap-git-map)))
@@ -168,6 +174,7 @@
   (define-key map (kbd "l") 'counsel-linux-app)
   (define-key map (kbd "n") 'tab-bar-switch-to-next-tab)
   (define-key map (kbd "p") 'tab-bar-switch-to-prev-tab)
+  (define-key map (kbd "r") 'config-keymap-bookmark-map)
   (define-key map (kbd "s") 'ace-window)
   (define-key map (kbd "s") 'window-toggle-side-windows)
   (define-key map (kbd "w") 'ace-window))
@@ -197,6 +204,7 @@
 (global-set-key (kbd "s-l") 'counsel-linux-app)
 (global-set-key (kbd "s-n") 'tab-bar-switch-to-next-tab)
 (global-set-key (kbd "s-p") 'tab-bar-switch-to-prev-tab)
+(global-set-key (kbd "s-r") 'config-keymap-bookmark-map)
 (global-set-key (kbd "s-s") 'ace-window)
 (global-set-key (kbd "s-w") 'ace-window)
 
