@@ -119,6 +119,9 @@
 (core-use-module 'embark
   :install 'straight)
 
+(core-use-module 'ement
+  :install 'straight)
+
 (core-use-module 'ess
   :after 'ess
   :install 'straight)
