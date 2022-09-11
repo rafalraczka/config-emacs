@@ -40,7 +40,8 @@
 
 (setq olivetti-global-modes '(:exclude (exwm-mode
                                         image-mode
-                                        pdf-view-mode)))
+                                        pdf-view-mode
+                                        pico-dashboard-mode)))
 
 ;;; Footer:
 
