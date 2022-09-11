@@ -39,12 +39,17 @@
   (interactive)
   (or (ignore-error t (or (delete-window) t))
       (ignore-error t (or (tab-bar-close-tab) t))
-      (when-let* ((dashboard (or (when (featurep 'pico-dashboard)
-                                   pico-dashboard-buffer-name)
-                                 "*dashboard*"))
-                  (buffer (get-buffer dashboard)))
-        (switch-to-buffer buffer))
-      (t (switch-to-buffer "*scratch*"))))
+      (when-let ((dashboard (when (featurep 'pico-dashboard)
+                              pico-dashboard-buffer-name))
+                 (buffer (get-buffer-create dashboard)))
+        (with-current-buffer buffer
+          (pico-dashboard-mode)
+          (pico-dashboard-refresh-buffer))
+        (if (not (eq (current-buffer) buffer))
+            (switch-to-buffer buffer)
+          t))
+      (switch-to-buffer "*scratch*")))
+
 
 ;;;###autoload
 (defun my-etc-tab-bar-switch-tab-dwim ()
