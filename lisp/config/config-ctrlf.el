@@ -27,8 +27,6 @@
 (defun my/ctrlf-disable-local-mode ()
   (ctrlf-local-mode -1))
 
-(add-hook 'after-init-hook #'ctrlf-mode)
-
 (with-eval-after-load 'pdf-tools
   (add-hook 'pdf-isearch-minor-mode-hook #'my/ctrlf-disable-local-mode))
 

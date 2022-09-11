@@ -80,8 +80,9 @@
   :install 'straight)
 
 (core-use-module 'ctrlf
-  :after 'config
-  :install 'straight)
+  :after 'ctrlf
+  :install 'straight
+  :execute ((add-hook 'after-init-hook #'ctrlf-mode)))
 
 (core-use-module 'custom
   :after 'config)
