@@ -132,6 +132,8 @@
 
 (with-eval-after-load 'org
   (let ((map org-mode-map))
+    (define-key map (kbd "TAB") nil)
+    (define-key map (kbd "C-<tab>") 'org-cycle)
     (define-key map (kbd "C-c c") 'org-cite-insert)
     (define-key map (kbd "C-c i") 'org-roam-node-insert)
     (setq org-mode-map map)))
