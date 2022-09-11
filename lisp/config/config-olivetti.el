@@ -24,8 +24,6 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook #'olivetti-global-mode)
-
 (defun my/olivetti-set-body-width ()
   "Set olivetti body width according to `fill-column' value."
   (let* ((col (if (local-variable-p 'olivetti-body-width)

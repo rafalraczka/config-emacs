@@ -252,8 +252,9 @@
   :install 'straight)
 
 (core-use-module 'olivetti
-  :after 'config
-  :install 'straight)
+  :after 'olivetti
+  :install 'straight
+  :execute ((add-hook 'after-init-hook #'olivetti-global-mode)))
 
 (core-use-module 'orderless
   :install 'straight
