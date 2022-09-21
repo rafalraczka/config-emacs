@@ -114,8 +114,8 @@
 (core-use-module 'eglot
   :install 'straight)
 
-(core-use-module 'elisp
-  :after 'elisp)
+(core-use-module 'elisp-mode
+  :after 'elisp-mode)
 
 (core-use-module 'embark
   :install 'straight)

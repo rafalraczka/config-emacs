@@ -1,4 +1,4 @@
-;;; config-elisp.el --- elisp configuration -*- lexical-binding: t; -*-
+;;; config-elisp-mode.el --- elisp configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 ;;
@@ -28,10 +28,10 @@
 (require 'flycheck)
 
 (add-hook 'emacs-lisp-mode-hook #'company-mode)
-(add-hook 'emacs-lisp-mode-hook #'flycheck-mode)
+(add-hook 'emacs-lisp-mode-hook #'flymake-mode)
 
 ;;; Footer:
 
-(provide 'config-elisp)
+(provide 'config-elisp-mode)
 
-;;; config-elisp.el ends here
+;;; config-elisp-mode.el ends here
