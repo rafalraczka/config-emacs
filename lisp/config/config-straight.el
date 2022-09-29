@@ -39,6 +39,8 @@
     (git-email
      :host source-hut :repo "~yoctocell/git-email"
      :files ("git-email.el" "git-email-magit.el" "git-email-notmuch.el"))
+    (git-timemachine
+     :host codeberg :repo "pidu/git-timemachine")
     (lilypond
      :files ("elisp/*.el"))
     (modus-themes
