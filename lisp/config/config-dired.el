@@ -44,8 +44,8 @@
 ;; available.  This also set default switches.
 
 (if (executable-find "ls")
-    (setq dired-listing-switches "-Ahl --group-directories-first")
-  (progn (setq dired-listing-switches "-Ahl")
+    (setq dired-listing-switches "-Ahlv --group-directories-first")
+  (progn (setq dired-listing-switches "-Ahlv")
          (setq ls-lisp-dirs-first t)))
 
 (when core-envi-android
