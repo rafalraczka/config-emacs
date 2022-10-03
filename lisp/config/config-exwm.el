@@ -60,18 +60,17 @@
         ))
 
 (setq exwm-input-simulation-keys
-      `(([?\C-a] . [home])
+      `(([?\C-_] . [?\C-z])
+        ([?\C-a] . [home])
         ([?\C-b] . [left])
         ([?\C-e] . [end])
         ([?\C-f] . [right])
         ([?\C-n] . [down])
         ([?\C-p] . [up])
-        ([?\C-s] . [?\C-f])
         ([?\C-w] . [?\C-x])
         ([?\C-y] . [?\C-v])
         ([?\M-_] . [?\C-y])
-        ([?\M-w] . [?\C-c])
-        ([?\C-_] . [?\C-z])))
+        ([?\M-w] . [?\C-c])))
 
 (setq exwm-layout-show-all-buffers t)
 
