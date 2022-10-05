@@ -88,8 +88,8 @@ nil.")
 (defconst core-envi-projects-directory
   (let ((cmd "xdg-user-dir"))
     (if (executable-find cmd)
-        (list (string-trim (shell-command-to-string (concat cmd " PROJECTS"))))
-      (list (expand-file-name "prj/" core-envi-user-files-directory))))
+        (string-trim (shell-command-to-string (concat cmd " PROJECTS")))
+      (expand-file-name "prj/" core-envi-user-files-directory)))
   "Default directory with projects.")
 
 (defconst core-envi-ref-notes-directory
