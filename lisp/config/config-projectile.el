@@ -24,7 +24,14 @@
 
 ;;; Code:
 
-(setq projectile-project-search-path core-envi-projects-directory)
+(require 'dash)
+(require 'f)
+
+(setq projectile-project-search-path
+      `(,core-envi-projects-directory
+        ,@(f-directories core-envi-projects-directory)
+        ,(when (featurep 'straight)
+          (straight--repos-dir))))
 
 ;;; Footer:
 
