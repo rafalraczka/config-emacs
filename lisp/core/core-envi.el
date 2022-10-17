@@ -61,7 +61,7 @@
   (concat (file-name-directory path) "files/"))
 
 (defconst core-envi-library-directory
-  (let ((dir (expand-file-name "library/" core-envi-user-files-directory)))
+  (let ((dir (expand-file-name "bib/" core-envi-user-files-directory)))
     (when (file-exists-p dir)
       dir))
   "Default directory where user stores publications and its metadata.")
