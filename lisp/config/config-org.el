@@ -111,12 +111,14 @@
 (setq org-priority-faces
       (let* ((palette modus-themes-vivendi-colors)
              (blue (cdr (assoc 'blue palette)))
-             (magenta (cdr (assoc 'magenta-intense palette)))
-             (red (cdr (assoc 'red palette))))
-        '((?A . (:foreground red))
-          (?B . (:foreground magenta))
-          (?D . (:foreground blue))
-          (?E . (:foreground blue)))))
+             (blue-faint (cdr (assoc 'blue-faint palette)))
+             (magenta (cdr (assoc 'magenta palette)))
+             (magenta-intense (cdr (assoc 'magenta-intense palette))))
+        `((?A . (:foreground ,magenta-intense))
+          (?B . (:foreground ,magenta))
+          (?C . (:inherit default))
+          (?D . (:foreground ,blue))
+          (?E . (:foreground ,blue-faint)))))
 
 (push '(".+\\.org-.*"
         (display-buffer-in-direction)
