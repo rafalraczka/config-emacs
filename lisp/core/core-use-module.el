@@ -29,6 +29,7 @@
 (require 'core-straight)
 
 (defvar core-use-module-prefix nil)
+(defvar core-use-module-package-manager nil)
 
 (defun core-install-local-package (name)
   (let ((dir (expand-file-name (concat "lisp/" (symbol-name name))
@@ -37,19 +38,26 @@
      `(,name :type nil
              :local-repo ,dir))))
 
+(defun core-use-module-install-package (package package-manager)
+  (pcase package-manager
+    ('straight (straight-use-package package))
+    ('package (core-package-ensure package))
+    ('local (core-install-local-package package))
+    (_ (error "Unknown package manager: %s for package %s"
+              package-manager package))))
+
 (cl-defmacro core-use-module (name &key after disable execute install when)
   (declare (indent 1) (debug t))
   `(when (and (null ,disable)
               (or (null (quote ,when)) ,when))
      (let* ((prefix (symbol-name ',core-use-module-prefix))
-            (file (format "%s-%s" prefix (symbol-name ,name))))
-       (when ,install
-         (pcase ,install
-           ('straight (straight-use-package ,name))
-           ('package (core-package-ensure ,name))
-           ('local (core-install-local-package ,name))
-           (_ (error "Unknown package manager: %s for module %s"
-                     ,install file))))
+            (file (format "%s-%s" prefix (symbol-name ,name)))
+            (package-manager (when ,install
+                               (if (eq ,install t)
+                                   core-use-module-package-manager
+                                 ,install))))
+       (when package-manager
+         (core-use-module-install-package ,name package-manager))
        (when ,after
          (eval-after-load ,after (lambda () (require (intern file)))))
        ,@execute)))
