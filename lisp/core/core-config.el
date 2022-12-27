@@ -1,9 +1,8 @@
-;;; core.el --- The heart of the Emacs configuration -*- lexical-binding: t; -*-
+;;; core-config.el --- Default core configuration -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
-;; URL: https://codeberg.org/rafalraczka/emacs-config
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -24,15 +23,10 @@
 
 ;;; Code:
 
-(require 'core-utils)
-(require 'core-envi)
-(require 'core-straight)
-;; (require 'core-package)
-(require 'core-use-module)
-(require 'core-config)
+(setq core-use-module-package-manager 'straight)
 
 ;;; Footer:
 
-(provide 'core)
+(provide 'core-config)
 
-;;; core.el ends here
+;;; core-config.el ends here
