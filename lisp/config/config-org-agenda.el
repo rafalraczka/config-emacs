@@ -44,7 +44,7 @@
 (setq org-agenda-prefix-format " %-2i")
 (setq org-agenda-remove-tags t)
 (setq org-agenda-show-inherited-tags nil)
-(setq org-agenda-span 2)                ; Shows only three days by default
+(setq org-agenda-span 7)                ; Show seven days by default
 ;; (setq org-agenda-scheduled-leaders '("Scheduled: " "Sched.%2dx: "))
 (setq org-agenda-start-day "+0d")       ; Start on today
 (setq org-agenda-start-with-log-mode t)
