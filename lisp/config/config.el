@@ -343,10 +343,6 @@
   :after 'screenshot
   :install 'straight)
 
-(core-use-module 'selectrum
-  :install 'straight
-  :execute ((add-hook 'core-utils-first-interaction-hook #'selectrum-mode)))
-
 (core-use-module 'server
   :after 'config)
 
