@@ -108,6 +108,9 @@
   :after 'config
   :install t)
 
+(core-use-module 'ediff
+  :after 'ediff)
+
 (core-use-module 'editorconfig
   :install t)
 
