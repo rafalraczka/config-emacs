@@ -255,6 +255,9 @@
   :after 'notmuch
   :install t)
 
+(core-use-module 'nov
+  :install t)
+
 (core-use-module 'ol-notmuch
   :install t)
 
