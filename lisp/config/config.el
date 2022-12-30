@@ -256,7 +256,9 @@
   :install t)
 
 (core-use-module 'nov
-  :install t)
+  :install t
+  :execute ((add-to-list 'auto-mode-alist
+                         '("\\.epub\\'" . nov-mode))))
 
 (core-use-module 'ol-notmuch
   :install t)
