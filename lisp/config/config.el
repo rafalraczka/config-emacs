@@ -315,10 +315,16 @@
 (core-use-module 'pdf-tools
   :after 'pdf-tools
   :install t
-  :execute ((unless (file-exists-p
-                     (expand-file-name "epdfinfo"
-                                       (straight--build-dir "pdf-tools")))
-              (pdf-tools-install))))
+  :execute ((autoload 'pdf-view-mode "pdf-view")
+            (if (file-exists-p (expand-file-name
+                                "epdfinfo"
+                                (straight--build-dir "pdf-tools")))
+                (progn
+                  (add-to-list 'auto-mode-alist
+                               '("\\.[pP][dD][fF]\\'" . 'pdf-view-mode))
+                  (add-to-list 'magic-mode-alist
+                               '("%PDF" . pdf-view-mode)))
+              (pdf-tools-install 'no-query-p))))
 
 (core-use-module 'pico-dashboard
   :after 'config
