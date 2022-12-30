@@ -168,6 +168,9 @@
 (core-use-module 'git-timemachine
   :install t)
 
+(core-use-module 'guix
+  :install t)
+
 (core-use-module 'help
   :after 'config)
 
