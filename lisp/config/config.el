@@ -162,6 +162,9 @@
   :install t
   :execute ((add-hook 'after-init-hook #'gcmh-mode)))
 
+(core-use-module 'geiser
+  :install t)
+
 (core-use-module 'git-email
   :install t)
 
