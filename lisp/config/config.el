@@ -165,6 +165,9 @@
 (core-use-module 'geiser
   :install t)
 
+(core-use-module 'geiser-guile
+  :install t)
+
 (core-use-module 'git-email
   :install t)
 
