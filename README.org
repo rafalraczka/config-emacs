@@ -2,4 +2,5 @@ This repository contains my personal configuration for [[https://www.gnu.org/sof
 
 * License
 
-Copyright (C) 2022 Rafał Rączka. Distributed under the GNU General Public License, Version 3.
+Copyright (C) 2022-2023 Rafał Rączka.  Distributed under the GNU General
+Public License, version 3.
