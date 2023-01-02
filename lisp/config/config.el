@@ -1,6 +1,6 @@
 ;;; config.el --- Modular configuration -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
+;; Copyright (C) 2022-2023 Rafał Rączka <info@rafalraczka.com>
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
 ;; URL: https://codeberg.org/rafalraczka/emacs-config
@@ -241,7 +241,7 @@
 
 (core-use-module 'my
   :install 'local
-  :execute ((add-hook 'exwm-init-hook #'my-polybar-start-panel)
+  :execute ((add-hook 'exwm-init-hook #'my-polybar-start)
             (setq ring-bell-function 'my-etc-blink-mode-line-bg)))
 
 (core-use-module 'my-mini-gui
