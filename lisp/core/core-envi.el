@@ -1,6 +1,6 @@
 ;;; core-envi.el --- Environment configuration -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 Rafał Rączka <info@rafalraczka.com>
+;; Copyright (C) 2022-2023 Rafał Rączka <info@rafalraczka.com>
 
 ;; Author: Rafał Rączka <info@rafalraczka.com>
 ;; URL: https://codeberg.org/rafalraczka/emacs-config
@@ -48,6 +48,21 @@
   "This constant specify whatever user is using Emacs on device with Windows system.")
 
 (defconst core-envi-daemon (daemonp))
+
+;;;;; Guix
+
+(defvar core-envi-guix-store-directory "/gnu/store/")
+
+(defun core-envi-guix-p ()
+  "Return t if Emacs is installed with GNU Guix, and return nil otherwise."
+  (and core-envi-gnu-linux
+       (file-directory-p core-envi-guix-store-directory)
+       (string-match core-envi-guix-store-directory data-directory)
+       (string-match core-envi-guix-store-directory exec-directory)
+       t))
+
+(defconst core-envi-guix (core-envi-guix-p)
+  "This constant specify whatever Emacs is installed with GNU Guix.")
 
 ;;;; Paths ----------------------------
 
