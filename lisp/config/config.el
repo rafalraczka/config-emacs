@@ -418,7 +418,8 @@
   :execute ((add-hook 'core-utils-first-interaction-hook #'volatile-highlights-mode)))
 
 (core-use-module 'vterm
-  :install t)
+  :install t
+  :when (null core-envi-guix))
 
 (core-use-module 'which-key
   :after 'which-key
